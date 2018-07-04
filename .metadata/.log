@@ -53,3 +53,30 @@ Caused by: java.io.EOFException: SSL peer shut down incorrectly
 
 !ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2018-07-04 15:14:38.630
 !MESSAGE No repository found at http://www.apache.org/dist/geronimo/eclipse/updates/.
+
+!ENTRY org.jboss.tools.common.jdt.debug 1 0 2018-07-04 15:43:08.823
+!MESSAGE JDK root directory is found at C:\Program Files\Java\jdk1.8.0_131\jre\...
+
+!ENTRY org.eclipse.egit.core 4 0 2018-07-04 15:45:10.109
+!MESSAGE An exception occurred during push on URI file:///C:\Users\USER\git: file:///C:\Users\USER\git: not found.
+!STACK 0
+org.eclipse.jgit.errors.NoRemoteRepositoryException: file:///C:\Users\USER\git: not found.
+	at org.eclipse.jgit.transport.TransportLocal$1.open(TransportLocal.java:131)
+	at org.eclipse.jgit.transport.TransportBundleFile$1.open(TransportBundleFile.java:106)
+	at org.eclipse.jgit.transport.Transport.open(Transport.java:561)
+	at org.eclipse.jgit.transport.Transport.open(Transport.java:532)
+	at org.eclipse.egit.core.op.PushOperation.run(PushOperation.java:192)
+	at org.eclipse.egit.ui.internal.push.ConfirmationPage$2.run(ConfirmationPage.java:209)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+
+!ENTRY org.eclipse.egit.core 4 0 2018-07-04 15:45:34.308
+!MESSAGE An exception occurred during push on URI file:///C:\Users\USER\git: file:///C:\Users\USER\git: not found.
+!STACK 0
+org.eclipse.jgit.errors.NoRemoteRepositoryException: file:///C:\Users\USER\git: not found.
+	at org.eclipse.jgit.transport.TransportLocal$1.open(TransportLocal.java:131)
+	at org.eclipse.jgit.transport.TransportBundleFile$1.open(TransportBundleFile.java:106)
+	at org.eclipse.jgit.transport.Transport.open(Transport.java:561)
+	at org.eclipse.jgit.transport.Transport.open(Transport.java:532)
+	at org.eclipse.egit.core.op.PushOperation.run(PushOperation.java:192)
+	at org.eclipse.egit.ui.internal.push.ConfirmationPage$2.run(ConfirmationPage.java:209)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
