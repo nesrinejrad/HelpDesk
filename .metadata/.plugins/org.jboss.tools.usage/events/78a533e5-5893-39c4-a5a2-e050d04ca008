@@ -1,8 +1,8 @@
-#Wed Jul 04 15:11:40 WAT 2018
+#Thu Jul 05 15:26:15 WAT 2018
 l=Server Runtime ID
 ct=server
-d=1530713500420
-c=1
+d=1530800775522
+c=0
 cmp=server
 a=detect
 cl=org.jboss.ide.eclipse.as.eap.61

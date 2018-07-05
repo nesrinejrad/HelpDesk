@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kb-project>
+ <depends-on-projects>
+  <project name="MedicaSud-domain"/>
+  <project name="MedicaSud-service"/>
+ </depends-on-projects>
+ <used-by-projects/>
+ <paths>
+  <path value="/MedicaSud-web/src/main/webapp/WEB-INF/faces-config.xml">
+   <libraries>
+    <library class="faces-config">
+     <id class="model-object"
+      path="FileSystems/WEB-INF/faces-config.xml" project="MedicaSud-web"/>
+    </library>
+   </libraries>
+  </path>
+  <path value="C:/Users/USER/.m2/repository/javax/javaee-web-api/7.0/javaee-web-api-7.0.jar"/>
+  <path value="C:/Users/USER/.m2/repository/org/primefaces/primefaces/5.1/primefaces-5.1.jar">
+   <libraries>
+    <library class="faces-config">
+     <id class="model-object"
+      path="FileSystems/lib-primefaces-5.1.jar/meta-inf/faces-config.xml" project="MedicaSud-web"/>
+    </library>
+    <library class="facelet">
+     <id class="model-object"
+      path="FileSystems/lib-primefaces-5.1.jar/meta-inf/primefaces-p.taglib.xml" project="MedicaSud-web"/>
+    </library>
+    <library class="facelet">
+     <id class="model-object"
+      path="FileSystems/lib-primefaces-5.1.jar/meta-inf/primefaces-pm.taglib.xml" project="MedicaSud-web"/>
+    </library>
+   </libraries>
+  </path>
+ </paths>
+ <validation>
+  <core validator-id="jsf-verification"/>
+  <core validator-id="jboss.jsf.core"/>
+  <el>
+   <linked-el length="25" name="%0" offset="530" path="%1"/>
+   <linked-el length="28" name="%0" offset="626" path="%1"/>
+   <linked-el length="59" name="%0" offset="226" path="%2"/>
+   <linked-el length="51" name="%3" offset="365" path="%4"/>
+   <linked-el length="23" name="%5" offset="377" path="%2"/>
+   <linked-el length="24" name="%5" offset="687" path="%1"/>
+   <linked-el length="25" name="%5" offset="530" path="%1"/>
+   <linked-el length="28" name="%5" offset="626" path="%1"/>
+   <linked-el length="22" name="%5" offset="203" path="%2"/>
+   <linked-el length="59" name="%5" offset="226" path="%2"/>
+   <linked-el length="21" name="%5" offset="307" path="%2"/>
+   <linked-el length="51" name="%6" offset="365" path="%4"/>
+   <linked-el length="23" name="%7" offset="377" path="%2"/>
+   <linked-el length="24" name="%7" offset="687" path="%1"/>
+   <linked-el length="25" name="%7" offset="530" path="%1"/>
+   <linked-el length="28" name="%7" offset="626" path="%1"/>
+   <linked-el length="22" name="%7" offset="203" path="%2"/>
+   <linked-el length="59" name="%7" offset="226" path="%2"/>
+   <linked-el length="21" name="%7" offset="307" path="%2"/>
+  </el>
+ </validation>
+ <aliases>
+  <alias
+   path="/MedicaSud-domain/src/main/java/tn/MedicaSud/entities/User.java" value="%0"/>
+  <alias path="request" value="%3"/>
+  <alias path="/MedicaSud-web/src/main/webapp/template/template.xhtml" value="%4"/>
+  <alias path="identity" value="%5"/>
+  <alias path="/MedicaSud-web/src/main/webapp/login.xhtml" value="%1"/>
+  <alias path="request.contextPath" value="%6"/>
+  <alias path="/MedicaSud-web/src/main/webapp/template/top-right.xhtml" value="%2"/>
+  <alias
+   path="/MedicaSud-web/src/main/java/tn/MedicaSud/mBeans/Identity.java" value="%7"/>
+ </aliases>
+ <includes/>
+ <uris>
+  <uri value="http://java.sun.com/jsf/core">
+   <prefix>f</prefix>
+  </uri>
+  <uri value="http://java.sun.com/jsf/html">
+   <prefix>h</prefix>
+  </uri>
+  <uri value="http://primefaces.org/ui">
+   <prefix>p</prefix>
+  </uri>
+ </uris>
+</kb-project>
