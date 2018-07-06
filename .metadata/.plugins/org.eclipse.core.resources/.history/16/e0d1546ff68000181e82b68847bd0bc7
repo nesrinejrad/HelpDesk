@@ -1,0 +1,7 @@
+package tn.MedicaSud.entities;
+
+public class Externe extends Intervention{
+
+	private String conatct;
+	private float cout;
+}

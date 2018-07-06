@@ -1,0 +1,22 @@
+package tn.MedicaSud.entities;
+
+import java.sql.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+@Entity
+public class Notification {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Integer id;
+	private EtatNotification etatNotification;
+	private Demande demandeMateriel;
+	private Utilisateur expéditeur;
+	private Utilisateur destinateur;
+	private Date dateIntervention;
+	private String description;
+	private Ticket ticket;
+
+}

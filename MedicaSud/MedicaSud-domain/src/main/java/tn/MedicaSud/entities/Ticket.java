@@ -1,15 +1,28 @@
 package tn.MedicaSud.entities;
 
 import java.sql.Date;
+import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+@Entity
 public class Ticket {
-
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	private Date sateCreation;
 	private String discription;
 	private TypeMateriel typeMateriel;
 	private EtatTicket etatTicket;
 	private StatutTicket statutTicket;
+	@ManyToOne
 	private Utilisateur utilisateur;
-	private Notification notification;
+	@OneToMany(mappedBy="ticket")
+	private List<Notification> notifications;
+	@OneToMany(mappedBy="ticket")
+	private List<Intervention> interventions;
 }

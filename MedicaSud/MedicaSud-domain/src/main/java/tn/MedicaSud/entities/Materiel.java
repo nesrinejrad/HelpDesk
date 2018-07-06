@@ -3,17 +3,27 @@ package tn.MedicaSud.entities;
 import java.awt.List;
 import java.sql.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.xml.crypto.Data;
-
+@Entity
 public class Materiel {
-	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	private String reference;
 	private String marque;
 	private Date  dateAchat;
 	private Integer dureeGarantie;
+	@ManyToOne
 	private Utilisateur utilisateur;
+	@ManyToOne
 	private Fournisseur fournisseur;
-	private List interventions;
+	@OneToMany(mappedBy="materiel")
+	private java.util.List<Intervention> interventions;
 
  }

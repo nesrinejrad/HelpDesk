@@ -1,0 +1,13 @@
+package tn.MedicaSud.entities;
+
+import java.sql.Date;
+
+public class Intervention {
+	
+	private Integer id;
+	private Date dateIntervention;
+	private String description;
+	private Materiel materiel;
+	private Ticket  ticket;
+
+}
