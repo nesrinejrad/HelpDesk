@@ -1,0 +1,7 @@
+package tn.MedicaSud.entities;
+
+public class Fournisseur {
+	
+	private Integer id;
+
+}

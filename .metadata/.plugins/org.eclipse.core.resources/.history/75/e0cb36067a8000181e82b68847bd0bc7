@@ -1,0 +1,14 @@
+package tn.MedicaSud.entities;
+
+public class Utilisateur {
+	
+	private Integer matricule;
+	private String email;
+	private String mdp;
+	private Role role;
+	private String fonction;
+	
+	
+	
+
+}

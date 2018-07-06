@@ -1,0 +1,11 @@
+package tn.MedicaSud.entities;
+
+import java.sql.Date;
+
+public class Ticket {
+
+	private Integer id;
+	private Date sateCreation;
+	private String discription;
+	private TypeMateriel typeMateriel;
+}

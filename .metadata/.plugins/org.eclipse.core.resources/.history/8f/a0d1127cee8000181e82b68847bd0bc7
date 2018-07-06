@@ -1,0 +1,11 @@
+package tn.MedicaSud.entities;
+
+public class Notification {
+	
+	private Integer id;
+	private EtatNotification etatNotification;
+	private Demande demandeMateriel;
+	private Utilisateur expéditeur;
+	private Utilisateur destinataire;
+
+}

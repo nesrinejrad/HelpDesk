@@ -1,0 +1,9 @@
+package tn.MedicaSud.entities;
+
+public class Fournisseur {
+	
+	private Integer id;
+	private String  nom;
+	private String adresse;
+	private String telephone;
+}
