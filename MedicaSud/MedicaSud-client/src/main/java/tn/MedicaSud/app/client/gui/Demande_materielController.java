@@ -76,7 +76,7 @@ public class Demande_materielController implements Initializable {
   	   img = new Image("Assets/icons8-ajouter-32.png");
   	   ImgNouveauTicket.setImage(img);
   	   
-  	   img = new Image("Assets/icons8-grève-filled-50 (2).png");
+  	   img = new Image("Assets/Demande.png");
   	   ImgDemandeMateriel.setImage(img);
   	   
   	   img = new Image("Assets/icons8-editer-le-fichier-80.png");
@@ -88,31 +88,36 @@ public class Demande_materielController implements Initializable {
 
 
 
-
+    @FXML
     private void ConsulterMaterielAction(ActionEvent event) throws IOException {
         utilites.newStage(Deconnexion, "Consulter_matériel.fxml", "consulter matériels");
     }
-
+    @FXML
     private void NouveauTicketAction(ActionEvent event) throws IOException {
           utilites.newStage(Deconnexion, "Ajouter_tickets.fxml"," nouveau ticket");
     }
-
+    @FXML
     private void DeconnexionAction(ActionEvent event) throws IOException { 
         utilites.newStage(Deconnexion, "login.fxml","login");
     }
-
+    @FXML
     private void EditerProfileAction(ActionEvent event) throws IOException {
         utilites.newStageWithOldStage("Editer_profil.fxml");
        
     }
-
+    @FXML
     private void consulterTicketAction(ActionEvent event) throws IOException {
                  utilites.newStage(Deconnexion, "Consulter_ticket.fxml","consulter tickets");
 
     }
-
+    @FXML
     private void DemandeMaterielAction(ActionEvent event) throws IOException {
                utilites.newStage(Deconnexion, "Demande_materiel.fxml","demande matériel");
+    }
+    
+    @FXML
+    private void EnvoyerDemandeMaterielAction(ActionEvent event) throws IOException {
+             
     }
     
 }

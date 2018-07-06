@@ -1575,3 +1575,184 @@ org.eclipse.core.internal.resources.ResourceException: Resource is out of sync w
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1488)
 !SUBENTRY 1 org.eclipse.core.resources 4 274 2018-07-06 11:20:55.380
 !MESSAGE Resource is out of sync with the file system: '/MedicaSud-client/src/main/java/tn/MedicaSud/app/client/gui/login.fxml'.
+
+!ENTRY org.jboss.tools.common.jdt.debug 2 0 2018-07-06 18:20:04.095
+!MESSAGE 
+!STACK 1
+org.jboss.tools.common.jdt.debug.tools.ToolsCoreException: 
+	at org.jboss.tools.common.jdt.debug.tools.internal.Tools.invokeGetMonitoredVm(Tools.java:585)
+	at org.jboss.tools.common.jdt.debug.tools.internal.Tools.getMonitoredVm(Tools.java:595)
+	at org.jboss.tools.common.jdt.debug.tools.ToolsCore.processIsRunning(ToolsCore.java:98)
+	at org.jboss.tools.common.jdt.debug.RemoteDebugActivator.getVmModelsUsingTools(RemoteDebugActivator.java:168)
+	at org.jboss.tools.common.jdt.debug.RemoteDebugActivator.getVmModel(RemoteDebugActivator.java:150)
+	at org.jboss.tools.common.jdt.debug.RemoteDebugActivator.getVmModel(RemoteDebugActivator.java:156)
+	at org.jboss.tools.jmx.jvmmonitor.internal.tools.JvmAttachHandler.updatesActiveJvms(JvmAttachHandler.java:107)
+	at org.jboss.tools.jmx.jvmmonitor.internal.tools.JvmAttachHandler$1.run(JvmAttachHandler.java:78)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.GeneratedMethodAccessor119.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.jboss.tools.common.jdt.debug.tools.internal.Tools.invokeGetMonitoredVm(Tools.java:583)
+	... 9 more
+Caused by: sun.jvmstat.monitor.MonitorException: 8084 not found
+	at sun.jvmstat.perfdata.monitor.protocol.local.PerfDataBuffer.<init>(PerfDataBuffer.java:84)
+	at sun.jvmstat.perfdata.monitor.protocol.local.LocalMonitoredVm.<init>(LocalMonitoredVm.java:68)
+	at sun.jvmstat.perfdata.monitor.protocol.local.MonitoredHostProvider.getMonitoredVm(MonitoredHostProvider.java:77)
+	at sun.jvmstat.perfdata.monitor.protocol.local.MonitoredHostProvider.getMonitoredVm(MonitoredHostProvider.java:67)
+	... 13 more
+Caused by: java.lang.IllegalArgumentException: Could not map vmid to user name
+	at sun.misc.Perf.attach(Native Method)
+	at sun.misc.Perf.attachImpl(Perf.java:270)
+	at sun.misc.Perf.attach(Perf.java:200)
+	at sun.jvmstat.perfdata.monitor.protocol.local.PerfDataBuffer.<init>(PerfDataBuffer.java:64)
+	... 16 more
+!SUBENTRY 1 org.jboss.tools.common.jdt.debug 4 0 2018-07-06 18:20:04.116
+!MESSAGE 
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at sun.reflect.GeneratedMethodAccessor119.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.jboss.tools.common.jdt.debug.tools.internal.Tools.invokeGetMonitoredVm(Tools.java:583)
+	at org.jboss.tools.common.jdt.debug.tools.internal.Tools.getMonitoredVm(Tools.java:595)
+	at org.jboss.tools.common.jdt.debug.tools.ToolsCore.processIsRunning(ToolsCore.java:98)
+	at org.jboss.tools.common.jdt.debug.RemoteDebugActivator.getVmModelsUsingTools(RemoteDebugActivator.java:168)
+	at org.jboss.tools.common.jdt.debug.RemoteDebugActivator.getVmModel(RemoteDebugActivator.java:150)
+	at org.jboss.tools.common.jdt.debug.RemoteDebugActivator.getVmModel(RemoteDebugActivator.java:156)
+	at org.jboss.tools.jmx.jvmmonitor.internal.tools.JvmAttachHandler.updatesActiveJvms(JvmAttachHandler.java:107)
+	at org.jboss.tools.jmx.jvmmonitor.internal.tools.JvmAttachHandler$1.run(JvmAttachHandler.java:78)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+Caused by: sun.jvmstat.monitor.MonitorException: 8084 not found
+	at sun.jvmstat.perfdata.monitor.protocol.local.PerfDataBuffer.<init>(PerfDataBuffer.java:84)
+	at sun.jvmstat.perfdata.monitor.protocol.local.LocalMonitoredVm.<init>(LocalMonitoredVm.java:68)
+	at sun.jvmstat.perfdata.monitor.protocol.local.MonitoredHostProvider.getMonitoredVm(MonitoredHostProvider.java:77)
+	at sun.jvmstat.perfdata.monitor.protocol.local.MonitoredHostProvider.getMonitoredVm(MonitoredHostProvider.java:67)
+	... 13 more
+Caused by: java.lang.IllegalArgumentException: Could not map vmid to user name
+	at sun.misc.Perf.attach(Native Method)
+	at sun.misc.Perf.attachImpl(Perf.java:270)
+	at sun.misc.Perf.attach(Perf.java:200)
+	at sun.jvmstat.perfdata.monitor.protocol.local.PerfDataBuffer.<init>(PerfDataBuffer.java:64)
+	... 16 more
+Root exception:
+sun.jvmstat.monitor.MonitorException: 8084 not found
+	at sun.jvmstat.perfdata.monitor.protocol.local.PerfDataBuffer.<init>(PerfDataBuffer.java:84)
+	at sun.jvmstat.perfdata.monitor.protocol.local.LocalMonitoredVm.<init>(LocalMonitoredVm.java:68)
+	at sun.jvmstat.perfdata.monitor.protocol.local.MonitoredHostProvider.getMonitoredVm(MonitoredHostProvider.java:77)
+	at sun.jvmstat.perfdata.monitor.protocol.local.MonitoredHostProvider.getMonitoredVm(MonitoredHostProvider.java:67)
+	at sun.reflect.GeneratedMethodAccessor119.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.jboss.tools.common.jdt.debug.tools.internal.Tools.invokeGetMonitoredVm(Tools.java:583)
+	at org.jboss.tools.common.jdt.debug.tools.internal.Tools.getMonitoredVm(Tools.java:595)
+	at org.jboss.tools.common.jdt.debug.tools.ToolsCore.processIsRunning(ToolsCore.java:98)
+	at org.jboss.tools.common.jdt.debug.RemoteDebugActivator.getVmModelsUsingTools(RemoteDebugActivator.java:168)
+	at org.jboss.tools.common.jdt.debug.RemoteDebugActivator.getVmModel(RemoteDebugActivator.java:150)
+	at org.jboss.tools.common.jdt.debug.RemoteDebugActivator.getVmModel(RemoteDebugActivator.java:156)
+	at org.jboss.tools.jmx.jvmmonitor.internal.tools.JvmAttachHandler.updatesActiveJvms(JvmAttachHandler.java:107)
+	at org.jboss.tools.jmx.jvmmonitor.internal.tools.JvmAttachHandler$1.run(JvmAttachHandler.java:78)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+Caused by: java.lang.IllegalArgumentException: Could not map vmid to user name
+	at sun.misc.Perf.attach(Native Method)
+	at sun.misc.Perf.attachImpl(Perf.java:270)
+	at sun.misc.Perf.attach(Perf.java:200)
+	at sun.jvmstat.perfdata.monitor.protocol.local.PerfDataBuffer.<init>(PerfDataBuffer.java:64)
+	... 16 more
+
+!ENTRY org.eclipse.equinox.p2.core 4 0 2018-07-06 19:18:12.381
+!MESSAGE Provisioning exception
+!STACK 1
+org.eclipse.equinox.p2.core.ProvisionException: Unable to read repository at http://download.oracle.com/otn_software/oepe/library/eclipse-mars.2/artifacts.xml.
+	at org.eclipse.equinox.internal.p2.repository.CacheManager.createCache(CacheManager.java:243)
+	at org.eclipse.equinox.internal.p2.artifact.repository.simple.SimpleArtifactRepositoryFactory.getLocalFile(SimpleArtifactRepositoryFactory.java:65)
+	at org.eclipse.equinox.internal.p2.artifact.repository.simple.SimpleArtifactRepositoryFactory.load(SimpleArtifactRepositoryFactory.java:88)
+	at org.eclipse.equinox.internal.p2.artifact.repository.simple.SimpleArtifactRepositoryFactory.load(SimpleArtifactRepositoryFactory.java:76)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.factoryLoad(ArtifactRepositoryManager.java:73)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:768)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:668)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:104)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:100)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.load(CompositeArtifactRepository.java:474)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.addChild(CompositeArtifactRepository.java:172)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.<init>(CompositeArtifactRepository.java:96)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepositoryFactory.load(CompositeArtifactRepositoryFactory.java:116)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.factoryLoad(ArtifactRepositoryManager.java:73)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:768)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:668)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:104)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:100)
+	at org.eclipse.equinox.p2.engine.ProvisioningContext.getLoadedArtifactRepositories(ProvisioningContext.java:160)
+	at org.eclipse.equinox.p2.engine.ProvisioningContext.getArtifactRepositories(ProvisioningContext.java:143)
+	at org.eclipse.equinox.internal.p2.engine.DownloadManager.start(DownloadManager.java:91)
+	at org.eclipse.equinox.internal.p2.engine.phases.Collect.completePhase(Collect.java:104)
+	at org.eclipse.equinox.internal.p2.engine.Phase.postPerform(Phase.java:251)
+	at org.eclipse.equinox.internal.p2.engine.Phase.perform(Phase.java:101)
+	at org.eclipse.equinox.internal.p2.engine.PhaseSet.perform(PhaseSet.java:47)
+	at org.eclipse.equinox.internal.p2.engine.Engine.perform(Engine.java:75)
+	at org.eclipse.equinox.internal.p2.engine.Engine.perform(Engine.java:44)
+	at org.eclipse.equinox.p2.operations.ProvisioningSession.performProvisioningPlan(ProvisioningSession.java:175)
+	at org.eclipse.equinox.p2.operations.ProfileModificationJob.runModal(ProfileModificationJob.java:79)
+	at org.eclipse.equinox.p2.operations.ProvisioningJob.run(ProvisioningJob.java:177)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at org.apache.http.impl.io.AbstractSessionInputBuffer.fillBuffer(AbstractSessionInputBuffer.java:160)
+	at org.apache.http.impl.io.SocketInputBuffer.fillBuffer(SocketInputBuffer.java:84)
+	at org.apache.http.impl.io.AbstractSessionInputBuffer.readLine(AbstractSessionInputBuffer.java:273)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:140)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:57)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:260)
+	at org.apache.http.impl.AbstractHttpClientConnection.receiveResponseHeader(AbstractHttpClientConnection.java:283)
+	at org.apache.http.impl.conn.DefaultClientConnection.receiveResponseHeader(DefaultClientConnection.java:251)
+	at org.apache.http.impl.conn.ManagedClientConnectionImpl.receiveResponseHeader(ManagedClientConnectionImpl.java:197)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:271)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:123)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:685)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:487)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientFileSystemBrowser.runRequest(HttpClientFileSystemBrowser.java:259)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	... 1 more
+!SUBENTRY 1 org.eclipse.equinox.p2.transport.ecf 4 1002 2018-07-06 19:18:12.383
+!MESSAGE Unable to read repository at http://download.oracle.com/otn_software/oepe/library/eclipse-mars.2/artifacts.xml.
+!STACK 0
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at org.apache.http.impl.io.AbstractSessionInputBuffer.fillBuffer(AbstractSessionInputBuffer.java:160)
+	at org.apache.http.impl.io.SocketInputBuffer.fillBuffer(SocketInputBuffer.java:84)
+	at org.apache.http.impl.io.AbstractSessionInputBuffer.readLine(AbstractSessionInputBuffer.java:273)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:140)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:57)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:260)
+	at org.apache.http.impl.AbstractHttpClientConnection.receiveResponseHeader(AbstractHttpClientConnection.java:283)
+	at org.apache.http.impl.conn.DefaultClientConnection.receiveResponseHeader(DefaultClientConnection.java:251)
+	at org.apache.http.impl.conn.ManagedClientConnectionImpl.receiveResponseHeader(ManagedClientConnectionImpl.java:197)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:271)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:123)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:685)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:487)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientFileSystemBrowser.runRequest(HttpClientFileSystemBrowser.java:259)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.equinox.p2.engine 4 4 2018-07-06 19:33:06.214
+!MESSAGE An error occurred while collecting items to be installed
+!SUBENTRY 1 org.eclipse.equinox.p2.engine 4 0 2018-07-06 19:33:06.214
+!MESSAGE session context was:(profile=jbds, phase=org.eclipse.equinox.internal.p2.engine.phases.Collect, operand=, action=).
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2018-07-06 19:33:06.214
+!MESSAGE No repository found containing: osgi.bundle,org.sonatype.m2e.mavenarchiver,0.17.0.201502101659-signed-20150525172209
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2018-07-06 19:33:06.214
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.sonatype.m2e.mavenarchiver.feature,0.17.0.201502101659-signed-20150525172209
