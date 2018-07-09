@@ -8,5 +8,6 @@ import tn.MedicaSud.utilities.IGenericDAO;
 
 @Remote
 public interface UtilisateurServicesRemote extends IGenericDAO<Utilisateur> {
+	  public Utilisateur login ( String login , String pwd);
 
 }

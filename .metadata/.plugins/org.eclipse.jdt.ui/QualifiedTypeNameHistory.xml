@@ -25,11 +25,7 @@
 <fullyQualifiedTypeName name="javax.persistence.Inheritance"/>
 <fullyQualifiedTypeName name="javax.swing.text.html.ImageView"/>
 <fullyQualifiedTypeName name="java.awt.ImageCapabilities"/>
-<fullyQualifiedTypeName name="java.awt.Image"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="tn.MedicaSud.app.client.gui.Accueil_clientController"/>
-<fullyQualifiedTypeName name="javax.naming.Context"/>
-<fullyQualifiedTypeName name="javax.naming.InitialContext"/>
 <fullyQualifiedTypeName name="tn.MedicaSud.utilities.IGenericDAO"/>
 <fullyQualifiedTypeName name="tn.MedicaSud.entities.Demande"/>
 <fullyQualifiedTypeName name="tn.MedicaSud.services.FournisseurServices"/>
@@ -40,10 +36,18 @@
 <fullyQualifiedTypeName name="tn.MedicaSud.entities.Panne"/>
 <fullyQualifiedTypeName name="tn.MedicaSud.entities.Ticket"/>
 <fullyQualifiedTypeName name="tn.MedicaSud.utilities.GenericDAO"/>
-<fullyQualifiedTypeName name="tn.MedicaSud.services.UtilisateurServicesRemote"/>
 <fullyQualifiedTypeName name="java.lang.Enum"/>
 <fullyQualifiedTypeName name="javax.persistence.Enumerated"/>
 <fullyQualifiedTypeName name="javax.persistence.EnumType"/>
 <fullyQualifiedTypeName name="tn.MedicaSud.entities.Role"/>
+<fullyQualifiedTypeName name="java.awt.TextField"/>
+<fullyQualifiedTypeName name="com.jfoenix.controls.JFXTextField"/>
+<fullyQualifiedTypeName name="tn.MedicaSud.services.UtilisateurServicesRemote"/>
+<fullyQualifiedTypeName name="java.awt.Image"/>
+<fullyQualifiedTypeName name="javax.naming.Context"/>
+<fullyQualifiedTypeName name="javax.naming.InitialContext"/>
+<fullyQualifiedTypeName name="javax.persistence.EntityManager"/>
+<fullyQualifiedTypeName name="javax.persistence.PersistenceContext"/>
 <fullyQualifiedTypeName name="tn.MedicaSud.entities.Utilisateur"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
 </qualifiedTypeNameHistroy>

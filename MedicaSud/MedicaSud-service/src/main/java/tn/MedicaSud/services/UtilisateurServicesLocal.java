@@ -8,5 +8,7 @@ import tn.MedicaSud.utilities.IGenericDAO;
 
 @Local
 public interface UtilisateurServicesLocal extends IGenericDAO<Utilisateur>{
+	  public Utilisateur login ( String login , String pwd);
+	
 
 }
