@@ -1,0 +1,9 @@
+package tn.MedicaSud.app.client.tests;
+
+public class TestUtilisateur {
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

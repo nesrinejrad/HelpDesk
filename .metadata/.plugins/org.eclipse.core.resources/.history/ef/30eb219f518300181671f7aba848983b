@@ -1,0 +1,20 @@
+package tn.MedicaSud.services;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+
+/**
+ * Session Bean implementation class PanneServices
+ */
+@Stateless
+@LocalBean
+public class PanneServices implements PanneServicesRemote, PanneServicesLocal {
+
+    /**
+     * Default constructor. 
+     */
+    public PanneServices() {
+        // TODO Auto-generated constructor stub
+    }
+
+}

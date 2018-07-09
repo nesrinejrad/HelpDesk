@@ -6,6 +6,8 @@
 package tn.MedicaSud.app.client.gui;
 
 import tn.MedicaSud.app.client.gui.Utilites;
+import tn.MedicaSud.entities.Utilisateur;
+
 import com.jfoenix.controls.JFXButton;
 
 import java.awt.Graphics;
@@ -50,7 +52,14 @@ public class LoginController implements Initializable {
     }    
     @FXML
    private void GoAcceuil(ActionEvent event) throws IOException {
-            utilites.newStage(Login, "Accueil_client.fxml","accueil");
+    	 Accueil_clientController accueil_clientController= new Accueil_clientController();
+         Utilisateur utilisateur= new Utilisateur();
+         //utilisateur.setEmail("email");
+         //accueil_clientController.utilisateurConnecte=utilisateur;
+         
+         utilites.newStage(Login, "Accueil_client.fxml","accueil");
+         System.out.println(Accueil_clientController.utilisateurConnecte.getEmail());
+
     }
     
 }

@@ -32,12 +32,13 @@ public class Editer_profilController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+    	System.out.println("essai2="+Accueil_clientController.utilisateurConnecte.getEmail());
         // TODO
     }    
 
     @FXML
     private void VAliderNouveauMotDePasseAction(ActionEvent event) {
-            utilites.closeStage(VAliderNouveauMotDePasse);
+      utilites.closeStage(VAliderNouveauMotDePasse);
        
     }
     

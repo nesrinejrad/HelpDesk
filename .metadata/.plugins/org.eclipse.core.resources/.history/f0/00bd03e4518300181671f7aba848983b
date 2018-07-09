@@ -1,0 +1,23 @@
+package tn.MedicaSud.services;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+
+import tn.MedicaSud.entities.Utilisateur;
+import tn.MedicaSud.utilities.GenericDAO;
+
+/**
+ * Session Bean implementation class UtilisateurServices
+ */
+@Stateless
+@LocalBean
+public class UtilisateurServices extends GenericDAO<Utilisateur> implements UtilisateurServicesRemote, UtilisateurServicesLocal {
+
+    /**
+     * Default constructor. 
+     */
+    public UtilisateurServices() {
+        // TODO Auto-generated constructor stub
+    }
+
+}

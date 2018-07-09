@@ -1,0 +1,20 @@
+package tn.MedicaSud.services;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+
+/**
+ * Session Bean implementation class DemandeServices
+ */
+@Stateless
+@LocalBean
+public class DemandeServices implements DemandeServicesRemote, DemandeServicesLocal {
+
+    /**
+     * Default constructor. 
+     */
+    public DemandeServices() {
+        // TODO Auto-generated constructor stub
+    }
+
+}

@@ -36,14 +36,15 @@ public class Utilites {
          Parent root = (Parent) loader.load();		
          Scene newScene = new Scene(root);
          Stage newStage = new Stage();
-         newStage.setHeight(500);
-         newStage.setTitle(Title);
-        newStage.setWidth(700);
-         newStage.setScene(newScene);
-         newStage.show();
+       
        
        
          Stage stage = (Stage) button.getScene().getWindow();
+         newStage.setHeight(stage.getHeight());
+         newStage.setTitle(Title);
+         newStage.setWidth(stage.getWidth());
+         newStage.setScene(newScene);
+         newStage.show();
          // do what you have to do
          stage.close();
     }

@@ -1,0 +1,24 @@
+package tn.MedicaSud.services;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+
+import tn.MedicaSud.entities.Panne;
+import tn.MedicaSud.utilities.GenericDAO;
+
+/**
+ * Session Bean implementation class PanneServices
+ */
+@Stateless
+@LocalBean
+public class PanneServices extends GenericDAO<Panne> implements PanneServicesRemote, PanneServicesLocal {
+
+    /**
+     * Default constructor. 
+     */
+    public PanneServices() {
+    	super(Panne.class);
+        // TODO Auto-generated constructor stub
+    }
+
+}

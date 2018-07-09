@@ -1,0 +1,20 @@
+package tn.MedicaSud.services;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+
+/**
+ * Session Bean implementation class TicketSercies
+ */
+@Stateless
+@LocalBean
+public class TicketSercies implements TicketSerciesRemote, TicketSerciesLocal {
+
+    /**
+     * Default constructor. 
+     */
+    public TicketSercies() {
+        // TODO Auto-generated constructor stub
+    }
+
+}

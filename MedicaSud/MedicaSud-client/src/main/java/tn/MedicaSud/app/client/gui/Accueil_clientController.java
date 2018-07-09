@@ -6,6 +6,8 @@
 package tn.MedicaSud.app.client.gui;
 
 import tn.MedicaSud.app.client.gui.Utilites;
+import tn.MedicaSud.entities.Utilisateur;
+
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXToggleButton;
 import java.io.IOException;
@@ -65,7 +67,8 @@ public class Accueil_clientController implements Initializable {
     private TableColumn<?, ?> marqueMAteriel;
     @FXML
     private TableColumn<?, ?> DateAchatMAteriel;
-
+    
+    static Utilisateur utilisateurConnecte;
     /**
      * Initializes the controller class.
      */
@@ -91,6 +94,7 @@ public class Accueil_clientController implements Initializable {
 	   
 	   img = new Image("Assets/icons8-connexion-filled-50.png");
 	   ImageDeconnexion.setImage(img);
+	   
     }    
 
     @FXML
@@ -108,6 +112,7 @@ public class Accueil_clientController implements Initializable {
     }
     @FXML
     private void DeconnexionAction(ActionEvent event) throws IOException {
+    		this.utilisateurConnecte=null;
                   utilites.newStage(Deconnexion, "login.fxml", "login");
 
     }
@@ -125,6 +130,10 @@ public class Accueil_clientController implements Initializable {
          utilites.newStageWithOldStage("Editer_profil.fxml");
 
         
+    }
+    private void returnIdConecte(Utilisateur utilisateur)
+    {
+    	utilisateurConnecte=utilisateur;
     }
 
  
