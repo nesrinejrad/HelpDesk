@@ -27,8 +27,8 @@ public class NewFXMain extends Application {
         FXMLLoader loader= new FXMLLoader(getClass().getResource("login.fxml"));
         Parent root = loader.load();                           
         Scene scene= new Scene(root);     
-        primaryStage.setHeight(400);
-        primaryStage.setWidth(700);
+        primaryStage.setHeight(600);
+        primaryStage.setWidth(800);
         primaryStage.setTitle("login");
         primaryStage.setScene(scene);
         primaryStage.show();

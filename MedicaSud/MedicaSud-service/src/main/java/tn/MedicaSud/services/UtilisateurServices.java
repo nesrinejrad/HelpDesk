@@ -26,10 +26,16 @@ EntityManager entityManager;
     }
     
     public Utilisateur login ( String login , String pwd)
-    {
-    	String query="Select u from User u where u.email=login and u.password=pwd";
-    	Utilisateur utilisateur= new Utilisateur();
-    	utilisateur=(Utilisateur) entityManager.createQuery(query).setParameter("email", login).setParameter("pwd", pwd).getSingleResult();
+    
+    {	Utilisateur utilisateur=null;
+    	try {
+    	String query="Select u from User u where u.email=:login and u.password=:pwd";
+    	utilisateur= (Utilisateur) entityManager.createQuery(query).setParameter("login", login).setParameter("pwd", pwd).getSingleResult();	
+	} catch (Exception e) {
+	
+	}
+    	
+    	
     	return utilisateur;
     }
 

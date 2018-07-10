@@ -19,6 +19,8 @@
 			<item value="0.0.1-SNAPSHOT"/>
 		</list>
 	</section>
+	<section name="org.jboss.tools.project.examples.stacksrequirements">
+	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -48,6 +50,12 @@
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
 		</list>
+		<list key="projectNameCombo">
+			<item value="jboss-forge-html5"/>
+		</list>
+		<list key="packageCombo">
+			<item value="org.jboss.tools.example.forge"/>
+		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
 			<item value="[artifactId]-TRUNK"/>
@@ -59,13 +67,13 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
-			<item value="tn.MedicaSud"/>
+			<item value="org.jboss.tools.example.forge"/>
 		</list>
 		<list key="groupId">
-			<item value="tn"/>
+			<item value="org.jboss.tools.example.forge"/>
 		</list>
 		<list key="artifactId">
-			<item value="MedicaSud"/>
+			<item value="jboss-forge-html5"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

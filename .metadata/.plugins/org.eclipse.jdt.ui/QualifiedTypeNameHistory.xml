@@ -41,13 +41,13 @@
 <fullyQualifiedTypeName name="javax.persistence.EnumType"/>
 <fullyQualifiedTypeName name="tn.MedicaSud.entities.Role"/>
 <fullyQualifiedTypeName name="java.awt.TextField"/>
-<fullyQualifiedTypeName name="com.jfoenix.controls.JFXTextField"/>
-<fullyQualifiedTypeName name="tn.MedicaSud.services.UtilisateurServicesRemote"/>
 <fullyQualifiedTypeName name="java.awt.Image"/>
-<fullyQualifiedTypeName name="javax.naming.Context"/>
-<fullyQualifiedTypeName name="javax.naming.InitialContext"/>
-<fullyQualifiedTypeName name="javax.persistence.EntityManager"/>
-<fullyQualifiedTypeName name="javax.persistence.PersistenceContext"/>
-<fullyQualifiedTypeName name="tn.MedicaSud.entities.Utilisateur"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="javax.persistence.PersistenceContext"/>
+<fullyQualifiedTypeName name="javax.persistence.EntityManager"/>
+<fullyQualifiedTypeName name="tn.MedicaSud.entities.Utilisateur"/>
+<fullyQualifiedTypeName name="tn.MedicaSud.services.UtilisateurServicesRemote"/>
+<fullyQualifiedTypeName name="javax.naming.InitialContext"/>
+<fullyQualifiedTypeName name="com.jfoenix.controls.JFXTextField"/>
+<fullyQualifiedTypeName name="javax.naming.Context"/>
 </qualifiedTypeNameHistroy>
