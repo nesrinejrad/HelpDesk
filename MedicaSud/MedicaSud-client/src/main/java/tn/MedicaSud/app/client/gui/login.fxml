@@ -20,8 +20,8 @@
                   <Image url="@Assets/MSI-Group.jpg" />
                </image>
             </ImageView>
-            <JFXTextField layoutX="117.0" layoutY="122.0" prefHeight="25.0" prefWidth="158.0" promptText="login" />
-            <JFXTextField layoutX="117.0" layoutY="174.0" prefHeight="25.0" prefWidth="158.0" promptText="login" text="mot de passe" />
+            <JFXTextField fx:id="loginText" layoutX="117.0" layoutY="122.0" prefHeight="25.0" prefWidth="158.0" promptText="login" />
+            <JFXTextField fx:id="pwdText" layoutX="117.0" layoutY="174.0" prefHeight="25.0" prefWidth="158.0" promptText="mot de passe"  />
          </children>
       </AnchorPane>
    </center>

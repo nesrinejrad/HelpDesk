@@ -14,10 +14,16 @@ public class TestUtilisateur {
 		Context context= new InitialContext();
 		UtilisateurServicesRemote utilisateurServicesRemote= (UtilisateurServicesRemote) context.lookup("MedicaSud-ear/MedicaSud-service/UtilisateurServices!tn.MedicaSud.services.UtilisateurServicesRemote");
 		Utilisateur utilisateur= new Utilisateur();
-		utilisateur.setEmail("email");
+	/*	utilisateur.setEmail("email");
 		utilisateur.setPassword("123456");
 		utilisateur.setRole(Role.valueOf("Client"));
-		utilisateurServicesRemote.save(utilisateur);
+		utilisateurServicesRemote.save(utilisateur);*/
+		utilisateur= utilisateurServicesRemote.login("email", "123456");
+		if(utilisateur!=null)
+			System.out.println(utilisateur.getEmail());
+		else {
+			System.out.println("null");
+		}
 		
 		
 	
