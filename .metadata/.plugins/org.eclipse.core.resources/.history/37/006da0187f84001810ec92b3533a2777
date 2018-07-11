@@ -1,0 +1,17 @@
+package tn.MedicaSud.app.client.tests;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+
+import tn.MedicaSud.services.MaterielServicesRemote;
+
+public class TestMateriel {
+	public static void main(String[] args) throws NamingException {
+	  MaterielServicesRemote materielServicesRemote;
+	  Context context= new InitialContext();
+	  materielServicesRemote= (MaterielServicesRemote) context.lookup("MedicaSud-ear/MedicaSud-service/MaterielServices!tn.MedicaSud.services.MaterielServicesRemote");
+		
+	}
+
+}

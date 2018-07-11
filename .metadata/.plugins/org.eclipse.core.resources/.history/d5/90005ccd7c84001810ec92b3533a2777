@@ -1,0 +1,11 @@
+package tn.MedicaSud.app.client.tests;
+
+import tn.MedicaSud.services.MaterielServicesRemote;
+
+public class TestMateriel {
+	public static void main(String[] args) {
+	  MaterielServicesRemote materielServicesRemote;
+		
+	}
+
+}

@@ -1,0 +1,14 @@
+package tn.MedicaSud.app.client.tests;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+
+import tn.MedicaSud.services.TicketSerciesRemote;
+
+public class TicketTest {
+	public static void main(String[] args) {
+		Context context= new InitialContext();
+		TicketSerciesRemote ticketSerciesRemote=context.lookup("MedicaSud-ear/MedicaSud-service/TicketSercies!tn.MedicaSud.services.TicketSerciesRemote);
+	}
+
+}

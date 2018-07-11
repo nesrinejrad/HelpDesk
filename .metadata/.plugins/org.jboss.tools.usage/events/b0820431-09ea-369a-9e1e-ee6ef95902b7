@@ -1,0 +1,11 @@
+#Wed Jul 11 11:05:21 WAT 2018
+vl=How many times the 'Finish' button pressed during the day
+l=Wizard class name
+ct=jbt
+d=1531303521457
+c=0
+cmp=usage
+a=finishWizard
+cl=org.jboss.tools.project.examples.wizard.ProjectReadyWizard
+v=2.1.0
+s=0

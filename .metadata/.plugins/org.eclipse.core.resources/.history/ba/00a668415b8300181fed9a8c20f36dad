@@ -1,0 +1,34 @@
+package tn.MedicaSud.services;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import tn.MedicaSud.entities.Utilisateur;
+import tn.MedicaSud.utilities.GenericDAO;
+
+/**
+ * Session Bean implementation class UtilisateurServices
+ */
+@Stateless
+@LocalBean
+public class UtilisateurServices extends GenericDAO<Utilisateur> implements UtilisateurServicesRemote, UtilisateurServicesLocal {
+	@PersistenceContext
+	private EntityManager entityManager;
+    /**
+     * Default constructor. 
+     */
+    public UtilisateurServices() {
+    	
+    	super(Utilisateur.class);
+        // TODO Auto-generated constructor stub
+    }
+    
+    public Utilisateur login(String mail , String pwd)
+    {
+    	String query="Select u from Utilisateur u where u.email=:mail and u.pwd=:pwd";
+    	return (Utilisateur) entityManager.createQuery(query).setParameter("mail", mail).setParameter("pwd", pwd).getSingleResult();
+    }
+
+}
