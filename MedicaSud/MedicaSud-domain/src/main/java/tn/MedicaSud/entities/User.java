@@ -23,17 +23,17 @@ public class User implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "USR_CODE")
-	private Long code;
+	private int code;
 	@Column(name = "USR_PWD")
 	private String password;
 	@Column(name = "USR_EMAIL")
 	private String email;
 
-	public Long getCode() {
+	public int getCode() {
 		return code;
 	}
 
-	public void setCode(Long code) {
+	public void setCode(int code) {
 		this.code = code;
 	}
 

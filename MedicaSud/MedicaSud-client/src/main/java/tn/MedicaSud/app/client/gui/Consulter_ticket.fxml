@@ -100,7 +100,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <TableView layoutX="14.0" layoutY="88.0" prefHeight="191.0" prefWidth="453.0">
+            <TableView fx:id="tickets" layoutX="14.0" layoutY="88.0" prefHeight="191.0" prefWidth="453.0">
                <columns>
                   <TableColumn fx:id="materielTicket" prefWidth="75.0" text="matériel" />
                   <TableColumn fx:id="DateCreationTicket" prefWidth="75.0" text="date de création" />

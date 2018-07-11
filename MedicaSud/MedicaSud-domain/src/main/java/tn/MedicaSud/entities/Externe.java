@@ -1,12 +1,15 @@
 package tn.MedicaSud.entities;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 
 @Entity
-public class Externe extends Intervention{
+public class Externe extends Intervention implements Serializable{
 
 	private String conatct;
 	private float cout;
+	private static final long serialVersionUID = 1L;
 	public String getConatct() {
 		return conatct;
 	}

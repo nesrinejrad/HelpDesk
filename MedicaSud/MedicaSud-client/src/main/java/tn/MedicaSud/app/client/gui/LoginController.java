@@ -90,7 +90,7 @@ public class LoginController implements Initializable {
 				 {System.out.println(loginText.getText());
 		        	 utilites.newStage(Login, "Accueil_client.fxml","accueil");
 		         accueil_clientController.utilisateurConnecte=utilisateur;
-		        System.out.println(Accueil_clientController.utilisateurConnecte.getEmail());
+		       //System.out.println(Accueil_clientController.utilisateurConnecte.getEmail());
 		        	
 		        }
 		         else

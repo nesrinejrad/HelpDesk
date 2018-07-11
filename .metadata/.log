@@ -3978,3 +3978,172 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.jboss.ide.eclipse.as.core 4 0 2018-07-10 20:39:35.597
 !MESSAGE Unable to retrieve a list of remote deployment scanners
+
+!ENTRY org.eclipse.wst.server.core 4 0 2018-07-10 22:41:54.942
+!MESSAGE The server cannot start because it is currently starting or stopping. Wait for the current operation to complete.
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2018-07-10 22:43:03.898
+!MESSAGE Unable to retrieve a list of remote deployment scanners
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2018-07-10 22:43:04.143
+!MESSAGE Unable to retrieve a list of remote deployment scanners
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2018-07-10 22:44:58.691
+!MESSAGE Unable to retrieve a list of remote deployment scanners
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2018-07-10 22:44:58.803
+!MESSAGE Unable to retrieve a list of remote deployment scanners
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2018-07-10 22:45:12.401
+!MESSAGE Unable to retrieve a list of remote deployment scanners
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2018-07-10 22:45:12.425
+!MESSAGE Unable to retrieve a list of remote deployment scanners
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2018-07-10 22:46:38.521
+!MESSAGE Unable to retrieve a list of remote deployment scanners
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2018-07-10 22:46:38.577
+!MESSAGE Unable to retrieve a list of remote deployment scanners
+
+!ENTRY org.eclipse.wst.server.discovery 1 0 2018-07-10 22:56:59.135
+!MESSAGE cacheFile=file:/C:/Users/USER/Desktop/HelpDesk/.metadata/.plugins/org.eclipse.wst.server.discovery/serverAdapterSitesDetails.xml
+
+!ENTRY org.jboss.tools.stacks.core 4 0 2018-07-10 22:57:27.612
+!MESSAGE Can't access or parse  https://raw.githubusercontent.com/jboss-developer/jboss-stacks/1.0.0.Final/pre-stacks.yaml
+!STACK 0
+while parsing a flow mapping
+ in "<reader>", line 201, column 12:
+       labels: {
+               ^
+expected ',' or '}', but got Value
+ in "<reader>", line 206, column 25:
+            wtp-runtime-type: org.jboss.ide.eclipse.as.runti ... 
+                            ^
+
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseFlowMappingKey.produce(ParserImpl.java:734)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:160)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:145)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:230)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:159)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:159)
+	at org.yaml.snakeyaml.composer.Composer.composeSequenceNode(Composer.java:204)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:157)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:159)
+	at org.yaml.snakeyaml.composer.Composer.composeDocument(Composer.java:122)
+	at org.yaml.snakeyaml.composer.Composer.getSingleNode(Composer.java:105)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getSingleData(BaseConstructor.java:120)
+	at org.yaml.snakeyaml.Yaml.loadFromReader(Yaml.java:480)
+	at org.yaml.snakeyaml.Yaml.load(Yaml.java:411)
+	at org.jboss.jdf.stacks.parser.Parser.parse(Parser.java:55)
+	at org.jboss.tools.stacks.core.model.StacksManager.getStacksFromFile(StacksManager.java:177)
+	at org.jboss.tools.stacks.core.model.StacksManager.getStacksFromURL(StacksManager.java:163)
+	at org.jboss.tools.stacks.core.model.StacksManager.getStacks(StacksManager.java:154)
+	at org.jboss.tools.stacks.core.model.StacksManager.getStacks(StacksManager.java:141)
+	at org.jboss.tools.stacks.core.model.StacksManager.getStacks(StacksManager.java:106)
+	at org.jboss.tools.as.runtimes.integration.internal.DownloadRuntimesProvider.getStacks(DownloadRuntimesProvider.java:56)
+	at org.jboss.tools.as.runtimes.integration.util.AbstractStacksDownloadRuntimesProvider.loadDownloadableRuntimes(AbstractStacksDownloadRuntimesProvider.java:70)
+	at org.jboss.tools.as.runtimes.integration.util.AbstractStacksDownloadRuntimesProvider.getDownloadableRuntimes(AbstractStacksDownloadRuntimesProvider.java:54)
+	at org.jboss.tools.runtime.core.internal.RuntimeExtensionManager.loadDownloadableRuntimesFromProviders(RuntimeExtensionManager.java:260)
+	at org.jboss.tools.runtime.core.internal.RuntimeExtensionManager.loadDownloadRuntimes(RuntimeExtensionManager.java:244)
+	at org.jboss.tools.runtime.core.internal.RuntimeExtensionManager.getDownloadRuntimes(RuntimeExtensionManager.java:186)
+	at org.jboss.tools.runtime.core.internal.RuntimeExtensionManager.getDownloadRuntimes(RuntimeExtensionManager.java:174)
+	at org.jboss.tools.runtime.core.RuntimeCoreActivator.getDownloadRuntimes(RuntimeCoreActivator.java:136)
+	at org.jboss.tools.as.runtimes.integration.util.DownloadRuntimeServerUtil.getDownloadRuntimes(DownloadRuntimeServerUtil.java:41)
+	at org.jboss.tools.as.runtimes.integration.ui.composites.DownloadRuntimeHomeComposite$1.run(DownloadRuntimeHomeComposite.java:162)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.jboss.tools.stacks.core 4 0 2018-07-10 22:57:28.702
+!MESSAGE Can't access or parse  https://raw.githubusercontent.com/jboss-developer/jboss-stacks/1.0.0.Final/stacks.yaml
+!STACK 0
+while parsing a flow mapping
+ in "<reader>", line 4059, column 12:
+       labels: {
+               ^
+expected ',' or '}', but got Value
+ in "<reader>", line 4064, column 25:
+            wtp-runtime-type: org.jboss.ide.eclipse.as.runti ... 
+                            ^
+
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseFlowMappingKey.produce(ParserImpl.java:734)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:160)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:145)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:230)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:159)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:159)
+	at org.yaml.snakeyaml.composer.Composer.composeSequenceNode(Composer.java:204)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:157)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:159)
+	at org.yaml.snakeyaml.composer.Composer.composeDocument(Composer.java:122)
+	at org.yaml.snakeyaml.composer.Composer.getSingleNode(Composer.java:105)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getSingleData(BaseConstructor.java:120)
+	at org.yaml.snakeyaml.Yaml.loadFromReader(Yaml.java:480)
+	at org.yaml.snakeyaml.Yaml.load(Yaml.java:411)
+	at org.jboss.jdf.stacks.parser.Parser.parse(Parser.java:55)
+	at org.jboss.tools.stacks.core.model.StacksManager.getStacksFromFile(StacksManager.java:177)
+	at org.jboss.tools.stacks.core.model.StacksManager.getStacksFromURL(StacksManager.java:163)
+	at org.jboss.tools.stacks.core.model.StacksManager.getStacks(StacksManager.java:154)
+	at org.jboss.tools.stacks.core.model.StacksManager.getStacks(StacksManager.java:141)
+	at org.jboss.tools.stacks.core.model.StacksManager.getStacks(StacksManager.java:95)
+	at org.jboss.tools.as.runtimes.integration.internal.DownloadRuntimesProvider.getStacks(DownloadRuntimesProvider.java:56)
+	at org.jboss.tools.as.runtimes.integration.util.AbstractStacksDownloadRuntimesProvider.loadDownloadableRuntimes(AbstractStacksDownloadRuntimesProvider.java:70)
+	at org.jboss.tools.as.runtimes.integration.util.AbstractStacksDownloadRuntimesProvider.getDownloadableRuntimes(AbstractStacksDownloadRuntimesProvider.java:54)
+	at org.jboss.tools.runtime.core.internal.RuntimeExtensionManager.loadDownloadableRuntimesFromProviders(RuntimeExtensionManager.java:260)
+	at org.jboss.tools.runtime.core.internal.RuntimeExtensionManager.loadDownloadRuntimes(RuntimeExtensionManager.java:244)
+	at org.jboss.tools.runtime.core.internal.RuntimeExtensionManager.getDownloadRuntimes(RuntimeExtensionManager.java:186)
+	at org.jboss.tools.runtime.core.internal.RuntimeExtensionManager.getDownloadRuntimes(RuntimeExtensionManager.java:174)
+	at org.jboss.tools.runtime.core.RuntimeCoreActivator.getDownloadRuntimes(RuntimeCoreActivator.java:136)
+	at org.jboss.tools.as.runtimes.integration.util.DownloadRuntimeServerUtil.getDownloadRuntimes(DownloadRuntimeServerUtil.java:41)
+	at org.jboss.tools.as.runtimes.integration.ui.composites.DownloadRuntimeHomeComposite$1.run(DownloadRuntimeHomeComposite.java:162)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.jboss.tools.stacks.core 2 0 2018-07-10 22:57:28.717
+!MESSAGE Stacks from https://raw.githubusercontent.com/jboss-developer/jboss-stacks/1.0.0.Final/stacks.yaml can not be read, using client mechanism instead
+
+!ENTRY org.jboss.tools.stacks.core 2 0 2018-07-10 22:57:28.737
+!MESSAGE BarrierProgressWaitJob - loading Stacks Client values
+
+!ENTRY org.jboss.tools.stacks.core 4 0 2018-07-10 22:57:30.391
+!MESSAGE while parsing a flow mapping; expected ',' or '}', but got Value
+!STACK 0
+while parsing a flow mapping
+ in "<reader>", line 4059, column 12:
+       labels: {
+               ^
+expected ',' or '}', but got Value
+ in "<reader>", line 4064, column 25:
+            wtp-runtime-type: org.jboss.ide.eclipse.as.runti ... 
+                            ^
+
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseFlowMappingKey.produce(ParserImpl.java:734)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:160)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:145)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:230)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:159)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:159)
+	at org.yaml.snakeyaml.composer.Composer.composeSequenceNode(Composer.java:204)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:157)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:159)
+	at org.yaml.snakeyaml.composer.Composer.composeDocument(Composer.java:122)
+	at org.yaml.snakeyaml.composer.Composer.getSingleNode(Composer.java:105)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getSingleData(BaseConstructor.java:120)
+	at org.yaml.snakeyaml.Yaml.loadFromReader(Yaml.java:480)
+	at org.yaml.snakeyaml.Yaml.load(Yaml.java:411)
+	at org.jboss.jdf.stacks.parser.Parser.parse(Parser.java:55)
+	at org.jboss.jdf.stacks.client.StacksClient.initializeStacks(StacksClient.java:70)
+	at org.jboss.jdf.stacks.client.StacksClient.getStacks(StacksClient.java:91)
+	at org.jboss.tools.stacks.core.model.StacksManager$1.run(StacksManager.java:191)
+	at org.jboss.tools.foundation.core.jobs.BarrierProgressWaitJob.run(BarrierProgressWaitJob.java:85)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2018-07-11 08:59:17.555
+!MESSAGE Unable to retrieve a list of remote deployment scanners
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2018-07-11 08:59:17.638
+!MESSAGE Unable to retrieve a list of remote deployment scanners

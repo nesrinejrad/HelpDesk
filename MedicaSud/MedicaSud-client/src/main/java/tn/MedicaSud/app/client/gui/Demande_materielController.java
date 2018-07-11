@@ -6,10 +6,13 @@
 package tn.MedicaSud.app.client.gui;
 
 import tn.MedicaSud.app.client.gui.Utilites;
-import com.jfoenix.controls.JFXButton;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import com.jfoenix.controls.JFXButton;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -99,6 +102,8 @@ public class Demande_materielController implements Initializable {
     @FXML
     private void DeconnexionAction(ActionEvent event) throws IOException { 
         utilites.newStage(Deconnexion, "login.fxml","login");
+        Accueil_clientController.utilisateurConnecte=null;
+
     }
     @FXML
     private void EditerProfileAction(ActionEvent event) throws IOException {

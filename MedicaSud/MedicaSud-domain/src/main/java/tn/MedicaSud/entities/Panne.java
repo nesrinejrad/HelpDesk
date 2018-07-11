@@ -1,21 +1,24 @@
 package tn.MedicaSud.entities;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Panne {
+public class Panne implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	Integer id;
+	private int id;
 	private String description;
 	private String solution;
-	public Integer getId() {
+	private static final long serialVersionUID = 1L;
+	public int getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getDescription() {

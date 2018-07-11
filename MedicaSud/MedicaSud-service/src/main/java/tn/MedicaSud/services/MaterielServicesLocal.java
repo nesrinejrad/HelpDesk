@@ -8,5 +8,6 @@ import tn.MedicaSud.utilities.IGenericDAO;
 
 @Local
 public interface MaterielServicesLocal extends IGenericDAO<Materiel> {
+	public Materiel findByReference( String reference);
 
 }

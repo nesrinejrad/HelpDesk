@@ -88,7 +88,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <TableView layoutX="74.0" layoutY="70.0" prefHeight="220.0" prefWidth="283.0">
+            <TableView fx:id="materiels" layoutX="74.0" layoutY="70.0" prefHeight="220.0" prefWidth="283.0">
                <columns>
                   <TableColumn fx:id="referenceMateriel" prefWidth="93.0" text="réference" />
                   <TableColumn fx:id="marqueMAteriel" prefWidth="102.0" text="marque" />

@@ -112,8 +112,8 @@ public class Accueil_clientController implements Initializable {
     }
     @FXML
     private void DeconnexionAction(ActionEvent event) throws IOException {
-    		this.utilisateurConnecte=null;
                   utilites.newStage(Deconnexion, "login.fxml", "login");
+              	this.utilisateurConnecte=null;
 
     }
     @FXML

@@ -1,5 +1,6 @@
 package tn.MedicaSud.entities;
 
+import java.io.Serializable;
 import java.sql.Date;
 
 import javax.persistence.Entity;
@@ -12,20 +13,21 @@ import javax.persistence.ManyToOne;
 
 @Entity
 @Inheritance(strategy=InheritanceType.JOINED)
-public class Intervention {
+public class Intervention implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer id;
+	private int id;
 	private Date dateIntervention;
 	private String description;
 	@ManyToOne
 	private Materiel materiel;
 	@ManyToOne
 	private Ticket  ticket;
-	public Integer getId() {
+	private static final long serialVersionUID = 1L;
+	public int getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public Date getDateIntervention() {
@@ -52,7 +54,7 @@ public class Intervention {
 	public void setTicket(Ticket ticket) {
 		this.ticket = ticket;
 	}
-	public Intervention(Integer id, Date dateIntervention, String description, Materiel materiel, Ticket ticket) {
+	public Intervention(int id, Date dateIntervention, String description, Materiel materiel, Ticket ticket) {
 		super();
 		this.id = id;
 		this.dateIntervention = dateIntervention;

@@ -13,17 +13,18 @@ import javax.persistence.OneToMany;
 public class Fournisseur implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer id;
+	private int id;
 	private String  nom;
 	private String adresse;
 	private String telephone;
 	private String email;
 	@OneToMany(mappedBy="fournisseur")
 	private java.util.List<Materiel> materiels;
-	public Integer getId() {
+	private static final long serialVersionUID = 1L;
+	public int getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getNom() {
@@ -56,7 +57,7 @@ public class Fournisseur implements Serializable{
 	public void setMateriels(java.util.List<Materiel> materiels) {
 		this.materiels = materiels;
 	}
-	public Fournisseur(Integer id, String nom, String adresse, String telephone, String email,
+	public Fournisseur(int id, String nom, String adresse, String telephone, String email,
 			java.util.List<Materiel> materiels) {
 		super();
 		this.id = id;

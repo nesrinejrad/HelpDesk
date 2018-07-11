@@ -8,5 +8,6 @@ import tn.MedicaSud.utilities.IGenericDAO;
 
 @Remote
 public interface TicketSerciesRemote extends IGenericDAO<Ticket>{
+	 public void add (Ticket ticket);
 
 }

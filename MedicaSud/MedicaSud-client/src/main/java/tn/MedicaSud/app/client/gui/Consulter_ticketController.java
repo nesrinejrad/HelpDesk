@@ -6,11 +6,17 @@
 package tn.MedicaSud.app.client.gui;
 
 import tn.MedicaSud.app.client.gui.Utilites;
+import tn.MedicaSud.entities.Materiel;
+import tn.MedicaSud.entities.Ticket;
+
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXToggleButton;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Observable;
 import java.util.ResourceBundle;
+
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -23,7 +29,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-
+import javafx.scene.control.TableView;
 /**
  * FXML Controller class
  *
@@ -57,6 +63,8 @@ public class Consulter_ticketController implements Initializable {
     private JFXButton Deconnexion;
     @FXML
     private JFXButton EditerProfile;
+    @FXML
+    private TableView<Ticket> tickets;
 
        Utilites utilites= new Utilites();
     @FXML
@@ -77,6 +85,7 @@ public class Consulter_ticketController implements Initializable {
     private ImageView ImgEditerProfile;
     @FXML
     private ImageView ImageDeconnexion;
+    private ObservableList<Materiel> data;
     /**
      * Initializes the controller class.
      */
@@ -100,6 +109,8 @@ public class Consulter_ticketController implements Initializable {
        	   
        	   img = new Image("Assets/icons8-connexion-filled-50.png");
        	   ImageDeconnexion.setImage(img);
+       	   
+       	   
 
     }    
 
@@ -122,6 +133,8 @@ public class Consulter_ticketController implements Initializable {
 
     private void DeconnexionAction(ActionEvent event) throws IOException {
           utilites.newStage(Deconnexion, "login.fxml","login");
+          Accueil_clientController.utilisateurConnecte=null;
+
     }
     @FXML
     private void EditerProfileAction(ActionEvent event) throws IOException {

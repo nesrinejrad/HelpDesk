@@ -8,5 +8,6 @@ import tn.MedicaSud.utilities.IGenericDAO;
 
 @Remote
 public interface MaterielServicesRemote  extends IGenericDAO<Materiel>{
+	public Materiel findByReference( String reference);
 
 }

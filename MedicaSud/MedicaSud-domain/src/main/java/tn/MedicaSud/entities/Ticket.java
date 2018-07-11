@@ -1,5 +1,6 @@
 package tn.MedicaSud.entities;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.List;
 
@@ -10,10 +11,10 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 @Entity
-public class Ticket {
+public class Ticket implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer id;
+	private int id;
 	private Date sateCreation;
 	private String discription;
 	private TypeMateriel typeMateriel;
@@ -25,10 +26,11 @@ public class Ticket {
 	private List<Notification> notifications;
 	@OneToMany(mappedBy="ticket")
 	private List<Intervention> interventions;
-	public Integer getId() {
+	private static final long serialVersionUID = 1L;
+	public int getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public Date getSateCreation() {
