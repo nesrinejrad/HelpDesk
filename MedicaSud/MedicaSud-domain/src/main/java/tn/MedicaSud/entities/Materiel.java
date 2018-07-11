@@ -25,6 +25,7 @@ public class Materiel implements Serializable{
 	private String marque;
 	private LocalDate  dateAchat;
 	private Integer dureeGarantie;
+	private TypeMateriel typeMateriel;
 	@ManyToMany(mappedBy="materiels", fetch=FetchType.EAGER, cascade={CascadeType.PERSIST,CascadeType.REMOVE,CascadeType.MERGE})
 	private java.util.List<Utilisateur> utilisateurs= new ArrayList<Utilisateur>();
 	@ManyToOne
@@ -83,11 +84,17 @@ public class Materiel implements Serializable{
 	public void setInterventions(java.util.List<Intervention> interventions) {
 		this.interventions = interventions;
 	}
+	
 	@Override
 	public String toString() {
 		return "Materiel [id=" + id + ", reference=" + reference + ", marque=" + marque + ", dateAchat=" + dateAchat
-				+ ", dureeGarantie=" + dureeGarantie  + ", fournisseur=" + fournisseur
-				+ ", interventions=" + interventions + "]";
+				+ ", dureeGarantie=" + dureeGarantie + ", typeMateriel=" + typeMateriel + "]";
+	}
+	public TypeMateriel getTypeMateriel() {
+		return typeMateriel;
+	}
+	public void setTypeMateriel(TypeMateriel typeMateriel) {
+		this.typeMateriel = typeMateriel;
 	}
 	public Materiel(String reference, String marque, LocalDate dateAchat, Integer dureeGarantie,java.util.List<Utilisateur > utilisateurs,
 			Fournisseur fournisseur, java.util.List<Intervention> interventions) {

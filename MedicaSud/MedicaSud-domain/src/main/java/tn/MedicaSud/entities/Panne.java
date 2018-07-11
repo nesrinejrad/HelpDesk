@@ -14,6 +14,7 @@ public class Panne implements Serializable{
 	private int id;
 	private String description;
 	private String solution;
+	private TypeMateriel typeMateriel;
 	private static final long serialVersionUID = 1L;
 	public int getId() {
 		return id;
@@ -41,9 +42,17 @@ public class Panne implements Serializable{
 	public Panne() {
 		super();
 	}
+	
+	public TypeMateriel getTypeMateriel() {
+		return typeMateriel;
+	}
+	public void setTypeMateriel(TypeMateriel typeMateriel) {
+		this.typeMateriel = typeMateriel;
+	}
 	@Override
 	public String toString() {
-		return "Panne [id=" + id + ", description=" + description + ", solution=" + solution + "]";
+		return "Panne [id=" + id + ", description=" + description + ", solution=" + solution + ", typeMateriel="
+				+ typeMateriel + "]";
 	}
 	
 	

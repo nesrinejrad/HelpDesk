@@ -12,8 +12,8 @@ public class PanneTest {
 		Context context= new InitialContext();
 		PanneServicesRemote panneServicesRemote=(PanneServicesRemote) context.lookup("MedicaSud-ear/MedicaSud-service/PanneServices!tn.MedicaSud.services.PanneServicesRemote");
 		Panne panne= new Panne();
-		panne.setDescription("description");
-		panne.setSolution("solution");
+		panne.setDescription("description1");
+		panne.setSolution("solution1");
 		panneServicesRemote.save(panne);
 	}
 

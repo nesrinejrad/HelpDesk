@@ -6,13 +6,27 @@
 package tn.MedicaSud.app.client.gui;
 
 import tn.MedicaSud.app.client.gui.Utilites;
+import tn.MedicaSud.entities.Materiel;
+import tn.MedicaSud.entities.Panne;
+import tn.MedicaSud.entities.StatutTicket;
+import tn.MedicaSud.services.PanneServicesRemote;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
-import com.jfoenix.controls.JFXButton;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
 
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXTextArea;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -65,6 +79,20 @@ public class Ajouter_ticketsController implements Initializable {
     private ImageView ImgEditerProfile;
     @FXML
     private ImageView ImageDeconnexion;
+    @FXML
+    private JFXComboBox<String> materiel;
+    @FXML
+    private JFXComboBox<String> Panne;
+    @FXML
+    private JFXComboBox<String> statut;
+    @FXML
+    private JFXTextArea description;
+
+    private PanneServicesRemote panneServiceRemote;
+     ObservableList<String> dataMateriels=FXCollections.observableArrayList();
+     ObservableList<String> dataPannes=FXCollections.observableArrayList();;
+    private ObservableList<String> dataStatutTickets=FXCollections.observableArrayList();
+
 
 
     /**
@@ -90,12 +118,50 @@ public class Ajouter_ticketsController implements Initializable {
   	   
   	   img = new Image("Assets/icons8-connexion-filled-50.png");
   	   ImageDeconnexion.setImage(img);
-      
+  	   
+  	 List<Materiel> materiels= Accueil_clientController.utilisateurConnecte.getMateriels();
+  	 System.out.println(materiels.size());
+  	 for (Materiel materiel1 : materiels) {
+  		 System.out.println(materiel1.getReference());
+		dataMateriels.add(materiel1.getReference());
+  		 //dataMateriels.
+	}
+  	 materiel.setItems(dataMateriels);
+  	 
+  	 try {
+		Context context= new InitialContext();
+		PanneServicesRemote panneServicesRemote=(PanneServicesRemote) context.lookup("MedicaSud-ear/MedicaSud-service/PanneServices!tn.MedicaSud.services.PanneServicesRemote");
+		List<Panne> pannes= new ArrayList<Panne>();
+		pannes=panneServicesRemote.findAll();
+		System.out.println("panne size="+pannes.size());
+		for (Panne panne1 : pannes) {
+			dataPannes.add(panne1.getDescription());
+			System.out.println(panne1.getDescription());
+
+		}
+		System.out.println("data size="+dataPannes.size());
+		for (String panne : dataPannes) {
+			System.out.println(panne.toString());
+		}
+		Panne.setItems(dataPannes);
+	} catch (NamingException e) {
+	
+	}
+  	 
+  	 StatutTicket[] statusTickets=StatutTicket.values();
+  	 for (StatutTicket statutTicket : statusTickets) {
+		dataStatutTickets.add(String.valueOf(statutTicket));
+		System.out.println(String.valueOf(statutTicket));
+	}
+  	
+     statut.setItems(dataStatutTickets);
     }    
 
 
     @FXML
-    private void AutresPAnnesAction(ActionEvent event) {
+    private void AutresPAnnesAction(ActionEvent event) throws IOException {
+    	utilites.newStageWithOldStage( "Nouvelle_Pannes.fxml");
+    	
     }
 
   

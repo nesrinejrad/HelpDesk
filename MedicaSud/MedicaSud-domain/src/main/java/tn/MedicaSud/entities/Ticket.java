@@ -5,6 +5,8 @@ import java.sql.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -19,6 +21,7 @@ public class Ticket implements Serializable {
 	private String discription;
 	private TypeMateriel typeMateriel;
 	private EtatTicket etatTicket;
+	@Enumerated(EnumType.STRING)
 	private StatutTicket statutTicket;
 	@ManyToOne
 	private Utilisateur utilisateur;
