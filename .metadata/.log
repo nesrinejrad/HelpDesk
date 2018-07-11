@@ -4147,3 +4147,16 @@ expected ',' or '}', but got Value
 
 !ENTRY org.jboss.ide.eclipse.as.core 4 0 2018-07-11 08:59:17.638
 !MESSAGE Unable to retrieve a list of remote deployment scanners
+
+!ENTRY org.eclipse.egit.ui 4 0 2018-07-11 10:48:08.240
+!MESSAGE Remote origin did not advertise Ref for branch now. This Ref may not exist in the remote or may be hidden by permission settings.
+!STACK 0
+org.eclipse.jgit.api.errors.RefNotAdvertisedException: Remote origin did not advertise Ref for branch now. This Ref may not exist in the remote or may be hidden by permission settings.
+	at org.eclipse.jgit.api.PullCommand.call(PullCommand.java:290)
+	at org.eclipse.egit.core.op.PullOperation$1.run(PullOperation.java:97)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2241)
+	at org.eclipse.egit.core.op.PullOperation.execute(PullOperation.java:128)
+	at org.eclipse.egit.ui.internal.pull.PullOperationUI.execute(PullOperationUI.java:140)
+	at org.eclipse.egit.ui.internal.pull.PullOperationUI$1.runInWorkspace(PullOperationUI.java:115)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
