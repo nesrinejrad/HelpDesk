@@ -9,7 +9,9 @@ import tn.MedicaSud.app.client.gui.Utilites;
 import tn.MedicaSud.entities.Materiel;
 import tn.MedicaSud.entities.Panne;
 import tn.MedicaSud.entities.StatutTicket;
+import tn.MedicaSud.entities.Ticket;
 import tn.MedicaSud.services.PanneServicesRemote;
+import tn.MedicaSud.services.TicketSerciesRemote;
 
 import java.io.IOException;
 import java.net.URL;
@@ -87,7 +89,7 @@ public class Ajouter_ticketsController implements Initializable {
     private JFXComboBox<String> statut;
     @FXML
     private JFXTextArea description;
-
+    private TicketSerciesRemote ticketSerciesRemote;
     private PanneServicesRemote panneServiceRemote;
      ObservableList<String> dataMateriels=FXCollections.observableArrayList();
      ObservableList<String> dataPannes=FXCollections.observableArrayList();;
@@ -160,6 +162,15 @@ public class Ajouter_ticketsController implements Initializable {
 
     @FXML
     private void AutresPAnnesAction(ActionEvent event) throws IOException {
+    	Nouvelle_PannesController nouvelle_PannesController= new Nouvelle_PannesController();
+    	nouvelle_PannesController.dim1= (int) Deconnexion1.getScene().getWindow().getWidth();
+    	System.out.println("dim1lahne"+Deconnexion1.getScene().getWindow().getWidth());
+    	System.out.println(nouvelle_PannesController.dim1);
+
+    	nouvelle_PannesController.dim2= (int) Deconnexion1.getScene().getWindow().getHeight();
+    	System.out.println("dim2lahne"+ Deconnexion1.getScene().getWindow().getHeight());
+    	System.out.println(nouvelle_PannesController.dim2);
+    	
     	utilites.newStageWithOldStage( "Nouvelle_Pannes.fxml");
     	
     }
@@ -172,6 +183,7 @@ public class Ajouter_ticketsController implements Initializable {
     }
     @FXML
     private void NouveauTicketAction(ActionEvent event) throws IOException { 
+    	
         utilites.newStage(Deconnexion1, "Ajouter_tickets.fxml"," nouveau ticket");
     }
 
@@ -195,7 +207,13 @@ public class Ajouter_ticketsController implements Initializable {
     }
     
     @FXML
-    private void ValiderNouveauTicketAction(ActionEvent event) throws IOException {
+    private void ValiderNouveauTicketAction(ActionEvent event) throws IOException, NamingException {
+    	
+    	Context context= new InitialContext();
+    	ticketSerciesRemote=(TicketSerciesRemote) context.lookup("MedicaSud-ear/MedicaSud-service/TicketSercies!tn.MedicaSud.services.TicketSerciesRemote");
+    	Ticket ticket= new Ticket();
+    	ticket.setDiscription(description.getText());
+    	
     }
     
 }
