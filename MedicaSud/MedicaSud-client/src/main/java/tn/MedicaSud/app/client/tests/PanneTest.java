@@ -1,5 +1,7 @@
 package tn.MedicaSud.app.client.tests;
 
+import java.util.List;
+
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -14,7 +16,12 @@ public class PanneTest {
 		Panne panne= new Panne();
 		panne.setDescription("description1");
 		panne.setSolution("solution1");
-		panneServicesRemote.save(panne);
+		//panneServicesRemote.save(panne);
+		List<Panne> pannes=panneServicesRemote.findAll();
+		for (Panne panne2 : pannes) {
+			System.out.println(			panne2.toString());
+		}
+				
 	}
 
 }

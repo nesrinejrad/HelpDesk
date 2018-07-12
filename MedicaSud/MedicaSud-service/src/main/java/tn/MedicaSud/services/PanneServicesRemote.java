@@ -8,5 +8,6 @@ import tn.MedicaSud.utilities.IGenericDAO;
 
 @Remote
 public interface PanneServicesRemote extends IGenericDAO<Panne>{
+	public Panne findByDescription(String description);
 
 }

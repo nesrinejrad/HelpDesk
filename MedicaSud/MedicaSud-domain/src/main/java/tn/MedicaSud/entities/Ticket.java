@@ -12,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 @Entity
 public class Ticket implements Serializable {
 	@Id
@@ -19,10 +20,15 @@ public class Ticket implements Serializable {
 	private int id;
 	private Date sateCreation;
 	private String discription;
+	@Enumerated(EnumType.STRING)
 	private TypeMateriel typeMateriel;
 	private EtatTicket etatTicket;
+	@ManyToOne
+	private Panne panne;
 	@Enumerated(EnumType.STRING)
 	private StatutTicket statutTicket;
+	@ManyToOne
+	private Materiel materiel;
 	@ManyToOne
 	private Utilisateur utilisateur;
 	@OneToMany(mappedBy="ticket")
@@ -100,12 +106,24 @@ public class Ticket implements Serializable {
 	public Ticket() {
 		super();
 	}
+	
+	public Materiel getMateriel() {
+		return materiel;
+	}
+	public void setMateriel(Materiel materiel) {
+		this.materiel = materiel;
+	}
 	@Override
 	public String toString() {
 		return "Ticket [id=" + id + ", sateCreation=" + sateCreation + ", discription=" + discription
 				+ ", typeMateriel=" + typeMateriel + ", etatTicket=" + etatTicket + ", statutTicket=" + statutTicket
-				+ ", utilisateur=" + utilisateur + ", notifications=" + notifications + ", interventions="
-				+ interventions + "]";
+				+ ", materiel=" + materiel + ", utilisateur=" + utilisateur + "]";
+	}
+	public Panne getPanne() {
+		return panne;
+	}
+	public void setPanne(Panne panne) {
+		this.panne = panne;
 	}
 	
 	

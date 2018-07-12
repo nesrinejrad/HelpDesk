@@ -8,6 +8,8 @@ import java.util.ArrayList;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,13 +21,15 @@ import javax.xml.crypto.Data;
 @Entity
 public class Materiel implements Serializable{
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	private String reference;
 	private String marque;
 	private LocalDate  dateAchat;
 	private Integer dureeGarantie;
+	@Enumerated(EnumType.STRING)
 	private TypeMateriel typeMateriel;
+	@OneToMany(mappedBy="materiel")
+	private java.util.List<Ticket> tickets;
 	@ManyToMany(mappedBy="materiels", fetch=FetchType.EAGER, cascade={CascadeType.PERSIST,CascadeType.REMOVE,CascadeType.MERGE})
 	private java.util.List<Utilisateur> utilisateurs= new ArrayList<Utilisateur>();
 	@ManyToOne
@@ -87,8 +91,7 @@ public class Materiel implements Serializable{
 	
 	@Override
 	public String toString() {
-		return "Materiel [id=" + id + ", reference=" + reference + ", marque=" + marque + ", dateAchat=" + dateAchat
-				+ ", dureeGarantie=" + dureeGarantie + ", typeMateriel=" + typeMateriel + "]";
+		return  reference ;
 	}
 	public TypeMateriel getTypeMateriel() {
 		return typeMateriel;

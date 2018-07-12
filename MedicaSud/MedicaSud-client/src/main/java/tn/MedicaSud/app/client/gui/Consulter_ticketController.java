@@ -8,14 +8,24 @@ package tn.MedicaSud.app.client.gui;
 import tn.MedicaSud.app.client.gui.Utilites;
 import tn.MedicaSud.entities.Materiel;
 import tn.MedicaSud.entities.Ticket;
+import tn.MedicaSud.services.TicketSerciesRemote;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXToggleButton;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Date;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Observable;
 import java.util.ResourceBundle;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -30,6 +40,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 /**
  * FXML Controller class
  *
@@ -38,17 +49,17 @@ import javafx.scene.control.TableView;
 public class Consulter_ticketController implements Initializable {
 
     @FXML
-    private TableColumn<?, ?> materielTicket;
+    private TableColumn<Ticket, String> materielTicket;
     @FXML
-    private TableColumn<?, ?> DateCreationTicket;
+    private TableColumn<Ticket, Date> DateCreationTicket;
     @FXML
-    private TableColumn<?, ?> ProblèpmeTicket;
+    private TableColumn<Ticket, String> ProblèpmeTicket;
     @FXML
-    private TableColumn<?, ?> StatutTicket;
+    private TableColumn<Ticket, String> StatutTicket;
     @FXML
-    private TableColumn<?, ?> DescriptionTicket;
+    private TableColumn<Ticket, String> DescriptionTicket;
     @FXML
-    private TableColumn<?, ?> EtatTicket;
+    private TableColumn<Ticket, String> EtatTicket;
     @FXML
     private JFXToggleButton ETatTicketButton;
     @FXML
@@ -85,7 +96,7 @@ public class Consulter_ticketController implements Initializable {
     private ImageView ImgEditerProfile;
     @FXML
     private ImageView ImageDeconnexion;
-    private ObservableList<Materiel> data;
+    private ObservableList<Ticket> data;
     /**
      * Initializes the controller class.
      */
@@ -109,6 +120,34 @@ public class Consulter_ticketController implements Initializable {
        	   
        	   img = new Image("Assets/icons8-connexion-filled-50.png");
        	   ImageDeconnexion.setImage(img);
+       	   try {
+			Context context= new InitialContext();
+			TicketSerciesRemote ticketSerciesRemote=(TicketSerciesRemote) context.lookup("MedicaSud-ear/MedicaSud-service/TicketSercies!tn.MedicaSud.services.TicketSerciesRemote");
+			List<Ticket> tickets=ticketSerciesRemote.findAll();
+			List<Ticket> ticketsFinal= new ArrayList<Ticket>();
+			System.out.println(tickets.size());
+			for (Ticket ticket : tickets) {
+				System.out.println(ticket.getUtilisateur().getCode());
+				System.out.println(Accueil_clientController.utilisateurConnecte.getCode());
+				if(ticket.getUtilisateur().getCode()==Accueil_clientController.utilisateurConnecte.getCode())
+				{
+					ticketsFinal.add(ticket);
+				}
+			}
+			data=FXCollections.observableList(ticketsFinal);
+			System.out.println("enfin="+data.size());
+				 materielTicket.setCellValueFactory(new PropertyValueFactory<>("materiel"));
+			 	  DescriptionTicket.setCellValueFactory(new PropertyValueFactory<>("discription"));
+			 	  DateCreationTicket.setCellValueFactory(new PropertyValueFactory<>("sateCreation"));
+			 	  ProblèpmeTicket.setCellValueFactory(new PropertyValueFactory<>("panne"));
+			 	  StatutTicket.setCellValueFactory(new PropertyValueFactory<>("statutTicket"));
+			 	  EtatTicket.setCellValueFactory(new PropertyValueFactory<>("etatTicket"));
+			 	 this.tickets.setItems(data);
+		
+			
+		} catch (NamingException e) {
+		}
+       	   
        	   
        	   
 

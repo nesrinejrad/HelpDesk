@@ -12,6 +12,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXTextArea;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -62,6 +64,12 @@ public class Demande_materielController implements Initializable {
     private ImageView ImageDeconnexion;
     @FXML
     private ImageView ImgEditerProfile;
+    @FXML 
+    private JFXTextArea description;
+    @FXML
+    private JFXComboBox status;
+    @FXML
+    private JFXComboBox typeMateriel;
 
     /**
      * Initializes the controller class.

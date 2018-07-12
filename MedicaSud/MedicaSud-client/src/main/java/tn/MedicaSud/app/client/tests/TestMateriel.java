@@ -1,5 +1,7 @@
 package tn.MedicaSud.app.client.tests;
 
+import java.sql.Date;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,31 +22,34 @@ public class TestMateriel {
 	  Context context= new InitialContext();
 	  materielServicesRemote= (MaterielServicesRemote) context.lookup("MedicaSud-ear/MedicaSud-service/MaterielServices!tn.MedicaSud.services.MaterielServicesRemote");
 	  Materiel materiel= new Materiel();
-	  materiel.setDateAchat(java.time.LocalDate.now());
+	  /*materiel.setDateAchat(java.time.LocalDate.now());
 	  materiel.setDureeGarantie(5);
 	  materiel.setMarque("asus");
-	  materiel.setReference("essai4");
+	  materiel.setReference("essaiFinFin");
 		UtilisateurServicesRemote utilisateurServicesRemote= (UtilisateurServicesRemote) context.lookup("MedicaSud-ear/MedicaSud-service/UtilisateurServices!tn.MedicaSud.services.UtilisateurServicesRemote");
 		Utilisateur utilisateur= new Utilisateur();
 		List<Utilisateur> utilisateurs= new ArrayList<Utilisateur>();
 		System.out.println(utilisateurs.size());
-		utilisateur=utilisateurServicesRemote.find(4);
 		System.out.println(utilisateur.getCode());
 		 materielServicesRemote= (MaterielServicesRemote) context.lookup("MedicaSud-ear/MedicaSud-service/MaterielServices!tn.MedicaSud.services.MaterielServicesRemote");
 		 materiel.setUtilisateurs(utilisateurs);
+		 materiel.setId(124500);
+		utilisateur=utilisateurServicesRemote.find(1);
 		List<Materiel> materiels= utilisateur.getMateriels();
 		System.out.println("3andou "+materiels.size());
-		materielServicesRemote.save(materiel);
-		Materiel materiel2= new Materiel();
-		materiel2= materielServicesRemote.findByReference(materiel.getReference());
-		 System.out.println(materiel2.getId());
+		//materielServicesRemote.save(materiel);
+		////Materiel materiel2= new Materiel();
+		//materiel2= materielServicesRemote.findByReference(materiel.getReference());
+		 //System.out.println(materiel2.getId());
 		 materiels.add(materiel);
 		 System.out.println("3andou ba3d "+materiels.size());
 		 utilisateur.setMateriels(materiels);
 		utilisateurServicesRemote.update(utilisateur);
+		utilisateurs.add(utilisateur);
 		materiel.setUtilisateurs(utilisateurs);
-		///System.out.println(materiel.toString());
-	 
+		System.out.println(materiel.toString());*/
+	  	materiel=materielServicesRemote.findByReference("essaiFinFin");
+	 System.out.println(materiel.getReference());
 	}
 
 }

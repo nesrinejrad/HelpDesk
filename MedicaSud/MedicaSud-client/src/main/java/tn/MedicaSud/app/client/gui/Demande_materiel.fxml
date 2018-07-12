@@ -87,9 +87,9 @@
             <Label layoutX="32.0" layoutY="160.0" text="Statut" />
             <Label layoutX="14.0" layoutY="88.0" text="Type de matériel" />
             <JFXButton fx:id="EnvoyerDemandeMateriel" layoutX="171.0" layoutY="284.0" onAction="#EnvoyerDemandeMaterielAction" prefHeight="27.0" prefWidth="69.0" style="-fx-border-color: #4682b4;" text="Envoyer" />
-            <JFXTextArea layoutX="107.0" layoutY="178.0" prefHeight="71.0" prefWidth="140.0" />
-            <JFXComboBox layoutX="107.0" layoutY="143.0" prefHeight="25.0" prefWidth="140.0" />
-            <JFXComboBox layoutX="107.0" layoutY="71.0" prefHeight="25.0" prefWidth="140.0" />
+            <JFXTextArea fx:id="description" layoutX="107.0" layoutY="178.0" prefHeight="71.0" prefWidth="140.0" />
+            <JFXComboBox fx:id="status" layoutX="107.0" layoutY="143.0" prefHeight="25.0" prefWidth="140.0" />
+            <JFXComboBox fx:id="typeMateriel" layoutX="107.0" layoutY="71.0" prefHeight="25.0" prefWidth="140.0" />
          </children></AnchorPane>
    </center>
    <right>

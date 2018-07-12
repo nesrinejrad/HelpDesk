@@ -6,10 +6,12 @@
 package tn.MedicaSud.app.client.gui;
 
 import tn.MedicaSud.app.client.gui.Utilites;
+import tn.MedicaSud.entities.EtatTicket;
 import tn.MedicaSud.entities.Materiel;
 import tn.MedicaSud.entities.Panne;
 import tn.MedicaSud.entities.StatutTicket;
 import tn.MedicaSud.entities.Ticket;
+import tn.MedicaSud.services.MaterielServicesRemote;
 import tn.MedicaSud.services.PanneServicesRemote;
 import tn.MedicaSud.services.TicketSerciesRemote;
 
@@ -90,10 +92,14 @@ public class Ajouter_ticketsController implements Initializable {
     @FXML
     private JFXTextArea description;
     private TicketSerciesRemote ticketSerciesRemote;
+    private MaterielServicesRemote materielServicesRemote;
     private PanneServicesRemote panneServiceRemote;
      ObservableList<String> dataMateriels=FXCollections.observableArrayList();
      ObservableList<String> dataPannes=FXCollections.observableArrayList();;
     private ObservableList<String> dataStatutTickets=FXCollections.observableArrayList();
+
+	
+	
 
 
 
@@ -137,6 +143,7 @@ public class Ajouter_ticketsController implements Initializable {
 		pannes=panneServicesRemote.findAll();
 		System.out.println("panne size="+pannes.size());
 		for (Panne panne1 : pannes) {
+			
 			dataPannes.add(panne1.getDescription());
 			System.out.println(panne1.getDescription());
 
@@ -213,7 +220,35 @@ public class Ajouter_ticketsController implements Initializable {
     	ticketSerciesRemote=(TicketSerciesRemote) context.lookup("MedicaSud-ear/MedicaSud-service/TicketSercies!tn.MedicaSud.services.TicketSerciesRemote");
     	Ticket ticket= new Ticket();
     	ticket.setDiscription(description.getText());
-    	
+    	ticket.setStatutTicket(StatutTicket.valueOf(statut.getValue()));
+    	String mat=materiel.getValue();
+    	Integer i=0;
+    	for (String string : dataMateriels) {
+			if(string!=mat)			{
+				i++;
+			}
+		}
+    	List<Materiel> materiels= new ArrayList<Materiel>();
+    	materiels= Accueil_clientController.utilisateurConnecte.getMateriels();
+    	Materiel materiel=materiels.get(i);
+    	ticket.setMateriel(materiel);
+    	ticket.setTypeMateriel(materiel.getTypeMateriel());
+    	ticket.setUtilisateur(Accueil_clientController.utilisateurConnecte);
+    	ticket.setEtatTicket(EtatTicket.valueOf("nonTraité"));
+    	Panne panne= new Panne();
+    	panneServiceRemote=(PanneServicesRemote) context.lookup("MedicaSud-ear/MedicaSud-service/PanneServices!tn.MedicaSud.services.PanneServicesRemote");
+    	List<Panne> pannes= panneServiceRemote.findAll();
+    	i=0;
+    	mat=Panne.getValue();
+    	for (String string : dataPannes) {
+			if(mat!=string)
+			{
+				i++;
+			}
+		}
+    	panne=pannes.get(i);
+    	ticket.setPanne(panne);
+    	ticketSerciesRemote.save(ticket);
     }
     
 }

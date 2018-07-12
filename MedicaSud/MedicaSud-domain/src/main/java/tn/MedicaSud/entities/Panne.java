@@ -1,11 +1,13 @@
 package tn.MedicaSud.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Panne implements Serializable{
@@ -15,6 +17,8 @@ public class Panne implements Serializable{
 	private String description;
 	private String solution;
 	private TypeMateriel typeMateriel;
+	@OneToMany(mappedBy="panne")
+	private List<Ticket> tickets;
 	private static final long serialVersionUID = 1L;
 	public int getId() {
 		return id;
@@ -51,8 +55,13 @@ public class Panne implements Serializable{
 	}
 	@Override
 	public String toString() {
-		return "Panne [id=" + id + ", description=" + description + ", solution=" + solution + ", typeMateriel="
-				+ typeMateriel + "]";
+		return  description;
+	}
+	public List<Ticket> getTickets() {
+		return tickets;
+	}
+	public void setTickets(List<Ticket> tickets) {
+		this.tickets = tickets;
 	}
 	
 	

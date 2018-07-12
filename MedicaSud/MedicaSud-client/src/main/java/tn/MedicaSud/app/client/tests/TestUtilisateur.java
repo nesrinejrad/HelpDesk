@@ -22,7 +22,7 @@ public class TestUtilisateur {
 		Context context= new InitialContext();
 		UtilisateurServicesRemote utilisateurServicesRemote= (UtilisateurServicesRemote) context.lookup("MedicaSud-ear/MedicaSud-service/UtilisateurServices!tn.MedicaSud.services.UtilisateurServicesRemote");
 		Utilisateur utilisateur= new Utilisateur();
-	   /* utilisateur.setEmail("email");
+	  /* utilisateur.setEmail("email");
 		utilisateur.setPassword("123456");
 		utilisateur.setRole(Role.valueOf("Client"));
 		//System.out.println(utilisateur.getCode());
@@ -34,18 +34,19 @@ public class TestUtilisateur {
 			System.out.println("null");
 		}*/
 		/*List<Utilisateur> utilisateurs= new ArrayList<Utilisateur>();
-		System.out.println(utilisateurs.size());
-		utilisateur=utilisateurServicesRemote.find(1);
-		utilisateurs.add(utilisateur);
 		System.out.println(utilisateurs.size());*/
+		utilisateur=utilisateurServicesRemote.find(1);
+		System.out.println(utilisateur.getCode() );
+		/*utilisateurs.add(utilisateur);
+		System.out.println(utilisateurs.size());
 		//MaterielServicesRemote materielServicesRemote= (MaterielServicesRemote) context.lookup("MedicaSud-ear/MedicaSud-service/MaterielServices!tn.MedicaSud.services.MaterielServicesRemote");
 		//Materiel materiel=materielServicesRemote.find(1);
 		/*List<Materiel> materiels= new ArrayList<Materiel>();
 		materiels.add(materiel);
-		utilisateur.setMateriels(materiels);
-		utilisateurServicesRemote.save(utilisateur);*/
-		utilisateur=utilisateurServicesRemote.find(4);
-		System.out.println(utilisateur.getEmail());
+		utilisateur.setMateriels(materiels);*/
+		//utilisateurServicesRemote.save(utilisateur);
+		/*utilisateur=utilisateurServicesRemote.find(4);
+		System.out.println(utilisateur.getEmail());*/
 		
 	
 	}
