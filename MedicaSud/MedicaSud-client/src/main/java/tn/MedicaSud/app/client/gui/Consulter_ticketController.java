@@ -6,6 +6,7 @@
 package tn.MedicaSud.app.client.gui;
 
 import tn.MedicaSud.app.client.gui.Utilites;
+import tn.MedicaSud.entities.EtatTicket;
 import tn.MedicaSud.entities.Materiel;
 import tn.MedicaSud.entities.Ticket;
 import tn.MedicaSud.services.TicketSerciesRemote;
@@ -25,22 +26,31 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
+import org.omg.CORBA.PUBLIC_MEMBER;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.HBox;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
+
 /**
  * FXML Controller class
  *
@@ -51,6 +61,8 @@ public class Consulter_ticketController implements Initializable {
     @FXML
     private TableColumn<Ticket, String> materielTicket;
     @FXML
+    private ImageView imgAccceuil;
+    @FXML
     private TableColumn<Ticket, Date> DateCreationTicket;
     @FXML
     private TableColumn<Ticket, String> ProblèpmeTicket;
@@ -59,7 +71,7 @@ public class Consulter_ticketController implements Initializable {
     @FXML
     private TableColumn<Ticket, String> DescriptionTicket;
     @FXML
-    private TableColumn<Ticket, String> EtatTicket;
+    private TableColumn<Ticket, EtatTicket> etatTicket;
     @FXML
     private JFXToggleButton ETatTicketButton;
     @FXML
@@ -120,6 +132,8 @@ public class Consulter_ticketController implements Initializable {
        	   
        	   img = new Image("Assets/icons8-connexion-filled-50.png");
        	   ImageDeconnexion.setImage(img);
+       	   
+       	imgAccceuil.setImage(img);
        	   try {
 			Context context= new InitialContext();
 			TicketSerciesRemote ticketSerciesRemote=(TicketSerciesRemote) context.lookup("MedicaSud-ear/MedicaSud-service/TicketSercies!tn.MedicaSud.services.TicketSerciesRemote");
@@ -141,9 +155,30 @@ public class Consulter_ticketController implements Initializable {
 			 	  DateCreationTicket.setCellValueFactory(new PropertyValueFactory<>("sateCreation"));
 			 	  ProblèpmeTicket.setCellValueFactory(new PropertyValueFactory<>("panne"));
 			 	  StatutTicket.setCellValueFactory(new PropertyValueFactory<>("statutTicket"));
-			 	  EtatTicket.setCellValueFactory(new PropertyValueFactory<>("etatTicket"));
+			 	  etatTicket.setCellValueFactory(new PropertyValueFactory<>("etatTicket"));
+			 	 etatTicket.setCellFactory(new Callback<TableColumn<Ticket,EtatTicket>, TableCell<Ticket,EtatTicket>>() {
+					public TableCell<Ticket, EtatTicket> call(TableColumn<Ticket, EtatTicket> param) {
+							return new TableCell<Ticket,EtatTicket>() 
+									{		@Override
+											  public void updateItem (EtatTicket t, boolean empty) {
+								                    super.updateItem(t, empty);
+								                    if (t==  EtatTicket.valueOf("nonTraité") ) {
+								                        //this.setTextFill(Color.RED);
+								                       // this.setStyle("-fx-background-color:#ff9999;");
+                   					                        this.setTextFill(Color.RED);
+								                        // Get fancy and change color based on data
+								                        //if(item.contains("@")) 
+								                         //   this.setTextFill(Color.GREEN);
+								                        setText(String.valueOf(t));
+								                    }
+										}
+									
+									};
+						}
+					});
+			 	 
 			 	 this.tickets.setItems(data);
-		
+			 	
 			
 		} catch (NamingException e) {
 		}
@@ -175,6 +210,13 @@ public class Consulter_ticketController implements Initializable {
           Accueil_clientController.utilisateurConnecte=null;
 
     }
+    @FXML
+    private void retourAcceuil() throws IOException
+    {
+    	   utilites.newStage(Deconnexion, "Accueil_client.fxml","consulter tickets");
+    	
+    }
+ 
     @FXML
     private void EditerProfileAction(ActionEvent event) throws IOException {
            utilites.newStageWithOldStage("Editer_profil.fxml");     

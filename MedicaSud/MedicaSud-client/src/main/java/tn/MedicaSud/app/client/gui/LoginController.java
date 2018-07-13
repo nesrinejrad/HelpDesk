@@ -79,6 +79,7 @@ public class LoginController implements Initializable {
     }    
     @FXML
    private void GoAcceuil(ActionEvent event) throws IOException, NamingException  {
+    	
     	 Accueil_clientController accueil_clientController= new Accueil_clientController();
          Utilisateur utilisateur= new Utilisateur();
          utilisateur=null;

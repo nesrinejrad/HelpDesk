@@ -49,8 +49,9 @@ import javafx.stage.Stage;
  * @author USER
  */
 public class Ajouter_ticketsController implements Initializable {
-
-    private JFXButton Deconnexion;
+	
+    @FXML
+    private ImageView imgAccceuil;
     Utilites utilites= new Utilites();
     @FXML
     private AnchorPane imageMedicaSud;
@@ -66,7 +67,7 @@ public class Ajouter_ticketsController implements Initializable {
     private JFXButton EditerProfile1;
     
     @FXML
-     private JFXButton Deconnexion1;
+     private JFXButton Deconnexion;
     @FXML
     private Hyperlink AutresPAnnes1;
     @FXML
@@ -126,6 +127,7 @@ public class Ajouter_ticketsController implements Initializable {
   	   
   	   img = new Image("Assets/icons8-connexion-filled-50.png");
   	   ImageDeconnexion.setImage(img);
+  	 imgAccceuil.setImage(img);
   	   
   	 List<Materiel> materiels= Accueil_clientController.utilisateurConnecte.getMateriels();
   	 System.out.println(materiels.size());
@@ -170,12 +172,12 @@ public class Ajouter_ticketsController implements Initializable {
     @FXML
     private void AutresPAnnesAction(ActionEvent event) throws IOException {
     	Nouvelle_PannesController nouvelle_PannesController= new Nouvelle_PannesController();
-    	nouvelle_PannesController.dim1= (int) Deconnexion1.getScene().getWindow().getWidth();
-    	System.out.println("dim1lahne"+Deconnexion1.getScene().getWindow().getWidth());
+    	nouvelle_PannesController.dim1= (int) Deconnexion.getScene().getWindow().getWidth();
+    	System.out.println("dim1lahne"+Deconnexion.getScene().getWindow().getWidth());
     	System.out.println(nouvelle_PannesController.dim1);
 
-    	nouvelle_PannesController.dim2= (int) Deconnexion1.getScene().getWindow().getHeight();
-    	System.out.println("dim2lahne"+ Deconnexion1.getScene().getWindow().getHeight());
+    	nouvelle_PannesController.dim2= (int) Deconnexion.getScene().getWindow().getHeight();
+    	System.out.println("dim2lahne"+ Deconnexion.getScene().getWindow().getHeight());
     	System.out.println(nouvelle_PannesController.dim2);
     	
     	utilites.newStageWithOldStage( "Nouvelle_Pannes.fxml");
@@ -185,18 +187,18 @@ public class Ajouter_ticketsController implements Initializable {
   
     @FXML
     private void ConsulterMaterielAction(ActionEvent event) throws IOException {
-              utilites.newStage(Deconnexion1, "Consulter_matériel.fxml", " consulter matériels");
+              utilites.newStage(Deconnexion, "Consulter_matériel.fxml", " consulter matériels");
 
     }
     @FXML
     private void NouveauTicketAction(ActionEvent event) throws IOException { 
     	
-        utilites.newStage(Deconnexion1, "Ajouter_tickets.fxml"," nouveau ticket");
+        utilites.newStage(Deconnexion, "Ajouter_tickets.fxml"," nouveau ticket");
     }
 
     @FXML
     private void DeconnexionAction(ActionEvent event) throws IOException {
-          utilites.newStage(Deconnexion1, "login.fxml", "login");
+          utilites.newStage(Deconnexion, "login.fxml", "login");
           Accueil_clientController.utilisateurConnecte=null;
 
     }
@@ -206,16 +208,46 @@ public class Ajouter_ticketsController implements Initializable {
     }
     @FXML
     private void consulterTicketAction(ActionEvent event) throws IOException {
-         utilites.newStage(Deconnexion1, "Consulter_ticket.fxml","consulter tickets");
+         utilites.newStage(Deconnexion, "Consulter_ticket.fxml","consulter tickets");
     }
     @FXML
     private void DemandeMaterielAction(ActionEvent event) throws IOException {
-            utilites.newStage(Deconnexion1, "Demande_materiel.fxml", "demande matériel");
+            utilites.newStage(Deconnexion, "Demande_materiel.fxml", "demande matériel");
+    }
+    @FXML
+    private void retourAcceuil() throws IOException
+    {
+    	   utilites.newStage(Deconnexion, "Accueil_client.fxml","consulter tickets");
+    	
     }
     
     @FXML
     private void ValiderNouveauTicketAction(ActionEvent event) throws IOException, NamingException {
+     	String msg="";
+    	if (statut.getValue()==null) {
+    		msg="statut non désigné!";
+    	    utilites.GenererAlerte(msg);
+    	}
+
+    	else if (description.getText().equals(null)) {
+    		msg=" description non remplie !";
+    	    utilites.GenererAlerte(msg);
+    	}
+    	else if (materiel.getValue()==null) {
+			msg="materiel non désigné!";
+		   utilites.GenererAlerte(msg);
+    	}
+    	else if (description.getText().equals(null)) {
+    		msg=" description non remplie !";
+    	    utilites.GenererAlerte(msg);
+    	}
+    	else if (Panne.getValue()==null) {
+			msg="panne non désigné!";
+		   utilites.GenererAlerte(msg);
+    	}
     	
+    else
+    {
     	Context context= new InitialContext();
     	ticketSerciesRemote=(TicketSerciesRemote) context.lookup("MedicaSud-ear/MedicaSud-service/TicketSercies!tn.MedicaSud.services.TicketSerciesRemote");
     	Ticket ticket= new Ticket();
@@ -249,6 +281,8 @@ public class Ajouter_ticketsController implements Initializable {
     	panne=pannes.get(i);
     	ticket.setPanne(panne);
     	ticketSerciesRemote.save(ticket);
+    	utilites.GenerertAletrtOk("Envoie effectué");
+        utilites.newStage(Deconnexion, "Ajout_tickets.fxml", "demande matériel");
     }
-    
+    }
 }

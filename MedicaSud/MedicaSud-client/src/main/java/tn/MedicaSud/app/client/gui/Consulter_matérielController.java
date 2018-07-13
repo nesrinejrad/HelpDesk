@@ -48,6 +48,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
  * @author USER
  */
 public class Consulter_matérielController implements Initializable {
+    @FXML
+    private ImageView imgAccceuil;
 
     @FXML
     private TableColumn<Materiel, String> referenceMateriel;
@@ -111,6 +113,8 @@ public class Consulter_matérielController implements Initializable {
  	   
  	   img = new Image("Assets/icons8-connexion-filled-50.png");
  	   ImageDeconnexion.setImage(img);
+ 	   
+ 	   imgAccceuil.setImage(img);;
         // TODO
  	   List<Materiel> materiels= new ArrayList<Materiel>();
  	   materiels.addAll(Accueil_clientController.utilisateurConnecte.getMateriels());
@@ -152,6 +156,12 @@ public class Consulter_matérielController implements Initializable {
     @FXML
     private void EditerProfileAction(ActionEvent event) throws IOException {
           utilites.newStageWithOldStage("Editer_profil.fxml");
+    }
+    @FXML
+    private void retourAcceuil() throws IOException
+    {
+    	   utilites.newStage(Deconnexion, "Accueil_client.fxml","consulter tickets");
+    	
     }
     
 }

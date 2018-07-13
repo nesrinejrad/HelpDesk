@@ -6,8 +6,13 @@
 package tn.MedicaSud.app.client.gui;
 
 import com.jfoenix.controls.JFXButton;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
 import java.io.IOException;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,22 +26,22 @@ import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 import javafx.stage.Stage;
+import tn.MedicaSud.services.UtilisateurServicesRemote;
 
 /**
  *
  * @author USER
  */
 public class Utilites {
-    
+    static UtilisateurServicesRemote utilisateurServicesRemote;
+    static String utilRemote="MedicaSud-ear/MedicaSud-service/UtilisateurServices!tn.MedicaSud.services.UtilisateurServicesRemote";
+    static Context context;
     public void newStage(JFXButton button , String fxml , String Title) throws IOException
     {
          FXMLLoader loader=new FXMLLoader(getClass().getResource(fxml));
          Parent root = (Parent) loader.load();		
          Scene newScene = new Scene(root);
          Stage newStage = new Stage();
-       
-       
-       
          Stage stage = (Stage) button.getScene().getWindow();
          newStage.setHeight(stage.getHeight());
          newStage.setTitle(Title);
@@ -75,5 +80,19 @@ public class Utilites {
         anchorPane.setBackground(new Background(myBI));
     }
     
+    public static void GenererAlerte(String msg){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setContentText(msg);
+        alert.showAndWait(); 
+    }
+    
+    public static void GenerertAletrtOk(String msg){
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Succes");
+        alert.setContentText(msg);
+        alert.showAndWait(); 
+    }
+
   
 }

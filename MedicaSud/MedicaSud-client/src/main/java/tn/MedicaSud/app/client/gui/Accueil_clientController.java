@@ -37,6 +37,10 @@ public class Accueil_clientController implements Initializable {
     @FXML
     private AnchorPane imageMedicaSud;
     @FXML
+    private ImageView imgAccceuil;
+    @FXML
+    private JFXButton Acceuil;
+    @FXML
     private JFXButton consulterTicket;
     @FXML
     private JFXButton ConsulterMateriel;
@@ -95,6 +99,7 @@ public class Accueil_clientController implements Initializable {
 	   img = new Image("Assets/icons8-connexion-filled-50.png");
 	   ImageDeconnexion.setImage(img);
 	   
+	   imgAccceuil.setImage(img);
     }    
 
     @FXML
@@ -135,7 +140,12 @@ public class Accueil_clientController implements Initializable {
     {
     	utilisateurConnecte=utilisateur;
     }
-
+    @FXML
+    private void retourAcceuil() throws IOException
+    {
+    	   utilites.newStage(Deconnexion, "Accueil_client.fxml","consulter tickets");
+    	
+    }
  
     
 }

@@ -6,15 +6,30 @@
 package tn.MedicaSud.app.client.gui;
 
 import tn.MedicaSud.app.client.gui.Utilites;
+import tn.MedicaSud.entities.Demande;
+import tn.MedicaSud.entities.EtatTicket;
+import tn.MedicaSud.entities.Materiel;
+import tn.MedicaSud.entities.StatutTicket;
+import tn.MedicaSud.entities.TypeMateriel;
+import tn.MedicaSud.services.DemandeServicesRemote;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Date;
+import java.util.List;
 import java.util.ResourceBundle;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.swing.text.Utilities;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextArea;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -32,6 +47,8 @@ import javafx.stage.Stage;
  * @author USER
  */
 public class Demande_materielController implements Initializable {
+	@FXML
+    private ImageView imgAccceuil;
 
     @FXML
     private JFXButton EnvoyerDemandeMateriel;
@@ -70,6 +87,12 @@ public class Demande_materielController implements Initializable {
     private JFXComboBox status;
     @FXML
     private JFXComboBox typeMateriel;
+    
+    private ObservableList<String> etatData=FXCollections.observableArrayList();
+    
+    private ObservableList<String> typeMterielData=FXCollections.observableArrayList();
+    
+    private DemandeServicesRemote demandeServiceRemote;
 
     /**
      * Initializes the controller class.
@@ -95,6 +118,19 @@ public class Demande_materielController implements Initializable {
   	   
   	   img = new Image("Assets/icons8-connexion-filled-50.png");
   	   ImageDeconnexion.setImage(img);
+  	   
+  	   imgAccceuil.setImage(img);
+  	   TypeMateriel[] data=TypeMateriel.values();
+  	   for (TypeMateriel typeMateriel : data) {
+		typeMterielData.add(String.valueOf(typeMateriel));
+	}
+  	   typeMateriel.setItems(typeMterielData);
+  	   
+  	   StatutTicket[] data2=StatutTicket.values();
+  	   for (StatutTicket statutTicket : data2) {
+		etatData.add(String.valueOf(statutTicket));
+	}
+  	   status.setItems(etatData);
     }    
 
 
@@ -129,8 +165,43 @@ public class Demande_materielController implements Initializable {
     }
     
     @FXML
-    private void EnvoyerDemandeMaterielAction(ActionEvent event) throws IOException {
-             
-    }
+    private void EnvoyerDemandeMaterielAction(ActionEvent event) throws IOException, NamingException {
+    	String msg="";
+    	if (typeMateriel.getValue()==null) {
+    		msg="type materiel non désigné!";
+    	    utilites.GenererAlerte(msg);
+    	}
+
+    	else if (description.getText().equals(null)) {
+    		msg=" demande non remplie !";
+    	    utilites.GenererAlerte(msg);
+    	}
+    	else if (status.getValue()==null) {
+			msg="status demande non désigné!";
+		   utilites.GenererAlerte(msg);
+    	}
+    	
     
+    else
+    {
+    	Demande demande= new Demande();
+    	demande.setDateDemande(Date.valueOf(java.time.LocalDate.now()));
+    	demande.setDescription(description.getText());
+    	demande.setTypeMateriel(TypeMateriel.valueOf((String) typeMateriel.getValue()));
+    	demande.setStatus(StatutTicket.valueOf((String) status.getValue()));
+        demande.setUtilisateur(Accueil_clientController.utilisateurConnecte);
+        Context context= new InitialContext();
+        demandeServiceRemote=(DemandeServicesRemote) context.lookup("MedicaSud-ear/MedicaSud-service/DemandeServices!tn.MedicaSud.services.DemandeServicesRemote");
+        demandeServiceRemote.save(demande);
+    	utilites.GenerertAletrtOk("Envoie effectué");
+    	 utilites.newStage(Deconnexion, "demande_materiel.fxml", "demande matériel");
+    	
+    }
+    }
+    @FXML
+    private void retourAcceuil() throws IOException
+    {
+    	   utilites.newStage(Deconnexion, "Accueil_client.fxml","consulter tickets");
+    	
+    }
 }

@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.sql.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -14,9 +16,12 @@ public class Demande implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
+	@Enumerated(EnumType.STRING)
 	private TypeMateriel typeMateriel;
 	private Date dateDemande;
 	private String description;
+	@Enumerated(EnumType.STRING)
+	private StatutTicket status;
 	@ManyToOne
 	private Utilisateur utilisateur;
 	@OneToOne(mappedBy="demandeMateriel")
@@ -76,6 +81,12 @@ public class Demande implements Serializable {
 		return "Demande [id=" + id + ", typeMateriel=" + typeMateriel + ", dateDemande=" + dateDemande
 				+ ", description=" + description + ", utilisateur=" + utilisateur + ", notification=" + notification
 				+ "]";
+	}
+	public StatutTicket getStatus() {
+		return status;
+	}
+	public void setStatus(StatutTicket status) {
+		this.status = status;
 	}
 	
 	
