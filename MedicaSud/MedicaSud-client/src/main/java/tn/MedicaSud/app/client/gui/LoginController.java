@@ -11,6 +11,7 @@ import tn.MedicaSud.entities.Utilisateur;
 import tn.MedicaSud.services.UtilisateurServicesRemote;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
@@ -56,7 +57,7 @@ public class LoginController implements Initializable {
     @FXML
     JFXTextField loginText;
     @FXML
-    JFXTextField pwdText;
+    JFXPasswordField pwdText;
     
     private UtilisateurServicesRemote utilisateurServiceRemote;
     /**
