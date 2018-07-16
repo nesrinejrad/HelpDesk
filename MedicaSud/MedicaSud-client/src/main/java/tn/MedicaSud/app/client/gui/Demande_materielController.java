@@ -49,7 +49,6 @@ import javafx.stage.Stage;
 public class Demande_materielController implements Initializable {
 	@FXML
     private ImageView imgAccceuil;
-
     @FXML
     private JFXButton EnvoyerDemandeMateriel;
     @FXML
@@ -62,13 +61,10 @@ public class Demande_materielController implements Initializable {
     private JFXButton Deconnexion;
     @FXML
     private JFXButton EditerProfile;
-    
-       Utilites utilites= new Utilites();
     @FXML
     private AnchorPane imageMedicaSud;
     @FXML
     private JFXButton consulterTicket;
-  
     @FXML
     private ImageView imgConsulterTicket;
     @FXML
@@ -87,12 +83,10 @@ public class Demande_materielController implements Initializable {
     private JFXComboBox status;
     @FXML
     private JFXComboBox typeMateriel;
-    
     private ObservableList<String> etatData=FXCollections.observableArrayList();
-    
     private ObservableList<String> typeMterielData=FXCollections.observableArrayList();
-    
-    private DemandeServicesRemote demandeServiceRemote;
+    Utilites utilites= new Utilites();
+
 
     /**
      * Initializes the controller class.
@@ -151,7 +145,7 @@ public class Demande_materielController implements Initializable {
     }
     @FXML
     private void EditerProfileAction(ActionEvent event) throws IOException {
-        utilites.newStageWithOldStage("Editer_profil.fxml");
+        utilites.newStageWithOldStage("EditerMotDePasse.fxml");
        
     }
     @FXML
@@ -190,9 +184,9 @@ public class Demande_materielController implements Initializable {
     	demande.setTypeMateriel(TypeMateriel.valueOf((String) typeMateriel.getValue()));
     	demande.setStatus(StatutTicket.valueOf((String) status.getValue()));
         demande.setUtilisateur(Accueil_clientController.utilisateurConnecte);
-        Context context= new InitialContext();
-        demandeServiceRemote=(DemandeServicesRemote) context.lookup("MedicaSud-ear/MedicaSud-service/DemandeServices!tn.MedicaSud.services.DemandeServicesRemote");
-        demandeServiceRemote.save(demande);
+        utilites.context= new InitialContext();
+        utilites.demandeServicesRemote=(DemandeServicesRemote) utilites.context.lookup(utilites.demandeRemote);
+        utilites.demandeServicesRemote.save(demande);
     	utilites.GenerertAletrtOk("Envoie effectué");
     	 utilites.newStage(Deconnexion, "demande_materiel.fxml", "demande matériel");
     	

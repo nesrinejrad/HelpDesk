@@ -36,38 +36,39 @@
   <core validator-id="jsf-verification"/>
   <core validator-id="jboss.jsf.core"/>
   <el>
-   <linked-el length="25" name="%0" offset="530" path="%1"/>
-   <linked-el length="28" name="%0" offset="626" path="%1"/>
-   <linked-el length="59" name="%0" offset="226" path="%2"/>
-   <linked-el length="51" name="%3" offset="365" path="%4"/>
-   <linked-el length="23" name="%5" offset="377" path="%2"/>
-   <linked-el length="24" name="%5" offset="687" path="%1"/>
-   <linked-el length="25" name="%5" offset="530" path="%1"/>
-   <linked-el length="28" name="%5" offset="626" path="%1"/>
-   <linked-el length="22" name="%5" offset="203" path="%2"/>
-   <linked-el length="59" name="%5" offset="226" path="%2"/>
-   <linked-el length="21" name="%5" offset="307" path="%2"/>
-   <linked-el length="51" name="%6" offset="365" path="%4"/>
-   <linked-el length="23" name="%7" offset="377" path="%2"/>
-   <linked-el length="24" name="%7" offset="687" path="%1"/>
-   <linked-el length="25" name="%7" offset="530" path="%1"/>
-   <linked-el length="28" name="%7" offset="626" path="%1"/>
-   <linked-el length="22" name="%7" offset="203" path="%2"/>
-   <linked-el length="59" name="%7" offset="226" path="%2"/>
-   <linked-el length="21" name="%7" offset="307" path="%2"/>
+   <linked-el length="51" name="%0" offset="365" path="%1"/>
+   <linked-el length="23" name="%2" offset="377" path="%3"/>
+   <linked-el length="22" name="%2" offset="203" path="%3"/>
+   <linked-el length="25" name="%4" offset="530" path="%5"/>
+   <linked-el length="28" name="%6" offset="626" path="%5"/>
+   <linked-el length="21" name="%7" offset="307" path="%3"/>
+   <linked-el length="23" name="%8" offset="377" path="%3"/>
+   <linked-el length="24" name="%8" offset="687" path="%5"/>
+   <linked-el length="25" name="%8" offset="530" path="%5"/>
+   <linked-el length="28" name="%8" offset="626" path="%5"/>
+   <linked-el length="22" name="%8" offset="203" path="%3"/>
+   <linked-el length="59" name="%8" offset="226" path="%3"/>
+   <linked-el length="21" name="%8" offset="307" path="%3"/>
+   <linked-el length="51" name="%9" offset="365" path="%1"/>
+   <linked-el length="59" name="%10" offset="226" path="%3"/>
+   <linked-el length="25" name="%11" offset="530" path="%5"/>
+   <linked-el length="28" name="%11" offset="626" path="%5"/>
+   <linked-el length="59" name="%11" offset="226" path="%3"/>
   </el>
  </validation>
  <aliases>
-  <alias
-   path="/MedicaSud-domain/src/main/java/tn/MedicaSud/entities/User.java" value="%0"/>
-  <alias path="request" value="%3"/>
-  <alias path="/MedicaSud-web/src/main/webapp/template/template.xhtml" value="%4"/>
-  <alias path="identity" value="%5"/>
-  <alias path="/MedicaSud-web/src/main/webapp/login.xhtml" value="%1"/>
-  <alias path="request.contextPath" value="%6"/>
-  <alias path="/MedicaSud-web/src/main/webapp/template/top-right.xhtml" value="%2"/>
-  <alias
-   path="/MedicaSud-web/src/main/java/tn/MedicaSud/mBeans/Identity.java" value="%7"/>
+  <alias path="request" value="%0"/>
+  <alias path="/MedicaSud-web/src/main/webapp/template/template.xhtml" value="%1"/>
+  <alias path="identity.isLogged" value="%2"/>
+  <alias path="identity.user.login" value="%4"/>
+  <alias path="identity.user.password" value="%6"/>
+  <alias path="identity.logout" value="%7"/>
+  <alias path="identity" value="%8"/>
+  <alias path="/MedicaSud-web/src/main/webapp/login.xhtml" value="%5"/>
+  <alias path="request.contextPath" value="%9"/>
+  <alias path="/MedicaSud-web/src/main/webapp/template/top-right.xhtml" value="%3"/>
+  <alias path="identity.user.name" value="%10"/>
+  <alias path="identity.user" value="%11"/>
  </aliases>
  <includes/>
  <uris>

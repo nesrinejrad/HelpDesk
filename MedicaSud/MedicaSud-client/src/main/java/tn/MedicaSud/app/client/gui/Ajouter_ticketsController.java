@@ -92,9 +92,6 @@ public class Ajouter_ticketsController implements Initializable {
     private JFXComboBox<String> statut;
     @FXML
     private JFXTextArea description;
-    private TicketSerciesRemote ticketSerciesRemote;
-    private MaterielServicesRemote materielServicesRemote;
-    private PanneServicesRemote panneServiceRemote;
      ObservableList<String> dataMateriels=FXCollections.observableArrayList();
      ObservableList<String> dataPannes=FXCollections.observableArrayList();;
     private ObservableList<String> dataStatutTickets=FXCollections.observableArrayList();
@@ -139,32 +136,23 @@ public class Ajouter_ticketsController implements Initializable {
   	 materiel.setItems(dataMateriels);
   	 
   	 try {
-		Context context= new InitialContext();
-		PanneServicesRemote panneServicesRemote=(PanneServicesRemote) context.lookup("MedicaSud-ear/MedicaSud-service/PanneServices!tn.MedicaSud.services.PanneServicesRemote");
+		utilites.context= new InitialContext();
+		utilites.panneServicesRemote=(PanneServicesRemote) utilites.context.lookup(utilites.panneRemote);
 		List<Panne> pannes= new ArrayList<Panne>();
-		pannes=panneServicesRemote.findAll();
+		pannes=utilites.panneServicesRemote.findAll();
 		System.out.println("panne size="+pannes.size());
 		for (Panne panne1 : pannes) {
-			
-			dataPannes.add(panne1.getDescription());
-			System.out.println(panne1.getDescription());
-
-		}
-		System.out.println("data size="+dataPannes.size());
-		for (String panne : dataPannes) {
-			System.out.println(panne.toString());
+				dataPannes.add(panne1.getDescription());
 		}
 		Panne.setItems(dataPannes);
-	} catch (NamingException e) {
-	
-	}
+	  } 
+  	 catch (NamingException e) {
+	  }
   	 
   	 StatutTicket[] statusTickets=StatutTicket.values();
   	 for (StatutTicket statutTicket : statusTickets) {
 		dataStatutTickets.add(String.valueOf(statutTicket));
-		System.out.println(String.valueOf(statutTicket));
 	}
-  	
      statut.setItems(dataStatutTickets);
     }    
 
@@ -173,13 +161,7 @@ public class Ajouter_ticketsController implements Initializable {
     private void AutresPAnnesAction(ActionEvent event) throws IOException {
     	Nouvelle_PannesController nouvelle_PannesController= new Nouvelle_PannesController();
     	nouvelle_PannesController.dim1= (int) Deconnexion.getScene().getWindow().getWidth();
-    	System.out.println("dim1lahne"+Deconnexion.getScene().getWindow().getWidth());
-    	System.out.println(nouvelle_PannesController.dim1);
-
-    	nouvelle_PannesController.dim2= (int) Deconnexion.getScene().getWindow().getHeight();
-    	System.out.println("dim2lahne"+ Deconnexion.getScene().getWindow().getHeight());
-    	System.out.println(nouvelle_PannesController.dim2);
-    	
+    	nouvelle_PannesController.dim2= (int) Deconnexion.getScene().getWindow().getHeight();    	
     	utilites.newStageWithOldStage( "Nouvelle_Pannes.fxml");
     	
     }
@@ -204,7 +186,7 @@ public class Ajouter_ticketsController implements Initializable {
     }
     @FXML
     private void EditerProfileAction(ActionEvent event) throws IOException {
-          utilites.newStageWithOldStage( "Editer_profil.fxml");
+          utilites.newStageWithOldStage( "EditerMotDePasse.fxml");
     }
     @FXML
     private void consulterTicketAction(ActionEvent event) throws IOException {
@@ -248,8 +230,8 @@ public class Ajouter_ticketsController implements Initializable {
     	
     else
     {
-    	Context context= new InitialContext();
-    	ticketSerciesRemote=(TicketSerciesRemote) context.lookup("MedicaSud-ear/MedicaSud-service/TicketSercies!tn.MedicaSud.services.TicketSerciesRemote");
+    	utilites.context=new InitialContext();
+    	utilites.ticketSerciesRemote=(TicketSerciesRemote) utilites.context.lookup(utilites.ticketRemote);
     	Ticket ticket= new Ticket();
     	ticket.setDiscription(description.getText());
     	ticket.setStatutTicket(StatutTicket.valueOf(statut.getValue()));
@@ -268,8 +250,8 @@ public class Ajouter_ticketsController implements Initializable {
     	ticket.setUtilisateur(Accueil_clientController.utilisateurConnecte);
     	ticket.setEtatTicket(EtatTicket.valueOf("nonTraité"));
     	Panne panne= new Panne();
-    	panneServiceRemote=(PanneServicesRemote) context.lookup("MedicaSud-ear/MedicaSud-service/PanneServices!tn.MedicaSud.services.PanneServicesRemote");
-    	List<Panne> pannes= panneServiceRemote.findAll();
+    	utilites.panneServicesRemote=(PanneServicesRemote) utilites.context.lookup(utilites.panneRemote);
+    	List<Panne> pannes=utilites.panneServicesRemote.findAll();
     	i=0;
     	mat=Panne.getValue();
     	for (String string : dataPannes) {
@@ -280,7 +262,7 @@ public class Ajouter_ticketsController implements Initializable {
 		}
     	panne=pannes.get(i);
     	ticket.setPanne(panne);
-    	ticketSerciesRemote.save(ticket);
+    	utilites.ticketSerciesRemote.save(ticket);
     	utilites.GenerertAletrtOk("Envoie effectué");
         utilites.newStage(Deconnexion, "Ajout_tickets.fxml", "demande matériel");
     }

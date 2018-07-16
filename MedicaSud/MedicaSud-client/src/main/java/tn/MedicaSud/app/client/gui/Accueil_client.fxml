@@ -14,7 +14,7 @@
    <left>
       <AnchorPane prefHeight="339.0" prefWidth="200.0" style="-fx-background-color: #4682b4;" BorderPane.alignment="CENTER">
          <children>
-         <JFXButton fx:id="Acceuil" layoutX="13.0" layoutY="13.0" onAction="#retourAcceuil" prefHeight="39.0" prefWidth="167.0" text="Acceuil" textFill="WHITE">
+         <JFXButton fx:id="Accueil" layoutX="13.0" layoutY="13.0" onAction="#retourAcceuil" prefHeight="39.0" prefWidth="167.0" text="Acceuil" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -88,13 +88,11 @@
       </AnchorPane>
    </left>
    <bottom>
-      <AnchorPane prefHeight="16.0" prefWidth="719.0" style="-fx-background-color: #4682b4;" BorderPane.alignment="CENTER" />
    </bottom>
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER" />
    </center>
    <right>
-      <AnchorPane prefHeight="311.0" prefWidth="27.0" style="-fx-background-color: #4682b4;" BorderPane.alignment="CENTER" />
    </right>
    <top>
       <AnchorPane fx:id="imageMedicaSud" prefHeight="83.0" prefWidth="718.0" BorderPane.alignment="CENTER" />

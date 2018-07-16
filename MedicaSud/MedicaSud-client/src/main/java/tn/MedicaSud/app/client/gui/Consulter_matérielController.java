@@ -87,8 +87,6 @@ public class Consulter_matérielController implements Initializable {
     @FXML
     private TableView<Materiel> materiels;
     private ObservableList<Materiel> data;
-    private UtilisateurServicesRemote utilisateurServicesRemote;
-
 
     /**
      * Initializes the controller class.
@@ -155,7 +153,7 @@ public class Consulter_matérielController implements Initializable {
     }
     @FXML
     private void EditerProfileAction(ActionEvent event) throws IOException {
-          utilites.newStageWithOldStage("Editer_profil.fxml");
+          utilites.newStageWithOldStage("EditerMotDePasse.fxml");
     }
     @FXML
     private void retourAcceuil() throws IOException

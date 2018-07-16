@@ -12,7 +12,6 @@
 
 <BorderPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.MedicaSud.app.client.gui.Ajouter_ticketsController">
    <bottom>
-      <AnchorPane prefHeight="16.0" prefWidth="719.0" style="-fx-background-color: #4682b4;" BorderPane.alignment="CENTER" />
    </bottom>
    <center>
       <AnchorPane style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
@@ -33,7 +32,7 @@
    <left>
         <AnchorPane prefHeight="339.0" prefWidth="200.0" style="-fx-background-color: #4682b4;" BorderPane.alignment="CENTER">
          <children>
-         <JFXButton fx:id="Acceuil" layoutX="13.0" layoutY="13.0" onAction="#retourAcceuil" prefHeight="39.0" prefWidth="167.0" text="Acceuil" textFill="WHITE">
+         <JFXButton fx:id="Accueil" layoutX="13.0" layoutY="13.0" onAction="#retourAcceuil" prefHeight="39.0" prefWidth="167.0" text="Acceuil" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -107,7 +106,6 @@
       </AnchorPane>
    </left>
    <right>
-      <AnchorPane prefHeight="345.0" prefWidth="7.0" style="-fx-background-color: #4682b4;" BorderPane.alignment="CENTER" />
    </right>
    <top>
       <AnchorPane fx:id="imageMedicaSud" prefHeight="83.0" prefWidth="718.0" BorderPane.alignment="CENTER" />

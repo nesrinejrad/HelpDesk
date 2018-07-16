@@ -134,22 +134,26 @@ public class Consulter_ticketController implements Initializable {
        	   ImageDeconnexion.setImage(img);
        	   
        	imgAccceuil.setImage(img);
-       	   try {
-			Context context= new InitialContext();
-			TicketSerciesRemote ticketSerciesRemote=(TicketSerciesRemote) context.lookup("MedicaSud-ear/MedicaSud-service/TicketSercies!tn.MedicaSud.services.TicketSerciesRemote");
-			List<Ticket> tickets=ticketSerciesRemote.findAll();
-			List<Ticket> ticketsFinal= new ArrayList<Ticket>();
-			System.out.println(tickets.size());
-			for (Ticket ticket : tickets) {
-				System.out.println(ticket.getUtilisateur().getCode());
-				System.out.println(Accueil_clientController.utilisateurConnecte.getCode());
-				if(ticket.getUtilisateur().getCode()==Accueil_clientController.utilisateurConnecte.getCode())
-				{
-					ticketsFinal.add(ticket);
+       	  
+			try {
+				utilites.context = new InitialContext();
+				utilites.ticketSerciesRemote=(TicketSerciesRemote) utilites.context.lookup(utilites.ticketRemote);
+				List<Ticket> tickets=utilites.ticketSerciesRemote.findAll();
+				List<Ticket> ticketsFinal= new ArrayList<Ticket>();
+				System.out.println(tickets.size());
+				for (Ticket ticket : tickets) {
+					if(ticket.getUtilisateur().getCode()==Accueil_clientController.utilisateurConnecte.getCode())
+					{
+						ticketsFinal.add(ticket);
+					}
+					data=FXCollections.observableList(ticketsFinal);
 				}
+			} catch (NamingException e) {
+			
 			}
-			data=FXCollections.observableList(ticketsFinal);
-			System.out.println("enfin="+data.size());
+			
+			
+       		
 				 materielTicket.setCellValueFactory(new PropertyValueFactory<>("materiel"));
 			 	  DescriptionTicket.setCellValueFactory(new PropertyValueFactory<>("discription"));
 			 	  DateCreationTicket.setCellValueFactory(new PropertyValueFactory<>("sateCreation"));
@@ -163,13 +167,12 @@ public class Consulter_ticketController implements Initializable {
 											  public void updateItem (EtatTicket t, boolean empty) {
 								                    super.updateItem(t, empty);
 								                    if (t==  EtatTicket.valueOf("nonTraité") ) {
-								                        //this.setTextFill(Color.RED);
-								                       // this.setStyle("-fx-background-color:#ff9999;");
-                   					                        this.setTextFill(Color.RED);
-								                        // Get fancy and change color based on data
-								                        //if(item.contains("@")) 
-								                         //   this.setTextFill(Color.GREEN);
-								                        setText(String.valueOf(t));
+								                        this.setText(String.valueOf(t));
+								                        this.setTextFill(Color.RED);
+								                    }
+								                    if (t==  EtatTicket.valueOf("résolu") ) {
+								                        this.setText(String.valueOf(t));
+								                        this.setTextFill(Color.GREEN);
 								                    }
 										}
 									
@@ -179,9 +182,7 @@ public class Consulter_ticketController implements Initializable {
 			 	 
 			 	 this.tickets.setItems(data);
 			 	
-			
-		} catch (NamingException e) {
-		}
+		
        	   
        	   
        	   
@@ -219,7 +220,7 @@ public class Consulter_ticketController implements Initializable {
  
     @FXML
     private void EditerProfileAction(ActionEvent event) throws IOException {
-           utilites.newStageWithOldStage("Editer_profil.fxml");     
+           utilites.newStageWithOldStage("EditerMotDePasse.fxml");     
     }
     @FXML
     private void consulterTicketAction(ActionEvent event) throws IOException {
@@ -235,7 +236,35 @@ public class Consulter_ticketController implements Initializable {
     }
     @FXML
     private void ETatTicketAction(ActionEvent event) throws IOException {
-           utilites.newStage(Deconnexion, "Demande_materiel.fxml", " demande matériel");
+    	if (ETatTicketButton.isSelected())
+    	{try {
+    		data.clear();
+			utilites.context = new InitialContext();
+			utilites.ticketSerciesRemote=(TicketSerciesRemote) utilites.context.lookup(utilites.ticketRemote);
+			List<Ticket> tickets=utilites.ticketSerciesRemote.findAll();
+			List<Ticket> ticketsFinal= new ArrayList<Ticket>();
+			System.out.println(tickets.size());
+			for (Ticket ticket : tickets) {
+				if(ticket.getUtilisateur().getCode()==Accueil_clientController.utilisateurConnecte.getCode())
+				{  if(ticket.getEtatTicket().equals(EtatTicket.valueOf("résolu")))
+				{	ticketsFinal.add(ticket);
+}
+				}
+				
+				data=FXCollections.observableList(ticketsFinal);
+				for (Ticket ticket1 : data) {
+					System.out.println(ticket1.getEtatTicket());
+				}
+				this.tickets.setItems(null);
+				this.tickets.setItems(data);
+				
+			}
+		} catch (NamingException e) {
+		
+		}
+    	}
+    	else
+           utilites.newStage(Deconnexion, "Consulter_ticket.fxml", " demande matériel");
     }
     
 }

@@ -4,9 +4,11 @@ import java.io.Serializable;
 import java.sql.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -22,6 +24,7 @@ public class Ticket implements Serializable {
 	private String discription;
 	@Enumerated(EnumType.STRING)
 	private TypeMateriel typeMateriel;
+	@Enumerated(EnumType.STRING)
 	private EtatTicket etatTicket;
 	@ManyToOne
 	private Panne panne;
@@ -117,7 +120,7 @@ public class Ticket implements Serializable {
 	public String toString() {
 		return "Ticket [id=" + id + ", sateCreation=" + sateCreation + ", discription=" + discription
 				+ ", typeMateriel=" + typeMateriel + ", etatTicket=" + etatTicket + ", statutTicket=" + statutTicket
-				+ ", materiel=" + materiel + ", utilisateur=" + utilisateur + "]";
+				+"]";
 	}
 	public Panne getPanne() {
 		return panne;

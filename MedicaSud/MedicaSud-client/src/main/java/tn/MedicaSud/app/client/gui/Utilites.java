@@ -26,6 +26,10 @@ import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 import javafx.stage.Stage;
+import tn.MedicaSud.services.DemandeServicesRemote;
+import tn.MedicaSud.services.MaterielServicesRemote;
+import tn.MedicaSud.services.PanneServicesRemote;
+import tn.MedicaSud.services.TicketSerciesRemote;
 import tn.MedicaSud.services.UtilisateurServicesRemote;
 
 /**
@@ -34,7 +38,15 @@ import tn.MedicaSud.services.UtilisateurServicesRemote;
  */
 public class Utilites {
     static UtilisateurServicesRemote utilisateurServicesRemote;
+    static TicketSerciesRemote ticketSerciesRemote;
+    static DemandeServicesRemote demandeServicesRemote;
+    static MaterielServicesRemote materielServicesRemote;
+    static PanneServicesRemote panneServicesRemote;
     static String utilRemote="MedicaSud-ear/MedicaSud-service/UtilisateurServices!tn.MedicaSud.services.UtilisateurServicesRemote";
+    static String panneRemote="MedicaSud-ear/MedicaSud-service/PanneServices!tn.MedicaSud.services.PanneServicesRemote";
+    static String ticketRemote="MedicaSud-ear/MedicaSud-service/TicketSercies!tn.MedicaSud.services.TicketSerciesRemote";
+    static String demandeRemote="MedicaSud-ear/MedicaSud-service/DemandeServices!tn.MedicaSud.services.DemandeServicesRemote";
+    static String materielRemote="MedicaSud-ear/MedicaSud-service/DemandeServices!tn.MedicaSud.services.DemandeServicesRemote";
     static Context context;
     public void newStage(JFXButton button , String fxml , String Title) throws IOException
     {

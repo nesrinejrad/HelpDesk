@@ -14,7 +14,7 @@
    <left>
         <AnchorPane prefHeight="339.0" prefWidth="200.0" style="-fx-background-color: #4682b4;" BorderPane.alignment="CENTER">
          <children>
-         <JFXButton fx:id="Acceuil" layoutX="13.0" layoutY="13.0" onAction="#retourAcceuil" prefHeight="39.0" prefWidth="167.0" text="Acceuil" textFill="WHITE">
+         <JFXButton fx:id="Accueil" layoutX="13.0" layoutY="13.0" onAction="#retourAcceuil" prefHeight="39.0" prefWidth="167.0" text="Acceuil" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -88,22 +88,20 @@
       </AnchorPane>
    </left>
    <bottom>
-      <AnchorPane prefHeight="16.0" prefWidth="719.0" style="-fx-background-color: #4682b4;" BorderPane.alignment="CENTER" />
    </bottom>
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="22.0" layoutY="232.0" text="Demande" />
-            <Label layoutX="32.0" layoutY="160.0" text="Statut" />
-            <Label layoutX="14.0" layoutY="88.0" text="Type de matériel" />
-            <JFXButton fx:id="EnvoyerDemandeMateriel" layoutX="205.0" layoutY="284.0" onAction="#EnvoyerDemandeMaterielAction" prefHeight="27.0" prefWidth="69.0" style="-fx-border-color: #4682b4;" text="Envoyer" />
-            <JFXTextArea fx:id="description" layoutX="180.0" layoutY="178.0" prefHeight="71.0" prefWidth="140.0" />
+            <Label layoutX="50.0" layoutY="232.0" text="Demande" />
+            <Label layoutX="50.0" layoutY="160.0" text="Statut" />
+            <Label layoutX="50.0" layoutY="88.0" text="Type de matériel" />
+            <JFXButton fx:id="EnvoyerDemandeMateriel" layoutX="350.0" layoutY="320.0" onAction="#EnvoyerDemandeMaterielAction" prefHeight="27.0" prefWidth="69.0" style="-fx-border-color: #4682b4;" text="Envoyer" />
+            <JFXTextArea fx:id="description" layoutX="180.0" layoutY="200.0" prefHeight="71.0" prefWidth="140.0" />
             <JFXComboBox fx:id="status" layoutX="180.0" layoutY="143.0" prefHeight="25.0" prefWidth="140.0" />
             <JFXComboBox fx:id="typeMateriel" layoutX="180.0" layoutY="71.0" prefHeight="25.0" prefWidth="140.0" />
          </children></AnchorPane>
    </center>
    <right>
-      <AnchorPane prefHeight="311.0" prefWidth="27.0" style="-fx-background-color: #4682b4;" BorderPane.alignment="CENTER" />
    </right>
    <top>
       <AnchorPane fx:id="imageMedicaSud" prefHeight="83.0" prefWidth="718.0" BorderPane.alignment="CENTER" />
