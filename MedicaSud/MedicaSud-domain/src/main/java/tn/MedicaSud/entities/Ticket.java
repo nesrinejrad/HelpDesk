@@ -20,8 +20,8 @@ public class Ticket implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
-	private Date sateCreation;
-	private String discription;
+	private Date dateCreation;
+	private String description;
 	@Enumerated(EnumType.STRING)
 	private TypeMateriel typeMateriel;
 	@Enumerated(EnumType.STRING)
@@ -38,6 +38,8 @@ public class Ticket implements Serializable {
 	private List<Notification> notifications;
 	@OneToMany(mappedBy="ticket")
 	private List<Intervention> interventions;
+	
+	
 	private static final long serialVersionUID = 1L;
 	public int getId() {
 		return id;
@@ -46,16 +48,16 @@ public class Ticket implements Serializable {
 		this.id = id;
 	}
 	public Date getSateCreation() {
-		return sateCreation;
+		return dateCreation;
 	}
-	public void setSateCreation(Date sateCreation) {
-		this.sateCreation = sateCreation;
+	public void setSateCreation(Date dateCreation) {
+		this.dateCreation = dateCreation;
 	}
 	public String getDiscription() {
-		return discription;
+		return description;
 	}
 	public void setDiscription(String discription) {
-		this.discription = discription;
+		this.description = discription;
 	}
 	public TypeMateriel getTypeMateriel() {
 		return typeMateriel;
@@ -97,8 +99,8 @@ public class Ticket implements Serializable {
 			StatutTicket statutTicket, Utilisateur utilisateur, List<Notification> notifications,
 			List<Intervention> interventions) {
 		super();
-		this.sateCreation = sateCreation;
-		this.discription = discription;
+		this.dateCreation = sateCreation;
+		this.description = discription;
 		this.typeMateriel = typeMateriel;
 		this.etatTicket = etatTicket;
 		this.statutTicket = statutTicket;
@@ -118,16 +120,16 @@ public class Ticket implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "Ticket [id=" + id + ", sateCreation=" + sateCreation + ", discription=" + discription
+		return "Ticket [id=" + id + ", sateCreation=" + dateCreation + ", discription=" + description
 				+ ", typeMateriel=" + typeMateriel + ", etatTicket=" + etatTicket + ", statutTicket=" + statutTicket
 				+"]";
 	}
-	public Panne getPanne() {
+/*	public Panne getPanne() {
 		return panne;
 	}
 	public void setPanne(Panne panne) {
 		this.panne = panne;
-	}
+	}*/
 	
 	
 	

@@ -1,7 +1,0 @@
-package tn.MedicaSud.entities;
-
-public class Panne {
-	
-	private Integer id;
-
-}

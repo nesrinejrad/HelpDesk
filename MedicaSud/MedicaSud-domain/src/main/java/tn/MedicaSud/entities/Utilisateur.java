@@ -17,14 +17,16 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 @Entity
 public class Utilisateur extends User implements Serializable{
+	private String nom;
+	private String prenom;
 	@Enumerated(EnumType.STRING)
 	private Role role;
 	private String fonction;
-	@OneToMany(mappedBy="utilisateur" , cascade={CascadeType.ALL}, fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="utilisateur" )
 	private java.util.List<Demande> demandes;
 	@OneToMany(mappedBy="utilisateur")
 	private java.util.List<Ticket> tickets;
-	@ManyToMany(fetch=FetchType.EAGER, cascade={CascadeType.PERSIST,CascadeType.REMOVE,CascadeType.MERGE})
+	@ManyToMany
 	private java.util.List<Materiel> materiels=new ArrayList<Materiel>();
 	private static final long serialVersionUID = 1L;
 	public Role getRole() {
@@ -73,6 +75,18 @@ public class Utilisateur extends User implements Serializable{
 	public String toString() {
 		return "Utilisateur [role=" + role + ", fonction=" + fonction + ", demandes=" + demandes + ", tickets="
 				+ tickets + ", materiels=" + materiels + "]";
+	}
+	public String getNom() {
+		return nom;
+	}
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+	public String getPrenom() {
+		return prenom;
+	}
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
 	}
 	
 	

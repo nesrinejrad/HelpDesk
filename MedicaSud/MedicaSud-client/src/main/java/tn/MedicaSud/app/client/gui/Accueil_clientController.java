@@ -45,6 +45,8 @@ public class Accueil_clientController implements Initializable {
     @FXML
     private JFXButton ConsulterMateriel;
     @FXML
+    private JFXButton  ConsulterDemande ;
+    @FXML
     private JFXButton NouveauTicket;
     @FXML
     private JFXButton DemandeMateriel;
@@ -55,6 +57,8 @@ public class Accueil_clientController implements Initializable {
      Utilites utilites= new Utilites();
     @FXML
     private ImageView imgConsulterTicket;
+    @FXML
+    private ImageView imgConsulterDemande;
     @FXML
     private ImageView ImgNouveauTicket;
     @FXML

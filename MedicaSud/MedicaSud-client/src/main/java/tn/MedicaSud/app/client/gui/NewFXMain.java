@@ -6,6 +6,7 @@
 package tn.MedicaSud.app.client.gui;
 
 import java.io.IOException;
+
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -24,7 +25,9 @@ public class NewFXMain extends Application {
     
     @Override
     public void start(Stage primaryStage) throws IOException {
-        FXMLLoader loader= new FXMLLoader(getClass().getResource("login.fxml"));
+       // FXMLLoader loader= new FXMLLoader(getClass().getResource("login.fxml"));
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("AccueilAdmin.fxml"));
+
         Parent root = loader.load();                           
         Scene scene= new Scene(root);     
         primaryStage.setHeight(600);

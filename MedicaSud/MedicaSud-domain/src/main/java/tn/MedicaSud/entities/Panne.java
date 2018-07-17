@@ -3,7 +3,11 @@ package tn.MedicaSud.entities;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -16,6 +20,7 @@ public class Panne implements Serializable{
 	private int id;
 	private String description;
 	private String solution;
+	@Enumerated(EnumType.STRING)
 	private TypeMateriel typeMateriel;
 	@OneToMany(mappedBy="panne")
 	private List<Ticket> tickets;
@@ -57,12 +62,12 @@ public class Panne implements Serializable{
 	public String toString() {
 		return  description;
 	}
-	public List<Ticket> getTickets() {
+	/*public List<Ticket> getTickets() {
 		return tickets;
 	}
 	public void setTickets(List<Ticket> tickets) {
 		this.tickets = tickets;
-	}
+	}*/
 	
 	
 	

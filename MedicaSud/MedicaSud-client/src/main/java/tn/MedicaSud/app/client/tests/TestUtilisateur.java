@@ -22,9 +22,10 @@ public class TestUtilisateur {
 		Context context= new InitialContext();
 		UtilisateurServicesRemote utilisateurServicesRemote= (UtilisateurServicesRemote) context.lookup("MedicaSud-ear/MedicaSud-service/UtilisateurServices!tn.MedicaSud.services.UtilisateurServicesRemote");
 		Utilisateur utilisateur= new Utilisateur();
-	  /* utilisateur.setEmail("email");
+	   utilisateur.setEmail("email");
 		utilisateur.setPassword("123456");
 		utilisateur.setRole(Role.valueOf("Client"));
+		utilisateurServicesRemote.save(utilisateur);
 		//System.out.println(utilisateur.getCode());
 	
 		/*utilisateur= utilisateurServicesRemote.login("email", "123456");
@@ -35,7 +36,7 @@ public class TestUtilisateur {
 		}*/
 		/*List<Utilisateur> utilisateurs= new ArrayList<Utilisateur>();
 		System.out.println(utilisateurs.size());*/
-		utilisateur=utilisateurServicesRemote.find(1);
+		/*utilisateur=utilisateurServicesRemote.find(1);
 		System.out.println(utilisateur.getCode() );
 		/*utilisateurs.add(utilisateur);
 		System.out.println(utilisateurs.size());

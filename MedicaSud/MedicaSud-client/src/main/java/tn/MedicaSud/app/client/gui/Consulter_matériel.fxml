@@ -64,12 +64,22 @@
                   <Image url="@ssets/icons8-poste-de-travail-64.png" />
                </image>
             </ImageView>
-            <JFXButton fx:id="EditerProfile" layoutX="55.0" layoutY="210.0" onAction="#EditerProfileAction" prefHeight="27.0" prefWidth="109.0" style="-fx-border-color: #4682b4;" text="Editer profile" textFill="WHITE">
+            <JFXButton fx:id="ConsulterDemande" layoutX="30.0" layoutY="200.0" onAction="#EditerProfileAction" prefHeight="27.0" prefWidth="167.0" style="-fx-border-color: #4682b4;" text="Consulter demandes" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <ImageView fx:id="ImgEditerProfile" fitHeight="28.0" fitWidth="28.0" layoutX="13.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="ImgConsulterDemande" fitHeight="28.0" fitWidth="28.0" layoutX="13.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@ssets/icons8-editer-le-fichier-80.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="EditerProfile" layoutX="55.0" layoutY="240.0" onAction="#EditerProfileAction" prefHeight="27.0" prefWidth="109.0" style="-fx-border-color: #4682b4;" text="Editer profile" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <ImageView fx:id="ImgEditerProfile" fitHeight="28.0" fitWidth="28.0" layoutX="13.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@ssets/icons8-editer-le-fichier-80.png" />
                </image>
@@ -99,7 +109,7 @@
             </Label>
             <TableView fx:id="materiels" layoutX="74.0" layoutY="70.0" prefHeight="220.0" prefWidth="283.0">
                <columns>
-                  <TableColumn fx:id="referenceMateriel" prefWidth="93.0" text="réference" />
+                  <TableColumn fx:id="referenceMateriel" prefWidth="93.0" text="description" />
                   <TableColumn fx:id="marqueMAteriel" prefWidth="102.0" text="marque" />
                   <TableColumn fx:id="DateAchatMAteriel" prefWidth="87.0" text="date d'achat" />
                </columns>

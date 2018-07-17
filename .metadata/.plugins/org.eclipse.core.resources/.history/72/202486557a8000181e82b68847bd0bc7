@@ -1,8 +1,0 @@
-package tn.MedicaSud.entities;
-
-public class Materiel {
-	
-	private Integer id;
-	private String reference;
-
-}

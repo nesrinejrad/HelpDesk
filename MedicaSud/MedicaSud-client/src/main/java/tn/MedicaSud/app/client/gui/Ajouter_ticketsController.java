@@ -49,6 +49,10 @@ import javafx.stage.Stage;
  * @author USER
  */
 public class Ajouter_ticketsController implements Initializable {
+	 @FXML
+	    private ImageView imgConsulterDemande;
+	  @FXML
+	    private JFXButton  ConsulterDemande ;
 	
     @FXML
     private ImageView imgAccceuil;

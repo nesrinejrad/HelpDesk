@@ -63,6 +63,21 @@ public class Utilites {
          // do what you have to do
          stage.close();
     }
+    public void newStageAdmin(AnchorPane anchropane , String fxml , String Title) throws IOException
+    {
+         FXMLLoader loader=new FXMLLoader(getClass().getResource(fxml));
+         Parent root = (Parent) loader.load();		
+         Scene newScene = new Scene(root);
+         Stage newStage = new Stage();
+         Stage stage = (Stage) anchropane.getScene().getWindow();
+         newStage.setHeight(stage.getHeight());
+         newStage.setTitle(Title);
+         newStage.setWidth(stage.getWidth());
+         newStage.setScene(newScene);
+         newStage.show();
+         // do what you have to do
+         stage.close();
+    }
     
     public void closeStage(JFXButton button)
     {

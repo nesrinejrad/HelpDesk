@@ -30,11 +30,11 @@ public class Materiel implements Serializable{
 	private TypeMateriel typeMateriel;
 	@OneToMany(mappedBy="materiel")
 	private java.util.List<Ticket> tickets;
-	@ManyToMany(mappedBy="materiels", fetch=FetchType.EAGER, cascade={CascadeType.PERSIST,CascadeType.REMOVE,CascadeType.MERGE})
+	@ManyToMany(mappedBy="materiels")
 	private java.util.List<Utilisateur> utilisateurs= new ArrayList<Utilisateur>();
 	@ManyToOne
 	private Fournisseur fournisseur;
-	@OneToMany(mappedBy="materiel")
+	@OneToMany(mappedBy="materiel",fetch=FetchType.EAGER)
 	private java.util.List<Intervention> interventions;
 	private static final long serialVersionUID = 1L;
 	public int getId() {

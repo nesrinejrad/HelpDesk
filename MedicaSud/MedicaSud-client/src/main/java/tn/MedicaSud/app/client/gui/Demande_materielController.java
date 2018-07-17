@@ -47,6 +47,11 @@ import javafx.stage.Stage;
  * @author USER
  */
 public class Demande_materielController implements Initializable {
+	 @FXML
+	    private ImageView imgConsulterDemande;
+	  @FXML
+	    private JFXButton  ConsulterDemande ;
+	
 	@FXML
     private ImageView imgAccceuil;
     @FXML

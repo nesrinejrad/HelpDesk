@@ -57,6 +57,11 @@ import javafx.scene.paint.Paint;
  * @author USER
  */
 public class Consulter_ticketController implements Initializable {
+	 @FXML
+	    private ImageView imgConsulterDemande;
+	  @FXML
+	    private JFXButton  ConsulterDemande ;
+	
 
     @FXML
     private TableColumn<Ticket, String> materielTicket;

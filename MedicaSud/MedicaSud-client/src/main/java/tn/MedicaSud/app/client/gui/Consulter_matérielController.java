@@ -50,6 +50,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
 public class Consulter_matérielController implements Initializable {
     @FXML
     private ImageView imgAccceuil;
+    @FXML
+    private ImageView imgConsulterDemande;
+  @FXML
+    private JFXButton  ConsulterDemande ;
 
     @FXML
     private TableColumn<Materiel, String> referenceMateriel;
