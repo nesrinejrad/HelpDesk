@@ -46,7 +46,7 @@ public class Utilites {
     static String panneRemote="MedicaSud-ear/MedicaSud-service/PanneServices!tn.MedicaSud.services.PanneServicesRemote";
     static String ticketRemote="MedicaSud-ear/MedicaSud-service/TicketSercies!tn.MedicaSud.services.TicketSerciesRemote";
     static String demandeRemote="MedicaSud-ear/MedicaSud-service/DemandeServices!tn.MedicaSud.services.DemandeServicesRemote";
-    static String materielRemote="MedicaSud-ear/MedicaSud-service/DemandeServices!tn.MedicaSud.services.DemandeServicesRemote";
+    static String materielRemote="MedicaSud-ear/MedicaSud-service/MaterielServices!tn.MedicaSud.services.MaterielServicesRemote";
     static Context context;
     public void newStage(JFXButton button , String fxml , String Title) throws IOException
     {
