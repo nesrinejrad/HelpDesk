@@ -265,7 +265,7 @@ public class Ajouter_ticketsController implements Initializable {
 			}
 		}
     	panne=pannes.get(i);
-    	ticket.setPanne(panne);
+    	//ticket.setPanne(panne);
     	utilites.ticketSerciesRemote.save(ticket);
     	utilites.GenerertAletrtOk("Envoie effectué");
         utilites.newStage(Deconnexion, "Ajout_tickets.fxml", "demande matériel");

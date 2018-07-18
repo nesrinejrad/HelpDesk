@@ -21,19 +21,18 @@ public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "USR_CODE")
-	private int code;
+	private String code;
 	@Column(name = "USR_PWD")
 	private String password;
 	@Column(name = "USR_EMAIL")
 	private String email;
 
-	public int getCode() {
+	public String getCode() {
 		return code;
 	}
 
-	public void setCode(int code) {
+	public void setCode(String code) {
 		this.code = code;
 	}
 

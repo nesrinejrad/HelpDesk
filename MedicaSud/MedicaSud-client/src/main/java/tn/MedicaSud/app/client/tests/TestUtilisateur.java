@@ -22,7 +22,8 @@ public class TestUtilisateur {
 		Context context= new InitialContext();
 		UtilisateurServicesRemote utilisateurServicesRemote= (UtilisateurServicesRemote) context.lookup("MedicaSud-ear/MedicaSud-service/UtilisateurServices!tn.MedicaSud.services.UtilisateurServicesRemote");
 		Utilisateur utilisateur= new Utilisateur();
-	   utilisateur.setEmail("email");
+		utilisateur.setCode("123");
+		utilisateur.setEmail("email");
 		utilisateur.setPassword("123456");
 		utilisateur.setRole(Role.valueOf("Client"));
 		utilisateurServicesRemote.save(utilisateur);
