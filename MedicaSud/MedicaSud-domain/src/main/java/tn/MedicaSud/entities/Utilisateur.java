@@ -26,7 +26,7 @@ public class Utilisateur extends User implements Serializable{
 	private java.util.List<Demande> demandes;
 	@OneToMany(mappedBy="utilisateur")
 	private java.util.List<Ticket> tickets;
-	@ManyToMany
+	@ManyToMany(cascade={CascadeType.MERGE},fetch=FetchType.EAGER)
 	private java.util.List<Materiel> materiels=new ArrayList<Materiel>();
 	private static final long serialVersionUID = 1L;
 	public Role getRole() {
@@ -73,8 +73,7 @@ public class Utilisateur extends User implements Serializable{
 	}
 	@Override
 	public String toString() {
-		return "Utilisateur [role=" + role + ", fonction=" + fonction + ", demandes=" + demandes + ", tickets="
-				+ tickets + ", materiels=" + materiels + "]";
+		return "Utilisateur [role=" + role + ", fonction=" + fonction + "]";
 	}
 	public String getNom() {
 		return nom;

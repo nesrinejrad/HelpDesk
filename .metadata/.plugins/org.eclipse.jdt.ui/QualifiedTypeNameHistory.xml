@@ -12,7 +12,6 @@
 <fullyQualifiedTypeName name="javax.persistence.Id"/>
 <fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
 <fullyQualifiedTypeName name="java.awt.List"/>
-<fullyQualifiedTypeName name="javax.persistence.CascadeType"/>
 <fullyQualifiedTypeName name="javax.persistence.FetchType"/>
 <fullyQualifiedTypeName name="javax.persistence.OneToOne"/>
 <fullyQualifiedTypeName name="javax.persistence.OneToMany"/>
@@ -36,7 +35,6 @@
 <fullyQualifiedTypeName name="tn.MedicaSud.entities.Ticket"/>
 <fullyQualifiedTypeName name="tn.MedicaSud.utilities.GenericDAO"/>
 <fullyQualifiedTypeName name="java.lang.Enum"/>
-<fullyQualifiedTypeName name="javax.persistence.Enumerated"/>
 <fullyQualifiedTypeName name="javax.persistence.EnumType"/>
 <fullyQualifiedTypeName name="tn.MedicaSud.entities.Role"/>
 <fullyQualifiedTypeName name="java.awt.TextField"/>
@@ -52,5 +50,9 @@
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="com.google.common.base.Optional"/>
 <fullyQualifiedTypeName name="java.util.Optional"/>
+<fullyQualifiedTypeName name="javassist.bytecode.analysis.Analyzer"/>
+<fullyQualifiedTypeName name="tn.MedicaSud.app.client.gui.Utilites"/>
 <fullyQualifiedTypeName name="tn.MedicaSud.entities.Utilisateur"/>
+<fullyQualifiedTypeName name="javax.persistence.Enumerated"/>
+<fullyQualifiedTypeName name="javax.persistence.CascadeType"/>
 </qualifiedTypeNameHistroy>

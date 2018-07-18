@@ -92,8 +92,8 @@ public class Utilites {
          Parent root = (Parent) loader.load();		
          Scene newScene = new Scene(root);
          Stage newStage = new Stage();
-          newStage.setHeight(300);
-        newStage.setWidth(450);
+         // newStage.setHeight(300);
+        //newStage.setWidth(450);
          newStage.setScene(newScene);
          newStage.show();
    }

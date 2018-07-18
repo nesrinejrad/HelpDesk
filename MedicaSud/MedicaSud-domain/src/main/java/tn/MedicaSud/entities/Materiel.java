@@ -21,7 +21,7 @@ import javax.xml.crypto.Data;
 @Entity
 public class Materiel implements Serializable{
 	@Id
-	private int id;
+	private String id;
 	private String reference;
 	private String marque;
 	private LocalDate  dateAchat;
@@ -30,17 +30,17 @@ public class Materiel implements Serializable{
 	private TypeMateriel typeMateriel;
 	@OneToMany(mappedBy="materiel")
 	private java.util.List<Ticket> tickets;
-	@ManyToMany(mappedBy="materiels")
+	@ManyToMany(mappedBy="materiels",cascade={CascadeType.MERGE},fetch=FetchType.EAGER)
 	private java.util.List<Utilisateur> utilisateurs= new ArrayList<Utilisateur>();
 	@ManyToOne
 	private Fournisseur fournisseur;
 	@OneToMany(mappedBy="materiel",fetch=FetchType.EAGER)
 	private java.util.List<Intervention> interventions;
 	private static final long serialVersionUID = 1L;
-	public int getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public String getReference() {

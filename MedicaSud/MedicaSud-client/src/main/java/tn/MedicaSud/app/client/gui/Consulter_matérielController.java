@@ -120,12 +120,7 @@ public class Consulter_matérielController implements Initializable {
         // TODO
  	   List<Materiel> materiels= new ArrayList<Materiel>();
  	   materiels.addAll(Accueil_clientController.utilisateurConnecte.getMateriels());
- 	   System.out.println(materiels.size());
- 	   data=FXCollections.observableList(materiels);
- 	   for (Materiel materiel : materiels) {
- 		   System.out.println(materiel.getId());
- 		   }
-		
+ 	   data=FXCollections.observableList(materiels);		
  	  referenceMateriel.setCellValueFactory(new PropertyValueFactory<>("reference"));
  	  marqueMAteriel.setCellValueFactory(new PropertyValueFactory<>("marque"));
  	  DateAchatMAteriel.setCellValueFactory(new PropertyValueFactory<>("date achat"));
