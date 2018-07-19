@@ -29,6 +29,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextArea;
 
+import Utilities.SendMail;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -267,6 +268,8 @@ public class Ajouter_ticketsController implements Initializable {
     	panne=pannes.get(i);
     	//ticket.setPanne(panne);
     	utilites.ticketSerciesRemote.save(ticket);
+    	SendMail sm =new SendMail();
+		  sm.sendmail("nesrine.jrad@esprit.tn","medicasudapplication@gmail.com", "nesrina0510", "l'utilisateur :"+ticket.getUtilisateur().getCode()+" \n a lancé un ticket concernant le materiel suivant  :"+ticket.getMateriel());
     	utilites.GenerertAletrtOk("Envoie effectué");
         utilites.newStage(Deconnexion, "Ajout_tickets.fxml", "demande matériel");
     }

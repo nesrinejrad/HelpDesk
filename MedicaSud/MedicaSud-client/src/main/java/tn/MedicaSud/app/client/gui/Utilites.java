@@ -5,7 +5,7 @@
  */
 package tn.MedicaSud.app.client.gui;
 
-import com.jfoenix.controls.JFXButton;
+
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
@@ -13,6 +13,8 @@ import java.io.IOException;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
+
+import com.jfoenix.controls.JFXButton;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

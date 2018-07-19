@@ -28,5 +28,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/USER/Desktop/nserine/jfoenix-8.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/USER/Desktop/nserine/mail.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
