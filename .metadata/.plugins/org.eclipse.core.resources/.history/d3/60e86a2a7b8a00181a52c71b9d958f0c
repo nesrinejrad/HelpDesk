@@ -1,0 +1,108 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package tn.MedicaSud.app.client.gui;
+
+import com.jfoenix.controls.JFXButton;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import tn.MedicaSud.entities.Materiel;
+import tn.MedicaSud.entities.Utilisateur;
+
+/**
+ * FXML Controller class
+ *
+ * @author USER
+ */
+public class GestionUtilisateursController implements Initializable {
+	@FXML
+    private AnchorPane imageMedicaSud;
+
+    @FXML
+    private TableView<Utilisateur> UtilisateurTableView;
+    @FXML
+    private TableColumn<Utilisateur, ?> codeUtilisateur;
+    @FXML
+    private TableColumn<Utilisateur, ?> nomUtilisateur;
+    @FXML
+    private TableColumn<Utilisateur, ?> prenomUtilisateur;
+    @FXML
+    private TableColumn<Utilisateur, ?> emailUtilisateur;
+    @FXML
+    private TableColumn<Utilisateur, ?> fonctionUtilisateur;
+    @FXML
+    private TableColumn<Utilisateur, ?> motdepasseUtilisateur;
+    @FXML
+    private JFXButton Accueil;
+    @FXML
+    private JFXButton Ajouter;
+    @FXML
+    private JFXButton modifier;
+    @FXML
+    private JFXButton Supprimer;
+    @FXML
+    private JFXButton ListeMateriel;
+    @FXML
+    private JFXButton ListeIntervention;
+    @FXML
+    private JFXButton Deconnexion;
+    Utilites utilies= new Utilites();
+    private ObservableList<Utilisateur> utilisateursData=FXCollections.observableList;
+
+
+    /**
+     * Initializes the controller class.
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+    	utilies.backgroundImage(imageMedicaSud);
+
+    }    
+
+    @FXML
+    private void AjouterAction(ActionEvent event) throws IOException {
+    	utilies.newStageWithOldStage("AjouterUtilisateur.fxml");
+    }
+
+    @FXML
+    private void modifierAction(ActionEvent event) throws IOException {
+    	utilies.newStage(Ajouter, "ModifierUtilisateur.fxml", "Ajouter Utilisateur");
+
+    }
+
+    @FXML
+    private void supprimerAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void ListeMAterielAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void ListeInterventionAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void AccueilAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void DeconnexionAction(ActionEvent event) {
+    }
+    
+}

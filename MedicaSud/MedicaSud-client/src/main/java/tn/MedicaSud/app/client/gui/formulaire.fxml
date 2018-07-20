@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FormulaireController">
+   <children>
+      <Label layoutX="145.0" layoutY="80.0" text="Label" />
+      <TextField fx:id="msg" layoutX="236.0" layoutY="85.0" />
+      <Button layoutX="259.0" layoutY="168.0" mnemonicParsing="false" onAction="#valider" text="Button" />
+   </children>
+</AnchorPane>

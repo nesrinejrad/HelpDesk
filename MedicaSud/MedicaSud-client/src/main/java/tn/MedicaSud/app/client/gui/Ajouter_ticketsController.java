@@ -132,7 +132,8 @@ public class Ajouter_ticketsController implements Initializable {
   	 imgAccceuil.setImage(img);
   	   
   	 List<Materiel> materiels= Accueil_clientController.utilisateurConnecte.getMateriels();
-  	 System.out.println(materiels.size());
+  	System.out.println(Accueil_clientController.utilisateurConnecte.getCode());
+  	 System.out.println("size materiel"+materiels.size());
   	 for (Materiel materiel1 : materiels) {
   		 System.out.println(materiel1.getReference());
 		dataMateriels.add(materiel1.getReference());
@@ -269,7 +270,7 @@ public class Ajouter_ticketsController implements Initializable {
     	//ticket.setPanne(panne);
     	utilites.ticketSerciesRemote.save(ticket);
     	SendMail sm =new SendMail();
-		  sm.sendmail("nesrine.jrad@esprit.tn","medicasudapplication@gmail.com", "nesrina0510", "l'utilisateur :"+ticket.getUtilisateur().getCode()+" \n a lancé un ticket concernant le materiel suivant  :"+ticket.getMateriel());
+		  sm.sendmail("jrad.nesrine1@gmail.com","nesrine.jrad@esprit.tn", "07188923", "your login to helpDesk platfrom \n Login:"+" \n Password :");
     	utilites.GenerertAletrtOk("Envoie effectué");
         utilites.newStage(Deconnexion, "Ajout_tickets.fxml", "demande matériel");
     }
