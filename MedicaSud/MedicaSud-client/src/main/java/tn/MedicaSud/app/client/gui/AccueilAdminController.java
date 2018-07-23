@@ -125,7 +125,7 @@ public class AccueilAdminController implements Initializable {
 
     @FXML
     private void EditerProfilAction(MouseEvent event) throws IOException {
-        utilities.newStageWithOldStage("Editer_profil.fxml");
+        utilities.newStageWithOldStage("EditerMotDePasse.fxml");
 
     }
 
@@ -134,7 +134,8 @@ public class AccueilAdminController implements Initializable {
     }
 
     @FXML
-    private void DeconnexionAction(MouseEvent event) {
+    private void DeconnexionAction(MouseEvent event) throws IOException {
+utilities.newStageAdmin(CoonsulterNotification, "login.fxml", "login");
     }
     
 }

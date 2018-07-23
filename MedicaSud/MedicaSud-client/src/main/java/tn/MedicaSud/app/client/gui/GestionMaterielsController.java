@@ -161,8 +161,7 @@ public class GestionMaterielsController implements Initializable {
 
     @FXML
     private void ListeUtilisateurAction(ActionEvent event) throws IOException, NamingException {
-    	UtilisateurTableView.setVisible(true);
-    	this.materiels.setVisible(false);
+    	
     	Materiel materiel= new Materiel();
     	materiel=this.materiels.getSelectionModel().getSelectedItem();
     
@@ -188,13 +187,21 @@ public class GestionMaterielsController implements Initializable {
 				}
 			
 		}
-    	dataUser=FXCollections.observableList(utilisateurs);
+    	if(utilisateurs.size()!=0)
+    	{UtilisateurTableView.setVisible(true);
+    	this.materiels.setVisible(false);
+    		dataUser=FXCollections.observableList(utilisateurs);
     	codeUtilisateur.setCellValueFactory(new PropertyValueFactory<>("code"));
    	    nomUtilisateur.setCellValueFactory(new PropertyValueFactory<>("nom"));
    	    prenomUtilisateur.setCellValueFactory(new PropertyValueFactory<>("prenom"));
    	    emailUtilisateur.setCellValueFactory(new PropertyValueFactory<>("email"));
    	 fonctionUtilisateur.setCellValueFactory(new PropertyValueFactory<>("fonction"));
 	    UtilisateurTableView.setItems(dataUser);
+	    materiel= new Materiel();}
+    	else
+    	{
+    		utilies.GenererAlerte("ce matériel n'a pas encore d'utilisateurs");
+    	}
     	
     }
 

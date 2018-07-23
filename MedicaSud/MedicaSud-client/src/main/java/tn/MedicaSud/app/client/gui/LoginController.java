@@ -6,7 +6,7 @@
 package tn.MedicaSud.app.client.gui;
 
 import tn.MedicaSud.app.client.gui.Utilites;
-
+import tn.MedicaSud.entities.Role;
 import tn.MedicaSud.entities.Utilisateur;
 import tn.MedicaSud.services.UtilisateurServicesRemote;
 
@@ -71,6 +71,9 @@ public class LoginController implements Initializable {
 		 Utilites.utilisateurServicesRemote= (UtilisateurServicesRemote) Utilites.context.lookup(Utilites.utilRemote);
 	     if ((utilisateur=Utilites.utilisateurServicesRemote.login(loginText.getText(), pwdText.getText()))!=null)
 	     {System.out.println(loginText.getText());
+	     if(utilisateur.getRole()==(Role.valueOf("Administrateur")))
+	      utilites.newStage(Login, "AccueilAdmin.fxml","accueil");
+	     else
 		  utilites.newStage(Login, "Accueil_client.fxml","accueil");
 		  Accueil_clientController.utilisateurConnecte=utilisateur;		        	
 		  }
