@@ -127,6 +127,7 @@ public class GestionUtilisateursController implements Initializable {
         Stage newStage = new Stage();
         newStage.setScene(newScene);
         newStage.show();
+        this.initialize(null, null);
 
     }
 
@@ -139,6 +140,7 @@ public class GestionUtilisateursController implements Initializable {
     	utilies.utilisateurServicesRemote.delete(utilisateur);
     	//utilies.closeStage(Accueil);
     	utilies.GenerertAletrtOk("utilisateur Ajouter avec succes");
+    	this.initialize(null, null);
     }
 
     @FXML

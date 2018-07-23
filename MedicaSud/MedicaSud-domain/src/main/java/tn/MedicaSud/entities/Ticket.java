@@ -32,7 +32,7 @@ public class Ticket implements Serializable {
 	private StatutTicket statutTicket;
 	@ManyToOne
 	private Materiel materiel;
-	@ManyToOne
+	@ManyToOne(cascade={CascadeType.MERGE},fetch=FetchType.EAGER)
 	private Utilisateur utilisateur;
 	@OneToMany(mappedBy="ticket")
 	private List<Notification> notifications;

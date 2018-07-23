@@ -34,6 +34,15 @@
                   <TableColumn fx:id="Fournisseur" prefWidth="87.0" text="Fournisseur" />
                </columns>
             </TableView>
+                 <TableView fx:id="UtilisateurTableView" layoutX="10.0" layoutY="70.0" prefHeight="220.0" prefWidth="520.0">
+               <columns>
+                  <TableColumn fx:id="codeUtilisateur" prefWidth="93.0" text="code" />
+                  <TableColumn fx:id="nomUtilisateur" prefWidth="93.0" text="nom" />
+                  <TableColumn fx:id="prenomUtilisateur" prefWidth="90.0" text="prenom" />
+                  <TableColumn fx:id="emailUtilisateur" prefWidth="150.0" text="email" />
+                  <TableColumn fx:id="fonctionUtilisateur" prefWidth="70.0" text="fonction" />
+               </columns>
+            </TableView>
          </children></AnchorPane>
    </center>
    <left>

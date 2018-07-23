@@ -168,8 +168,15 @@ public class Ajouter_ticketsController implements Initializable {
     	Nouvelle_PannesController nouvelle_PannesController= new Nouvelle_PannesController();
     	nouvelle_PannesController.dim1= (int) Deconnexion.getScene().getWindow().getWidth();
     	nouvelle_PannesController.dim2= (int) Deconnexion.getScene().getWindow().getHeight();    	
-    	utilites.newStageWithOldStage( "Nouvelle_Pannes.fxml");
-    	
+    	FXMLLoader loader=new FXMLLoader(getClass().getResource("Nouvelle_Pannes.fxml"));
+        Parent root = (Parent) loader.load();
+    	nouvelle_PannesController=loader.getController();
+    	nouvelle_PannesController.NouvellePanneUser();		
+        Scene newScene = new Scene(root);
+        Stage newStage = new Stage();
+        newStage.setScene(newScene);
+        newStage.show();
+  	
     }
 
   

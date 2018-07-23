@@ -94,7 +94,7 @@ public class Accueil_clientController implements Initializable {
 	   img = new Image("Assets/icons8-ajouter-32.png");
 	   ImgNouveauTicket.setImage(img);
 	   
-	   img = new Image("Assets/Demande.png");
+	   img = new Image("Assets/demandeblanche.png");
 	   ImgDemandeMateriel.setImage(img);;
 	   
 	   img = new Image("Assets/icons8-editer-le-fichier-80.png");

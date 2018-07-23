@@ -22,7 +22,7 @@ import javax.naming.NamingException;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
-
+import javafx.scene.control.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -47,6 +47,10 @@ public class Nouvelle_PannesController implements Initializable {
     private JFXComboBox<String> Type;
     @FXML
     private JFXTextField description;
+    @FXML
+    private JFXTextField solutionText;
+    @FXML
+    private Label  Solution;
     private ObservableList<String> dateTypeMateriel=FXCollections.observableArrayList();
     private PanneServicesRemote panneServiceRemote;
     static int dim1;
@@ -66,6 +70,8 @@ public class Nouvelle_PannesController implements Initializable {
         Type.setItems(dateTypeMateriel);
         System.out.println("dim1="+dim1);
         System.out.println("dim2="+dim2);
+        Solution.setVisible(true);
+        solutionText.setVisible(true);
 
     }    
 
@@ -76,7 +82,15 @@ public class Nouvelle_PannesController implements Initializable {
 		 Panne panne= new Panne();
 		 panne.setTypeMateriel(TypeMateriel.valueOf(Type.getValue()));
 		 panne.setDescription(description.getText());
-		 panneServiceRemote.save(panne);
+		 if(solutionText!=null)
+		 {
+			 panne.setSolution(solutionText.getText());
+			 panneServiceRemote.update(panne);
+		     utilites.closeStage(ValiderNouvellePanne);
+			 
+		 }
+		 else
+		 { panneServiceRemote.save(panne);
 	     utilites.closeStage(ValiderNouvellePanne);
 	     FXMLLoader loader= new FXMLLoader(getClass().getResource("Ajouter_tickets.fxml"));
 	     Stage primaryStage= new Stage();
@@ -86,7 +100,18 @@ public class Nouvelle_PannesController implements Initializable {
 	        primaryStage.setWidth(dim1);
 	        primaryStage.setTitle("Ajout ticket");
 	        primaryStage.setScene(scene);
-	        primaryStage.show();
+	        primaryStage.show();}
 	     
+    }
+    
+    public void NouvellePanneUser()
+    {
+    	Solution.setVisible(false);
+    	solutionText.setVisible(false);
+    }
+    public void RemplirCahmp(Panne panne)
+    {
+    	description.setText(panne.getDescription());
+    	solutionText.setText(panne.getSolution());
     }
 }

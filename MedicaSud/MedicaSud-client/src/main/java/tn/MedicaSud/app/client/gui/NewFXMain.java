@@ -31,7 +31,7 @@ public class NewFXMain extends Application {
         Parent root = loader.load();                           
         Scene scene= new Scene(root);     
         primaryStage.setHeight(600);
-        primaryStage.setWidth(800);
+        primaryStage.setWidth(750);
         primaryStage.setTitle("login");
         primaryStage.setScene(scene);
         primaryStage.show();

@@ -80,6 +80,20 @@ public class GestionMaterielsController implements Initializable {
     @FXML
     private TableView<Materiel> materiels;
     private ObservableList<Materiel> data;
+    private ObservableList<Utilisateur> dataUser;
+
+    @FXML
+    private TableView<Utilisateur> UtilisateurTableView;
+    @FXML
+    private TableColumn<Utilisateur, String> codeUtilisateur;
+    @FXML
+    private TableColumn<Utilisateur, String> nomUtilisateur;
+    @FXML
+    private TableColumn<Utilisateur, String> prenomUtilisateur;
+    @FXML
+    private TableColumn<Utilisateur, String> emailUtilisateur;
+    @FXML
+    private TableColumn<Utilisateur, String> fonctionUtilisateur;
 
 
     /**
@@ -88,21 +102,27 @@ public class GestionMaterielsController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
     	utilies.backgroundImage(imageMedicaSud);
+
     	List<Materiel> materiels= new ArrayList<Materiel>();
    	   try {
-		utilies.context= new InitialContext();
+   		   utilies.context= new InitialContext();
 		utilies.materielServicesRemote= (MaterielServicesRemote) utilies.context.lookup(utilies.materielRemote);
 		materiels=utilies.materielServicesRemote.findAll();
+		System.out.println("size materiem="+materiels.size());
 		data=FXCollections.observableList(materiels);	
+		System.out.println("data materiem="+data.size());
+		UtilisateurTableView.setVisible(false);
+
 		referenceMateriel.setCellValueFactory(new PropertyValueFactory<>("reference"));
 	   	  marqueMAteriel.setCellValueFactory(new PropertyValueFactory<>("marque"));
 	   	  DateAchatMAteriel.setCellValueFactory(new PropertyValueFactory<>("date achat"));
 	   	  DureeGarantie.setCellValueFactory(new PropertyValueFactory<>("dureeGarantie"));
 	 	  Fournisseur.setCellValueFactory(new PropertyValueFactory<>("fournisseur"));
 	 	  CodeMateriel.setCellValueFactory(new PropertyValueFactory<>("id"));
-	   	  this.materiels.setItems(data);
+	   		this.materiels.setItems(data);
+
    	   } catch (NamingException e) {
-		
+		//this.materiels.setVisible(true);
 	}	
     }    
 
@@ -123,7 +143,7 @@ public class GestionMaterielsController implements Initializable {
         Stage newStage = new Stage();
         newStage.setScene(newScene);
         newStage.show();
-
+        this.initialize(null, null);
     	
 
     }
@@ -136,12 +156,45 @@ public class GestionMaterielsController implements Initializable {
     	utilies.materielServicesRemote=(MaterielServicesRemote) utilies.context.lookup(utilies.materielRemote);
     	utilies.materielServicesRemote.delete(materiel);
     	utilies.GenerertAletrtOk("materiel supprimé avec succes");
-    	materiels.refresh();
-    	
+    	this.initialize(null, null);    	
     }
 
     @FXML
-    private void ListeUtilisateurAction(ActionEvent event) throws IOException {
+    private void ListeUtilisateurAction(ActionEvent event) throws IOException, NamingException {
+    	UtilisateurTableView.setVisible(true);
+    	this.materiels.setVisible(false);
+    	Materiel materiel= new Materiel();
+    	materiel=this.materiels.getSelectionModel().getSelectedItem();
+    
+    	List<Utilisateur> utilisateurs= new ArrayList<Utilisateur>();
+    	List<Utilisateur> utilisateurs1= new ArrayList<Utilisateur>();
+    	utilies.context= new InitialContext();
+    	utilies.utilisateurServicesRemote= (UtilisateurServicesRemote) utilies.context.lookup(utilies.utilRemote);
+    	utilisateurs1=utilies.utilisateurServicesRemote.findAll();
+    	for (Utilisateur utilisateur : utilisateurs1) {
+			boolean exist=false;
+			List<Materiel> materiels= new ArrayList<Materiel>();
+			materiels=utilisateur.getMateriels();
+			System.out.println("size materiel"+materiels.size());
+			for (Materiel materiel1 : materiels) {
+				if(materiel.getId().equals(materiel1.getId()))
+				{
+					System.out.println("ok");
+					exist=true;
+				}}
+				if(exist)
+				{
+					utilisateurs.add(utilisateur);
+				}
+			
+		}
+    	dataUser=FXCollections.observableList(utilisateurs);
+    	codeUtilisateur.setCellValueFactory(new PropertyValueFactory<>("code"));
+   	    nomUtilisateur.setCellValueFactory(new PropertyValueFactory<>("nom"));
+   	    prenomUtilisateur.setCellValueFactory(new PropertyValueFactory<>("prenom"));
+   	    emailUtilisateur.setCellValueFactory(new PropertyValueFactory<>("email"));
+   	 fonctionUtilisateur.setCellValueFactory(new PropertyValueFactory<>("fonction"));
+	    UtilisateurTableView.setItems(dataUser);
     	
     }
 
