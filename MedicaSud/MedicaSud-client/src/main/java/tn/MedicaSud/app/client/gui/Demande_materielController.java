@@ -51,7 +51,6 @@ public class Demande_materielController implements Initializable {
 	    private ImageView imgConsulterDemande;
 	  @FXML
 	    private JFXButton  ConsulterDemande ;
-	
 	@FXML
     private ImageView imgAccceuil;
     @FXML

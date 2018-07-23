@@ -118,21 +118,13 @@ public class ConsulterMaterielParUtilisateurController implements Initializable 
   	   materiels=utilities.materielServicesRemote.findAll();
   	   for (Materiel materiel : materiels) {
   		 boolean exist=false;
-  		  System.out.println(utilisateur.getMateriels().size());
   		  utilisateurs=materiel.getUtilisateurs();
-  		  System.out.println("size utilosateur="+utilisateurs.size());
   		  for (Utilisateur utilisateur1 : utilisateurs) {
-  			System.out.println("code utilisateur globale="+utilisateur.getCode());
-  			System.out.println("code utilisateur l'e5er="+utilisateur1.getCode());
-  			System.out.println(utilisateur1.getCode().equals(utilisateur.getCode()));
   			  if((utilisateur1.getCode().equals(utilisateur.getCode())))
   			  {  exist=true;	  }}
-  		 
   		  if(!exist)
   			  materiels1.add(materiel);}
-	
-  	   System.out.println("size finale="+materiels1.size());
-  	   data=FXCollections.observableList(materiels1);		
+	  	   data=FXCollections.observableList(materiels1);		
   	  referenceMateriel.setCellValueFactory(new PropertyValueFactory<>("reference"));
   	  marqueMAteriel.setCellValueFactory(new PropertyValueFactory<>("marque"));
   	  DateAchatMAteriel.setCellValueFactory(new PropertyValueFactory<>("date achat"));

@@ -29,6 +29,7 @@ import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 import javafx.stage.Stage;
 import tn.MedicaSud.services.DemandeServicesRemote;
+import tn.MedicaSud.services.FournisseurServicesRemote;
 import tn.MedicaSud.services.MaterielServicesRemote;
 import tn.MedicaSud.services.PanneServicesRemote;
 import tn.MedicaSud.services.TicketSerciesRemote;
@@ -44,6 +45,8 @@ public class Utilites {
     static DemandeServicesRemote demandeServicesRemote;
     static MaterielServicesRemote materielServicesRemote;
     static PanneServicesRemote panneServicesRemote;
+    static FournisseurServicesRemote fournisseurServicesRemote;
+    static String FournisseurRemote="MedicaSud-ear/MedicaSud-service/FournisseurServices!tn.MedicaSud.services.FournisseurServicesRemote";
     static String utilRemote="MedicaSud-ear/MedicaSud-service/UtilisateurServices!tn.MedicaSud.services.UtilisateurServicesRemote";
     static String panneRemote="MedicaSud-ear/MedicaSud-service/PanneServices!tn.MedicaSud.services.PanneServicesRemote";
     static String ticketRemote="MedicaSud-ear/MedicaSud-service/TicketSercies!tn.MedicaSud.services.TicketSerciesRemote";

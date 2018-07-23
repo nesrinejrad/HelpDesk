@@ -8,6 +8,7 @@ package tn.MedicaSud.app.client.gui;
 import com.jfoenix.controls.JFXButton;
 
 
+
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
@@ -112,12 +113,30 @@ public class GestionMaterielsController implements Initializable {
 
     @FXML
     private void modifierAction(ActionEvent event) throws IOException {
+      	Materiel materiel= materiels.getSelectionModel().getSelectedItem();
+    	AjouterMaterielController ajouterMaterielController= new AjouterMaterielController();
+    	FXMLLoader loader=new FXMLLoader(getClass().getResource("AjouterMateriel.fxml"));
+        Parent root = (Parent) loader.load();
+    	ajouterMaterielController=loader.getController();
+    	ajouterMaterielController.RemplirCahmp(materiel);		
+        Scene newScene = new Scene(root);
+        Stage newStage = new Stage();
+        newStage.setScene(newScene);
+        newStage.show();
+
     	
 
     }
 
     @FXML
     private void supprimerAction(ActionEvent event) throws NamingException {
+    	Materiel materiel= new Materiel();
+    	materiel=materiels.getSelectionModel().getSelectedItem();
+    	utilies.context= new InitialContext();
+    	utilies.materielServicesRemote=(MaterielServicesRemote) utilies.context.lookup(utilies.materielRemote);
+    	utilies.materielServicesRemote.delete(materiel);
+    	utilies.GenerertAletrtOk("materiel supprimé avec succes");
+    	materiels.refresh();
     	
     }
 

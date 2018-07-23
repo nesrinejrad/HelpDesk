@@ -15,7 +15,7 @@
    <center>
       <AnchorPane prefHeight="306.0" prefWidth="400.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="144.0" layoutY="23.0" text="Identfiant">
+            <Label fx:id="idLabel" layoutX="144.0" layoutY="23.0" text="Identfiant">
                <font>
                   <Font size="14.0" />
                </font>
@@ -48,9 +48,9 @@
             <JFXTextField fx:id="IdentifiantMateriel" layoutX="251.0" layoutY="11.0" />
             <JFXTextField fx:id="DescriptionMateriel" layoutX="251.0" layoutY="45.0" />
             <JFXTextField fx:id="MarqueMateriel" layoutX="251.0" layoutY="85.0" />
-            <JFXTextField fx:id="DateAchatMateriel" layoutX="251.0" layoutY="130.0" />
+            <DatePicker fx:id="DateAchatMateriel" layoutX="252.0" layoutY="143.0" prefHeight="25.0" prefWidth="138.0" />
             <JFXTextField fx:id="DureeGarantieMateriel" layoutX="251.0" layoutY="172.0" />
-            <JFXComboBox fx:id="TypeMateriel" layoutX="254.0" layoutY="217.0" prefHeight="25.0" prefWidth="129.0" />
+            <JFXComboBox fx:id="TypeMaterielC" layoutX="254.0" layoutY="217.0" prefHeight="25.0" prefWidth="129.0" />
             <JFXButton fx:id="Enregistrer" layoutX="455.0" layoutY="339.0" onAction="#EnregistrerMateriel" style="-fx-border-color: #4682b4;" text="Enregister" />
             <Label layoutX="147.0" layoutY="275.0" text="Fournissuer">
                <font>
