@@ -50,10 +50,10 @@ public class AnchorPaneNode extends AnchorPane {
          Stage primaryStage= new Stage();
          System.out.println("This pane's date is: " + date);
            
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("formulaire.fxml"));
+      /*  FXMLLoader loader = new FXMLLoader(getClass().getResource("formulaire.fxml"));
         primaryStage.setTitle("Full Calendar FXML Example");
                 primaryStage.setScene(new Scene(loader.load()));
 
-        primaryStage.show();
+        primaryStage.show();*/
     }
 }

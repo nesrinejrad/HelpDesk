@@ -8,21 +8,23 @@ package tn.MedicaSud.app.client.gui;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 
 /**
  * FXML Controller class
  *
  * @author USER
  */
-public class FormulaireController implements Initializable {
+public class FullCalendarController implements Initializable {
 
     @FXML
-    private TextField msg;
-   
+    private BorderPane borderPane;
+    @FXML
+    private Pane calendarPane;
+
     /**
      * Initializes the controller class.
      */
@@ -30,11 +32,5 @@ public class FormulaireController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-
-    @FXML
-    private void valider(ActionEvent event) {
-       String msg1= msg.getText();
-       
-    }
     
 }

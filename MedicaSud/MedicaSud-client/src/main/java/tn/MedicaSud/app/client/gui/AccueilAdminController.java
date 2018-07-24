@@ -7,9 +7,12 @@ package tn.MedicaSud.app.client.gui;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.YearMonth;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -111,7 +114,15 @@ public class AccueilAdminController implements Initializable {
     }
 
     @FXML
-    private void GestionInterventionAction(MouseEvent event) {
+    private void GestionInterventionAction(MouseEvent event) throws IOException {
+    	  FXMLLoader loader = new FXMLLoader(getClass().getResource("fullCalendar.fxml"));
+    	  Stage primaryStage= new Stage();
+          primaryStage.setTitle("Full Calendar FXML Example");
+          primaryStage.setScene(new Scene(loader.load()));
+          // Get the controller and add the calendar view to it
+          Controller controller = loader.getController();
+          controller.calendarPane.getChildren().add(new FullCalendarView(YearMonth.now()).getView());
+          primaryStage.show();
     }
 
     @FXML

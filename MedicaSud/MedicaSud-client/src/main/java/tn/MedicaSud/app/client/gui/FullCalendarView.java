@@ -13,6 +13,7 @@ import java.time.YearMonth;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import javafx.scene.layout.BorderPane;
 
 
 public class FullCalendarView {
@@ -78,6 +79,7 @@ public class FullCalendarView {
         // Populate calendar with the appropriate day numbers
         populateCalendar(yearMonth);
         // Create the calendar view
+           BorderPane borderPane= new BorderPane();
         view = new VBox(titleBar, dayLabels, calendar);
        
     }
