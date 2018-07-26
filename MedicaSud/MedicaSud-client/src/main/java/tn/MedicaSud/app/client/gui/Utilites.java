@@ -30,6 +30,7 @@ import javafx.scene.layout.BackgroundSize;
 import javafx.stage.Stage;
 import tn.MedicaSud.services.DemandeServicesRemote;
 import tn.MedicaSud.services.FournisseurServicesRemote;
+import tn.MedicaSud.services.InterventionServicesRemote;
 import tn.MedicaSud.services.MaterielServicesRemote;
 import tn.MedicaSud.services.PanneServicesRemote;
 import tn.MedicaSud.services.TicketSerciesRemote;
@@ -45,6 +46,7 @@ public class Utilites {
     static DemandeServicesRemote demandeServicesRemote;
     static MaterielServicesRemote materielServicesRemote;
     static PanneServicesRemote panneServicesRemote;
+    static InterventionServicesRemote interventionServicesRemote;
     static FournisseurServicesRemote fournisseurServicesRemote;
     static String FournisseurRemote="MedicaSud-ear/MedicaSud-service/FournisseurServices!tn.MedicaSud.services.FournisseurServicesRemote";
     static String utilRemote="MedicaSud-ear/MedicaSud-service/UtilisateurServices!tn.MedicaSud.services.UtilisateurServicesRemote";
@@ -53,6 +55,7 @@ public class Utilites {
     static String demandeRemote="MedicaSud-ear/MedicaSud-service/DemandeServices!tn.MedicaSud.services.DemandeServicesRemote";
     static String materielRemote="MedicaSud-ear/MedicaSud-service/MaterielServices!tn.MedicaSud.services.MaterielServicesRemote";
     static Context context;
+    static String interventionRemote="MedicaSud-ear/MedicaSud-service/InterventionServices!tn.MedicaSud.services.InterventionServicesRemote";
     public void newStage(JFXButton button , String fxml , String Title) throws IOException
     {
          FXMLLoader loader=new FXMLLoader(getClass().getResource(fxml));

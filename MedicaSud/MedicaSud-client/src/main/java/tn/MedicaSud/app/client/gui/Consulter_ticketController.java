@@ -147,10 +147,11 @@ public class Consulter_ticketController implements Initializable {
 				List<Ticket> ticketsFinal= new ArrayList<Ticket>();
 				System.out.println(tickets.size());
 				for (Ticket ticket : tickets) {
-					if(ticket.getUtilisateur().getCode()==Accueil_clientController.utilisateurConnecte.getCode())
+					if(ticket.getUtilisateur().getCode().equals(Accueil_clientController.utilisateurConnecte.getCode()))
 					{
 						ticketsFinal.add(ticket);
 					}
+					System.out.println("final="+ticketsFinal.size());
 					data=FXCollections.observableList(ticketsFinal);
 				}
 			} catch (NamingException e) {

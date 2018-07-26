@@ -1,0 +1,9 @@
+package tn.MedicaSud.app.client.tests;
+
+import tn.MedicaSud.app.client.gui.Utilites;
+
+public class InterventionTest {
+Utilites utilites= new Utilites();
+ 
+
+}

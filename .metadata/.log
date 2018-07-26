@@ -6288,3 +6288,282 @@ org.eclipse.jface.text.BadLocationException
 
 !ENTRY org.eclipse.ui.ide 4 4 2018-07-24 17:24:24.625
 !MESSAGE Exception in org.eclipse.ui.actions.CopyFilesAndFoldersOperation.performCopy(): java.lang.ArrayIndexOutOfBoundsException: 0
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2018-07-24 18:51:18.507
+!MESSAGE Unable to retrieve a list of remote deployment scanners
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2018-07-24 18:51:18.563
+!MESSAGE Unable to retrieve a list of remote deployment scanners
+
+!ENTRY org.jboss.tools.common.jdt.debug 2 0 2018-07-26 00:33:26.176
+!MESSAGE 
+!STACK 1
+org.jboss.tools.common.jdt.debug.tools.ToolsCoreException: 
+	at org.jboss.tools.common.jdt.debug.tools.internal.Tools.invokeGetMonitoredVm(Tools.java:585)
+	at org.jboss.tools.common.jdt.debug.tools.internal.Tools.getMonitoredVm(Tools.java:595)
+	at org.jboss.tools.common.jdt.debug.tools.ToolsCore.processIsRunning(ToolsCore.java:98)
+	at org.jboss.tools.common.jdt.debug.RemoteDebugActivator.getVmModelsUsingTools(RemoteDebugActivator.java:168)
+	at org.jboss.tools.common.jdt.debug.RemoteDebugActivator.getVmModel(RemoteDebugActivator.java:150)
+	at org.jboss.tools.common.jdt.debug.RemoteDebugActivator.getVmModel(RemoteDebugActivator.java:156)
+	at org.jboss.tools.jmx.jvmmonitor.internal.tools.JvmAttachHandler.updatesActiveJvms(JvmAttachHandler.java:107)
+	at org.jboss.tools.jmx.jvmmonitor.internal.tools.JvmAttachHandler$1.run(JvmAttachHandler.java:78)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.GeneratedMethodAccessor22.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.jboss.tools.common.jdt.debug.tools.internal.Tools.invokeGetMonitoredVm(Tools.java:583)
+	... 9 more
+Caused by: sun.jvmstat.monitor.MonitorException: 26200 not found
+	at sun.jvmstat.perfdata.monitor.protocol.local.PerfDataBuffer.<init>(PerfDataBuffer.java:84)
+	at sun.jvmstat.perfdata.monitor.protocol.local.LocalMonitoredVm.<init>(LocalMonitoredVm.java:68)
+	at sun.jvmstat.perfdata.monitor.protocol.local.MonitoredHostProvider.getMonitoredVm(MonitoredHostProvider.java:77)
+	at sun.jvmstat.perfdata.monitor.protocol.local.MonitoredHostProvider.getMonitoredVm(MonitoredHostProvider.java:67)
+	... 13 more
+Caused by: java.lang.IllegalArgumentException: Could not map vmid to user name
+	at sun.misc.Perf.attach(Native Method)
+	at sun.misc.Perf.attachImpl(Perf.java:270)
+	at sun.misc.Perf.attach(Perf.java:200)
+	at sun.jvmstat.perfdata.monitor.protocol.local.PerfDataBuffer.<init>(PerfDataBuffer.java:64)
+	... 16 more
+!SUBENTRY 1 org.jboss.tools.common.jdt.debug 4 0 2018-07-26 00:33:26.301
+!MESSAGE 
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at sun.reflect.GeneratedMethodAccessor22.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.jboss.tools.common.jdt.debug.tools.internal.Tools.invokeGetMonitoredVm(Tools.java:583)
+	at org.jboss.tools.common.jdt.debug.tools.internal.Tools.getMonitoredVm(Tools.java:595)
+	at org.jboss.tools.common.jdt.debug.tools.ToolsCore.processIsRunning(ToolsCore.java:98)
+	at org.jboss.tools.common.jdt.debug.RemoteDebugActivator.getVmModelsUsingTools(RemoteDebugActivator.java:168)
+	at org.jboss.tools.common.jdt.debug.RemoteDebugActivator.getVmModel(RemoteDebugActivator.java:150)
+	at org.jboss.tools.common.jdt.debug.RemoteDebugActivator.getVmModel(RemoteDebugActivator.java:156)
+	at org.jboss.tools.jmx.jvmmonitor.internal.tools.JvmAttachHandler.updatesActiveJvms(JvmAttachHandler.java:107)
+	at org.jboss.tools.jmx.jvmmonitor.internal.tools.JvmAttachHandler$1.run(JvmAttachHandler.java:78)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+Caused by: sun.jvmstat.monitor.MonitorException: 26200 not found
+	at sun.jvmstat.perfdata.monitor.protocol.local.PerfDataBuffer.<init>(PerfDataBuffer.java:84)
+	at sun.jvmstat.perfdata.monitor.protocol.local.LocalMonitoredVm.<init>(LocalMonitoredVm.java:68)
+	at sun.jvmstat.perfdata.monitor.protocol.local.MonitoredHostProvider.getMonitoredVm(MonitoredHostProvider.java:77)
+	at sun.jvmstat.perfdata.monitor.protocol.local.MonitoredHostProvider.getMonitoredVm(MonitoredHostProvider.java:67)
+	... 13 more
+Caused by: java.lang.IllegalArgumentException: Could not map vmid to user name
+	at sun.misc.Perf.attach(Native Method)
+	at sun.misc.Perf.attachImpl(Perf.java:270)
+	at sun.misc.Perf.attach(Perf.java:200)
+	at sun.jvmstat.perfdata.monitor.protocol.local.PerfDataBuffer.<init>(PerfDataBuffer.java:64)
+	... 16 more
+Root exception:
+sun.jvmstat.monitor.MonitorException: 26200 not found
+	at sun.jvmstat.perfdata.monitor.protocol.local.PerfDataBuffer.<init>(PerfDataBuffer.java:84)
+	at sun.jvmstat.perfdata.monitor.protocol.local.LocalMonitoredVm.<init>(LocalMonitoredVm.java:68)
+	at sun.jvmstat.perfdata.monitor.protocol.local.MonitoredHostProvider.getMonitoredVm(MonitoredHostProvider.java:77)
+	at sun.jvmstat.perfdata.monitor.protocol.local.MonitoredHostProvider.getMonitoredVm(MonitoredHostProvider.java:67)
+	at sun.reflect.GeneratedMethodAccessor22.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.jboss.tools.common.jdt.debug.tools.internal.Tools.invokeGetMonitoredVm(Tools.java:583)
+	at org.jboss.tools.common.jdt.debug.tools.internal.Tools.getMonitoredVm(Tools.java:595)
+	at org.jboss.tools.common.jdt.debug.tools.ToolsCore.processIsRunning(ToolsCore.java:98)
+	at org.jboss.tools.common.jdt.debug.RemoteDebugActivator.getVmModelsUsingTools(RemoteDebugActivator.java:168)
+	at org.jboss.tools.common.jdt.debug.RemoteDebugActivator.getVmModel(RemoteDebugActivator.java:150)
+	at org.jboss.tools.common.jdt.debug.RemoteDebugActivator.getVmModel(RemoteDebugActivator.java:156)
+	at org.jboss.tools.jmx.jvmmonitor.internal.tools.JvmAttachHandler.updatesActiveJvms(JvmAttachHandler.java:107)
+	at org.jboss.tools.jmx.jvmmonitor.internal.tools.JvmAttachHandler$1.run(JvmAttachHandler.java:78)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+Caused by: java.lang.IllegalArgumentException: Could not map vmid to user name
+	at sun.misc.Perf.attach(Native Method)
+	at sun.misc.Perf.attachImpl(Perf.java:270)
+	at sun.misc.Perf.attach(Perf.java:200)
+	at sun.jvmstat.perfdata.monitor.protocol.local.PerfDataBuffer.<init>(PerfDataBuffer.java:64)
+	... 16 more
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2018-07-26 01:08:47.378
+!MESSAGE Unable to retrieve a list of remote deployment scanners
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2018-07-26 01:08:47.793
+!MESSAGE Unable to retrieve a list of remote deployment scanners
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2018-07-26 08:55:53.440
+!MESSAGE Unable to retrieve a list of remote deployment scanners
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2018-07-26 08:55:53.635
+!MESSAGE Unable to retrieve a list of remote deployment scanners
+
+!ENTRY org.jboss.tools.common.jdt.debug 2 0 2018-07-26 11:01:33.635
+!MESSAGE 
+!STACK 1
+org.jboss.tools.common.jdt.debug.tools.ToolsCoreException: 
+	at org.jboss.tools.common.jdt.debug.tools.internal.Tools.invokeGetMonitoredVm(Tools.java:585)
+	at org.jboss.tools.common.jdt.debug.tools.internal.Tools.getMonitoredVm(Tools.java:595)
+	at org.jboss.tools.common.jdt.debug.tools.ToolsCore.processIsRunning(ToolsCore.java:98)
+	at org.jboss.tools.common.jdt.debug.RemoteDebugActivator.getVmModelsUsingTools(RemoteDebugActivator.java:168)
+	at org.jboss.tools.common.jdt.debug.RemoteDebugActivator.getVmModel(RemoteDebugActivator.java:150)
+	at org.jboss.tools.common.jdt.debug.RemoteDebugActivator.getVmModel(RemoteDebugActivator.java:156)
+	at org.jboss.tools.jmx.jvmmonitor.internal.tools.JvmAttachHandler.updatesActiveJvms(JvmAttachHandler.java:107)
+	at org.jboss.tools.jmx.jvmmonitor.internal.tools.JvmAttachHandler$1.run(JvmAttachHandler.java:78)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.GeneratedMethodAccessor22.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.jboss.tools.common.jdt.debug.tools.internal.Tools.invokeGetMonitoredVm(Tools.java:583)
+	... 9 more
+Caused by: sun.jvmstat.monitor.MonitorException: Could not attach to 16296
+	at sun.jvmstat.perfdata.monitor.protocol.local.PerfDataBuffer.<init>(PerfDataBuffer.java:92)
+	at sun.jvmstat.perfdata.monitor.protocol.local.LocalMonitoredVm.<init>(LocalMonitoredVm.java:68)
+	at sun.jvmstat.perfdata.monitor.protocol.local.MonitoredHostProvider.getMonitoredVm(MonitoredHostProvider.java:77)
+	at sun.jvmstat.perfdata.monitor.protocol.local.MonitoredHostProvider.getMonitoredVm(MonitoredHostProvider.java:67)
+	... 13 more
+Caused by: java.io.IOException: Could not determine PerfMemory size
+	at sun.misc.Perf.attach(Native Method)
+	at sun.misc.Perf.attachImpl(Perf.java:270)
+	at sun.misc.Perf.attach(Perf.java:200)
+	at sun.jvmstat.perfdata.monitor.protocol.local.PerfDataBuffer.<init>(PerfDataBuffer.java:64)
+	... 16 more
+!SUBENTRY 1 org.jboss.tools.common.jdt.debug 4 0 2018-07-26 11:01:33.685
+!MESSAGE 
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at sun.reflect.GeneratedMethodAccessor22.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.jboss.tools.common.jdt.debug.tools.internal.Tools.invokeGetMonitoredVm(Tools.java:583)
+	at org.jboss.tools.common.jdt.debug.tools.internal.Tools.getMonitoredVm(Tools.java:595)
+	at org.jboss.tools.common.jdt.debug.tools.ToolsCore.processIsRunning(ToolsCore.java:98)
+	at org.jboss.tools.common.jdt.debug.RemoteDebugActivator.getVmModelsUsingTools(RemoteDebugActivator.java:168)
+	at org.jboss.tools.common.jdt.debug.RemoteDebugActivator.getVmModel(RemoteDebugActivator.java:150)
+	at org.jboss.tools.common.jdt.debug.RemoteDebugActivator.getVmModel(RemoteDebugActivator.java:156)
+	at org.jboss.tools.jmx.jvmmonitor.internal.tools.JvmAttachHandler.updatesActiveJvms(JvmAttachHandler.java:107)
+	at org.jboss.tools.jmx.jvmmonitor.internal.tools.JvmAttachHandler$1.run(JvmAttachHandler.java:78)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+Caused by: sun.jvmstat.monitor.MonitorException: Could not attach to 16296
+	at sun.jvmstat.perfdata.monitor.protocol.local.PerfDataBuffer.<init>(PerfDataBuffer.java:92)
+	at sun.jvmstat.perfdata.monitor.protocol.local.LocalMonitoredVm.<init>(LocalMonitoredVm.java:68)
+	at sun.jvmstat.perfdata.monitor.protocol.local.MonitoredHostProvider.getMonitoredVm(MonitoredHostProvider.java:77)
+	at sun.jvmstat.perfdata.monitor.protocol.local.MonitoredHostProvider.getMonitoredVm(MonitoredHostProvider.java:67)
+	... 13 more
+Caused by: java.io.IOException: Could not determine PerfMemory size
+	at sun.misc.Perf.attach(Native Method)
+	at sun.misc.Perf.attachImpl(Perf.java:270)
+	at sun.misc.Perf.attach(Perf.java:200)
+	at sun.jvmstat.perfdata.monitor.protocol.local.PerfDataBuffer.<init>(PerfDataBuffer.java:64)
+	... 16 more
+Root exception:
+sun.jvmstat.monitor.MonitorException: Could not attach to 16296
+	at sun.jvmstat.perfdata.monitor.protocol.local.PerfDataBuffer.<init>(PerfDataBuffer.java:92)
+	at sun.jvmstat.perfdata.monitor.protocol.local.LocalMonitoredVm.<init>(LocalMonitoredVm.java:68)
+	at sun.jvmstat.perfdata.monitor.protocol.local.MonitoredHostProvider.getMonitoredVm(MonitoredHostProvider.java:77)
+	at sun.jvmstat.perfdata.monitor.protocol.local.MonitoredHostProvider.getMonitoredVm(MonitoredHostProvider.java:67)
+	at sun.reflect.GeneratedMethodAccessor22.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.jboss.tools.common.jdt.debug.tools.internal.Tools.invokeGetMonitoredVm(Tools.java:583)
+	at org.jboss.tools.common.jdt.debug.tools.internal.Tools.getMonitoredVm(Tools.java:595)
+	at org.jboss.tools.common.jdt.debug.tools.ToolsCore.processIsRunning(ToolsCore.java:98)
+	at org.jboss.tools.common.jdt.debug.RemoteDebugActivator.getVmModelsUsingTools(RemoteDebugActivator.java:168)
+	at org.jboss.tools.common.jdt.debug.RemoteDebugActivator.getVmModel(RemoteDebugActivator.java:150)
+	at org.jboss.tools.common.jdt.debug.RemoteDebugActivator.getVmModel(RemoteDebugActivator.java:156)
+	at org.jboss.tools.jmx.jvmmonitor.internal.tools.JvmAttachHandler.updatesActiveJvms(JvmAttachHandler.java:107)
+	at org.jboss.tools.jmx.jvmmonitor.internal.tools.JvmAttachHandler$1.run(JvmAttachHandler.java:78)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+Caused by: java.io.IOException: Could not determine PerfMemory size
+	at sun.misc.Perf.attach(Native Method)
+	at sun.misc.Perf.attachImpl(Perf.java:270)
+	at sun.misc.Perf.attach(Perf.java:200)
+	at sun.jvmstat.perfdata.monitor.protocol.local.PerfDataBuffer.<init>(PerfDataBuffer.java:64)
+	... 16 more
+
+!ENTRY org.jboss.tools.common.jdt.debug 2 0 2018-07-26 11:12:03.728
+!MESSAGE 
+!STACK 1
+org.jboss.tools.common.jdt.debug.tools.ToolsCoreException: 
+	at org.jboss.tools.common.jdt.debug.tools.internal.Tools.invokeGetMonitoredVm(Tools.java:585)
+	at org.jboss.tools.common.jdt.debug.tools.internal.Tools.getMonitoredVm(Tools.java:595)
+	at org.jboss.tools.common.jdt.debug.tools.ToolsCore.processIsRunning(ToolsCore.java:98)
+	at org.jboss.tools.common.jdt.debug.RemoteDebugActivator.getVmModelsUsingTools(RemoteDebugActivator.java:168)
+	at org.jboss.tools.common.jdt.debug.RemoteDebugActivator.getVmModel(RemoteDebugActivator.java:150)
+	at org.jboss.tools.common.jdt.debug.RemoteDebugActivator.getVmModel(RemoteDebugActivator.java:156)
+	at org.jboss.tools.jmx.jvmmonitor.internal.tools.JvmAttachHandler.updatesActiveJvms(JvmAttachHandler.java:107)
+	at org.jboss.tools.jmx.jvmmonitor.internal.tools.JvmAttachHandler$1.run(JvmAttachHandler.java:78)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.GeneratedMethodAccessor22.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.jboss.tools.common.jdt.debug.tools.internal.Tools.invokeGetMonitoredVm(Tools.java:583)
+	... 9 more
+Caused by: sun.jvmstat.monitor.MonitorException: 27544 not found
+	at sun.jvmstat.perfdata.monitor.protocol.local.PerfDataBuffer.<init>(PerfDataBuffer.java:84)
+	at sun.jvmstat.perfdata.monitor.protocol.local.LocalMonitoredVm.<init>(LocalMonitoredVm.java:68)
+	at sun.jvmstat.perfdata.monitor.protocol.local.MonitoredHostProvider.getMonitoredVm(MonitoredHostProvider.java:77)
+	at sun.jvmstat.perfdata.monitor.protocol.local.MonitoredHostProvider.getMonitoredVm(MonitoredHostProvider.java:67)
+	... 13 more
+Caused by: java.lang.IllegalArgumentException: Could not map vmid to user name
+	at sun.misc.Perf.attach(Native Method)
+	at sun.misc.Perf.attachImpl(Perf.java:270)
+	at sun.misc.Perf.attach(Perf.java:200)
+	at sun.jvmstat.perfdata.monitor.protocol.local.PerfDataBuffer.<init>(PerfDataBuffer.java:64)
+	... 16 more
+!SUBENTRY 1 org.jboss.tools.common.jdt.debug 4 0 2018-07-26 11:12:03.728
+!MESSAGE 
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at sun.reflect.GeneratedMethodAccessor22.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.jboss.tools.common.jdt.debug.tools.internal.Tools.invokeGetMonitoredVm(Tools.java:583)
+	at org.jboss.tools.common.jdt.debug.tools.internal.Tools.getMonitoredVm(Tools.java:595)
+	at org.jboss.tools.common.jdt.debug.tools.ToolsCore.processIsRunning(ToolsCore.java:98)
+	at org.jboss.tools.common.jdt.debug.RemoteDebugActivator.getVmModelsUsingTools(RemoteDebugActivator.java:168)
+	at org.jboss.tools.common.jdt.debug.RemoteDebugActivator.getVmModel(RemoteDebugActivator.java:150)
+	at org.jboss.tools.common.jdt.debug.RemoteDebugActivator.getVmModel(RemoteDebugActivator.java:156)
+	at org.jboss.tools.jmx.jvmmonitor.internal.tools.JvmAttachHandler.updatesActiveJvms(JvmAttachHandler.java:107)
+	at org.jboss.tools.jmx.jvmmonitor.internal.tools.JvmAttachHandler$1.run(JvmAttachHandler.java:78)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+Caused by: sun.jvmstat.monitor.MonitorException: 27544 not found
+	at sun.jvmstat.perfdata.monitor.protocol.local.PerfDataBuffer.<init>(PerfDataBuffer.java:84)
+	at sun.jvmstat.perfdata.monitor.protocol.local.LocalMonitoredVm.<init>(LocalMonitoredVm.java:68)
+	at sun.jvmstat.perfdata.monitor.protocol.local.MonitoredHostProvider.getMonitoredVm(MonitoredHostProvider.java:77)
+	at sun.jvmstat.perfdata.monitor.protocol.local.MonitoredHostProvider.getMonitoredVm(MonitoredHostProvider.java:67)
+	... 13 more
+Caused by: java.lang.IllegalArgumentException: Could not map vmid to user name
+	at sun.misc.Perf.attach(Native Method)
+	at sun.misc.Perf.attachImpl(Perf.java:270)
+	at sun.misc.Perf.attach(Perf.java:200)
+	at sun.jvmstat.perfdata.monitor.protocol.local.PerfDataBuffer.<init>(PerfDataBuffer.java:64)
+	... 16 more
+Root exception:
+sun.jvmstat.monitor.MonitorException: 27544 not found
+	at sun.jvmstat.perfdata.monitor.protocol.local.PerfDataBuffer.<init>(PerfDataBuffer.java:84)
+	at sun.jvmstat.perfdata.monitor.protocol.local.LocalMonitoredVm.<init>(LocalMonitoredVm.java:68)
+	at sun.jvmstat.perfdata.monitor.protocol.local.MonitoredHostProvider.getMonitoredVm(MonitoredHostProvider.java:77)
+	at sun.jvmstat.perfdata.monitor.protocol.local.MonitoredHostProvider.getMonitoredVm(MonitoredHostProvider.java:67)
+	at sun.reflect.GeneratedMethodAccessor22.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.jboss.tools.common.jdt.debug.tools.internal.Tools.invokeGetMonitoredVm(Tools.java:583)
+	at org.jboss.tools.common.jdt.debug.tools.internal.Tools.getMonitoredVm(Tools.java:595)
+	at org.jboss.tools.common.jdt.debug.tools.ToolsCore.processIsRunning(ToolsCore.java:98)
+	at org.jboss.tools.common.jdt.debug.RemoteDebugActivator.getVmModelsUsingTools(RemoteDebugActivator.java:168)
+	at org.jboss.tools.common.jdt.debug.RemoteDebugActivator.getVmModel(RemoteDebugActivator.java:150)
+	at org.jboss.tools.common.jdt.debug.RemoteDebugActivator.getVmModel(RemoteDebugActivator.java:156)
+	at org.jboss.tools.jmx.jvmmonitor.internal.tools.JvmAttachHandler.updatesActiveJvms(JvmAttachHandler.java:107)
+	at org.jboss.tools.jmx.jvmmonitor.internal.tools.JvmAttachHandler$1.run(JvmAttachHandler.java:78)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+Caused by: java.lang.IllegalArgumentException: Could not map vmid to user name
+	at sun.misc.Perf.attach(Native Method)
+	at sun.misc.Perf.attachImpl(Perf.java:270)
+	at sun.misc.Perf.attach(Perf.java:200)
+	at sun.jvmstat.perfdata.monitor.protocol.local.PerfDataBuffer.<init>(PerfDataBuffer.java:64)
+	... 16 more

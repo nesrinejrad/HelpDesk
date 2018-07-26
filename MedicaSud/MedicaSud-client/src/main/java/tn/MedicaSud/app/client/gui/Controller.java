@@ -1,10 +1,17 @@
 package tn.MedicaSud.app.client.gui;
 
 import com.jfoenix.controls.JFXButton;
+
+import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
+
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -14,6 +21,8 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
+import tn.MedicaSud.entities.Intervention;
+import tn.MedicaSud.services.InterventionServicesRemote;
 
 public class Controller implements  Initializable {
 
@@ -29,13 +38,9 @@ public class Controller implements  Initializable {
     @FXML
     private JFXButton Ajouter;
     @FXML
-    private JFXButton modifier;
+    private JFXButton ListeTickets;
     @FXML
-    private JFXButton Supprimer;
-    @FXML
-    private JFXButton ListeMateriel;
-    @FXML
-    private JFXButton ListeIntervention;
+    private JFXButton ListeInterventions;
     @FXML
     private JFXButton Accueil;
     @FXML
@@ -53,9 +58,17 @@ public class Controller implements  Initializable {
             }
             Text txt = new Text(String.valueOf(calendarDate.getDayOfMonth()));
             ap.setDate(calendarDate);
+            List<Intervention> intervention= new ArrayList<Intervention>();
+            List<Integer> periodes= new ArrayList<Integer>();
+            try {
+				utilities.context= new InitialContext();
+				utilities.interventionServicesRemote= (InterventionServicesRemote) utilities.context.lookup(utilities.interventionRemote);
+				intervention=utilities.interventionServicesRemote.findAll();
+			} catch (NamingException e) {
+			
+			}
             String date2="2018-06-01";
             LocalDate ldate2= LocalDate.parse(date2);
-            if(calendarDate==ldate2)
             {
                  System.out.println("hiii");
             }
@@ -73,27 +86,26 @@ public class Controller implements  Initializable {
     }
 
     @FXML
-    private void modifierAction(ActionEvent event) {
+    private void ListeTicketsAction(ActionEvent event) throws IOException {
+    	utilities.newStage(Accueil, "ConsulterTicketAdmin.fxml", "Liste des tickets");
+    }
+
+ 
+
+    @FXML
+    private void ListeInterventionsAction(ActionEvent event) {
     }
 
     @FXML
-    private void supprimerAction(ActionEvent event) {
+    private void AccueilAction(ActionEvent event) throws IOException {
+    	utilities.newStage(Accueil, "AccueilAdmin.fxml", "Accueil");
+
     }
 
     @FXML
-    private void ListeMAterielAction(ActionEvent event) {
-    }
+    private void DeconnexionAction(ActionEvent event) throws IOException {
+    	utilities.newStage(Accueil, "login.fxml", "login");
 
-    @FXML
-    private void ListeInterventionAction(ActionEvent event) {
-    }
-
-    @FXML
-    private void AccueilAction(ActionEvent event) {
-    }
-
-    @FXML
-    private void DeconnexionAction(ActionEvent event) {
     }
     
 }

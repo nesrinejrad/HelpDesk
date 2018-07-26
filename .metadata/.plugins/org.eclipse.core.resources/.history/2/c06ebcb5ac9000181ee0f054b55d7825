@@ -1,0 +1,47 @@
+package tn.MedicaSud.app.client.tests;
+
+import java.util.List;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+
+import tn.MedicaSud.app.client.gui.Utilites;
+import tn.MedicaSud.entities.Intervention;
+import tn.MedicaSud.services.InterventionServicesRemote;
+
+public class InterventionTest {
+Context context= new InitialContext();
+InterventionServicesRemote interventionServicesRemote= new InterventionServicesRemote(;) {
+	
+	@Override
+	public Intervention update(Intervention entity) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	@Override
+	public void save(Intervention entity) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	@Override
+	public List<Intervention> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	@Override
+	public Intervention find(String entityID) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	@Override
+	public void delete(Intervention entity) {
+		// TODO Auto-generated method stub
+		
+	}
+};
+
+}

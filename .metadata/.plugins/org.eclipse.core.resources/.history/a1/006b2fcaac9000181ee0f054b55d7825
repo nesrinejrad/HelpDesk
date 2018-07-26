@@ -1,0 +1,15 @@
+package tn.MedicaSud.app.client.tests;
+
+import java.util.List;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+
+import tn.MedicaSud.app.client.gui.Utilites;
+import tn.MedicaSud.entities.Intervention;
+import tn.MedicaSud.services.InterventionServicesRemote;
+
+public class InterventionTest {
+Context context= new InitialContext();
+InterventionServicesRemote interventionServicesRemote;
+}

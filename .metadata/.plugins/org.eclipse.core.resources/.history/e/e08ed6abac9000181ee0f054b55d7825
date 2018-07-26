@@ -1,0 +1,11 @@
+package tn.MedicaSud.app.client.tests;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+
+import tn.MedicaSud.app.client.gui.Utilites;
+
+public class InterventionTest {
+Context context= new InitialContext();
+
+}

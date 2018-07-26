@@ -124,12 +124,12 @@ public class Ticket implements Serializable {
 				+ ", typeMateriel=" + typeMateriel + ", etatTicket=" + etatTicket + ", statutTicket=" + statutTicket
 				+"]";
 	}
-/*	public Panne getPanne() {
+	public Panne getPanne() {
 		return panne;
 	}
 	public void setPanne(Panne panne) {
 		this.panne = panne;
-	}*/
+	}
 	
 	
 	

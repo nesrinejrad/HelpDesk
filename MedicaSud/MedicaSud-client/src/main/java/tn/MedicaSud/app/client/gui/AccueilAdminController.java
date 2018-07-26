@@ -117,12 +117,15 @@ public class AccueilAdminController implements Initializable {
     private void GestionInterventionAction(MouseEvent event) throws IOException {
     	  FXMLLoader loader = new FXMLLoader(getClass().getResource("fullCalendar.fxml"));
     	  Stage primaryStage= new Stage();
-          primaryStage.setTitle("Full Calendar FXML Example");
+          primaryStage.setTitle("gestion des interventions");
           primaryStage.setScene(new Scene(loader.load()));
           // Get the controller and add the calendar view to it
           Controller controller = loader.getController();
           controller.calendarPane.getChildren().add(new FullCalendarView(YearMonth.now()).getView());
           primaryStage.show();
+          Stage stage2 = (Stage) CoonsulterNotification.getScene().getWindow();
+          stage2.close();
+          
     }
 
     @FXML
