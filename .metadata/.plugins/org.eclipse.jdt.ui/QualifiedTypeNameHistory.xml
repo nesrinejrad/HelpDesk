@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="javax.persistence.FetchType"/>
-<fullyQualifiedTypeName name="javax.persistence.OneToOne"/>
-<fullyQualifiedTypeName name="javax.persistence.OneToMany"/>
 <fullyQualifiedTypeName name="javax.persistence.ManyToOne"/>
 <fullyQualifiedTypeName name="javax.persistence.InheritanceType"/>
 <fullyQualifiedTypeName name="java.io.Serializable"/>
@@ -43,16 +40,10 @@
 <fullyQualifiedTypeName name="tn.MedicaSud.app.client.gui.ConsulterTicketsParUtilisateurController"/>
 <fullyQualifiedTypeName name="Utilities.SendMail"/>
 <fullyQualifiedTypeName name="tn.MedicaSud.app.client.gui.Accueil_clientController"/>
-<fullyQualifiedTypeName name="tn.MedicaSud.app.client.gui.Utilites"/>
-<fullyQualifiedTypeName name="tn.MedicaSud.services.FournisseurServicesRemote"/>
-<fullyQualifiedTypeName name="tn.MedicaSud.entities.Fournisseur"/>
 <fullyQualifiedTypeName name="org.hibernate.internal.util.xml.FilteringXMLEventReader"/>
 <fullyQualifiedTypeName name="tn.MedicaSud.entities.TypeMateriel"/>
-<fullyQualifiedTypeName name="javax.naming.InitialContext"/>
 <fullyQualifiedTypeName name="tn.MedicaSud.app.client.gui.AffecterUtilisateurMaterielController"/>
 <fullyQualifiedTypeName name="tn.MedicaSud.entities.Utilisateur"/>
-<fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="tn.MedicaSud.app.client.gui.AjouterMaterielController"/>
 <fullyQualifiedTypeName name="java.awt.Label"/>
@@ -60,4 +51,13 @@
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="tn.MedicaSud.entities.Materiel"/>
 <fullyQualifiedTypeName name="tn.MedicaSud.services.MaterielServicesRemote"/>
+<fullyQualifiedTypeName name="tn.MedicaSud.app.client.gui.Utilites"/>
+<fullyQualifiedTypeName name="tn.MedicaSud.services.FournisseurServicesRemote"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="javassist.tools.framedump"/>
+<fullyQualifiedTypeName name="javax.naming.NamingException"/>
+<fullyQualifiedTypeName name="tn.MedicaSud.app.client.gui.AjouterFournisseurController"/>
+<fullyQualifiedTypeName name="tn.MedicaSud.entities.Fournisseur"/>
+<fullyQualifiedTypeName name="javax.naming.InitialContext"/>
 </qualifiedTypeNameHistroy>

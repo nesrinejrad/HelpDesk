@@ -1,0 +1,15 @@
+package tn.MedicaSud.app.client.tests;
+
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+
+import tn.MedicaSud.app.client.gui.Utilites;
+
+public class TestLogin {
+	public static void main(String[] args) throws NamingException {
+		Utilites utilites= new Utilites();
+		utilites.context= new InitialContext();
+		utilites.utilisateurServicesRemote=utilites.context.lookup(utilites.utilRemote)
+	}
+
+}

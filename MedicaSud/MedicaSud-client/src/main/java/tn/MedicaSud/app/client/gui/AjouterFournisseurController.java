@@ -27,6 +27,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
+import javassist.tools.framedump;
 import tn.MedicaSud.entities.Fournisseur;
 import tn.MedicaSud.entities.Role;
 import tn.MedicaSud.entities.StatutTicket;
@@ -40,6 +41,9 @@ import tn.MedicaSud.services.UtilisateurServicesRemote;
  * @author USER
  */
 public class AjouterFournisseurController implements Initializable {
+
+    @FXML
+    private Label idLabel;
 	 @FXML
 	    private JFXTextField IdentifiantFournisseur;
 	    @FXML
@@ -59,8 +63,27 @@ public class AjouterFournisseurController implements Initializable {
 	     */
 	    @Override
 	    public void initialize(URL url, ResourceBundle rb) {
-	        // TODO
-	    }    
+	     
+	        }    
+	    public void modifFournisseur(Fournisseur fournisseur1) throws NamingException
+	    {
+	    	   idLabel.setVisible(false);
+		        IdentifiantFournisseur.setVisible(false);
+		        IdentifiantFournisseur.setText(fournisseur1.getId());
+		        NomFournisseur.setText(fournisseur1.getNom());
+		        AdresseFournisseur.setText(fournisseur1.getAdresse());
+		        TéléphoneFournisseur.setText(fournisseur1.getTelephone());
+		        MailFournisseur.setText(fournisseur1.getEmail());
+		        
+		        Fournisseur fournisseur= new Fournisseur();
+		        fournisseur.setId(idLabel.getText());
+		        fournisseur.setEmail(MailFournisseur.getText());
+		        fournisseur.setAdresse(AdresseFournisseur.getText());
+		        fournisseur.setTelephone(TéléphoneFournisseur.getText());
+		        fournisseur.setNom(NomFournisseur.getText());
+		       
+		        
+	    }
 
 	    @FXML
 	    private void EnregistrerFournisseur(ActionEvent event) throws NamingException {
@@ -72,7 +95,7 @@ public class AjouterFournisseurController implements Initializable {
 	    	fournisseur.setTelephone(TéléphoneFournisseur.getText());
 	    	utilities.context= new InitialContext();
 	    	utilities.fournisseurServicesRemote= (FournisseurServicesRemote) utilities.context.lookup(utilities.FournisseurRemote);
-	    	utilities.fournisseurServicesRemote.save(fournisseur);
+	    	utilities.fournisseurServicesRemote.update(fournisseur);
 	    	utilities.closeStage(Enregistrer);
 	    	utilities.GenerertAletrtOk("fournisseur ajouté avec succés");
 	    }

@@ -169,8 +169,10 @@ public class ConsulterTicketAdminController implements Initializable {
  
 
     @FXML
-    private void ListeInterventionsAction(ActionEvent event) {
-    }
+    private void ListeInterventionsAction(ActionEvent event) throws IOException {
+    	utilites.newStage(Accueil, "ListeInterventions.fxml", "liste des interventions");   }
+
+    
 
     @FXML
     private void AccueilAction(ActionEvent event) throws IOException {
@@ -199,11 +201,9 @@ public class ConsulterTicketAdminController implements Initializable {
     	AjouterInterventionController ajouterInterventionController= new AjouterInterventionController();
     	ajouterInterventionController.ticket=ticket;
     	System.out.println(ticket.toString());
-
     	FXMLLoader loader=new FXMLLoader(getClass().getResource("AjouterIntervention.fxml"));
         Parent root = (Parent) loader.load();
     	ajouterInterventionController=loader.getController();
-    	//ajouterInterventionController.RemplirCahmp(materiel);		
         Scene newScene = new Scene(root);
         Stage newStage = new Stage();
         newStage.setScene(newScene);

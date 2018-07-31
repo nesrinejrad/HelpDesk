@@ -65,6 +65,10 @@ public class AccueilAdminController implements Initializable {
     @FXML
     private ImageView imgDeconnexion;
     Utilites utilities=new Utilites();
+    @FXML
+    private AnchorPane GestionFournisseurs;
+    @FXML
+    private ImageView imgGestionFournisseurs;
 
     /**
      * Initializes the controller class.
@@ -95,7 +99,10 @@ public class AccueilAdminController implements Initializable {
 	   
 	   img = new Image("Assets/demande.png");
 	   ImgGestionDemande.setImage(img);
-	   
+	   img = new Image("Assets/iconFournisseur.png");
+	   imgGestionFournisseurs.setImage(img);
+	   img = new Image("Assets/iconStatistiques.png");
+	   ImgCoonsulterStatistique.setImage(img);
 	   
     }    
 
@@ -151,5 +158,11 @@ public class AccueilAdminController implements Initializable {
     private void DeconnexionAction(MouseEvent event) throws IOException {
 utilities.newStageAdmin(CoonsulterNotification, "login.fxml", "login");
     }
+    @FXML
+    private void GestionFournisseursAction(MouseEvent event) throws IOException {
+    	utilities.newStageAdmin(CoonsulterNotification, "GestionFournisseurs.fxml", "gestion des fournisseurs");
+    }
+    
+    
     
 }

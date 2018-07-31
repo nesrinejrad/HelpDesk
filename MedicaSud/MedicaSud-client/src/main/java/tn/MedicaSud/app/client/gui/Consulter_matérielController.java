@@ -9,6 +9,7 @@ import tn.MedicaSud.app.client.gui.Utilites;
 
 
 
+
 import tn.MedicaSud.entities.Materiel;
 import tn.MedicaSud.services.MaterielServicesRemote;
 import tn.MedicaSud.services.UtilisateurServicesRemote;

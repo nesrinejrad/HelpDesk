@@ -91,7 +91,7 @@ public class Materiel implements Serializable{
 	
 	@Override
 	public String toString() {
-		return  reference ;
+		return reference;
 	}
 	public TypeMateriel getTypeMateriel() {
 		return typeMateriel;

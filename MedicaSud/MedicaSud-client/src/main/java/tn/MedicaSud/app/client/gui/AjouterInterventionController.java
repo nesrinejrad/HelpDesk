@@ -38,6 +38,7 @@ import javafx.scene.control.*;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import tn.MedicaSud.entities.EtatTicket;
 import tn.MedicaSud.entities.Fournisseur;
 import tn.MedicaSud.entities.Intervention;
 import tn.MedicaSud.entities.Materiel;
@@ -67,13 +68,20 @@ public class AjouterInterventionController implements Initializable {
     @FXML
     private JFXTextField PeriodeIntervention;
     @FXML
-    private Label labelIntervention;
+    private Label labelPeriode;
     @FXML
     private JFXButton Enregistrer;
     @FXML
     private Label idLabel;
     static Ticket ticket= new Ticket();
     Utilites utilities= new Utilites();
+    static Materiel materiel= new Materiel();
+    @FXML
+    private Hyperlink externe;
+    @FXML
+    private Label labelEtat;
+    @FXML
+    private JFXComboBox<?> etatIntervention;
 
     /**
      * Initializes the controller class.
@@ -82,29 +90,41 @@ public class AjouterInterventionController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
     	 
     	System.out.println(ticket.toString());
-
-     	   
+    	PeriodeIntervention.setVisible(false);
+    	labelPeriode.setVisible(false);
+    	labelEtat.setVisible(false);
+    	etatIntervention.setVisible(false);
      	   
     }    
-    public void RemplirCahmp(Materiel materiel)
+    public void RemplirCahmp(Materiel materiel) throws NamingException
     {	
-    	
-    
     }
 
     @FXML
     private void EnregistrerIntervetnion(ActionEvent event) throws NamingException  {
+    	
     	Intervention intervention= new Intervention();
-    	intervention.setId(IdentifiantIntervention.getText());
+    	if(PeriodeIntervention.getText()!=null)
+    	{intervention.setId(IdentifiantIntervention.getText());
     	intervention.setDescription(DescriptionIntervention.getText());
     	intervention.setDateIntervention(DateIntervention.getValue());
     	intervention.setMateriel(ticket.getMateriel());
     	intervention.setPeriode(Integer.valueOf(PeriodeIntervention.getText()));
-    	intervention.setTicket(ticket);
-    	System.out.println(DescriptionIntervention.getText());
+    	intervention.setTicket(ticket);}
+    	else
+    	{
+    		intervention.setId(IdentifiantIntervention.getText());
+        	intervention.setDescription(DescriptionIntervention.getText());
+        	intervention.setDateIntervention(DateIntervention.getValue());
+        	intervention.setMateriel(materiel);
+        	intervention.setPeriode(null);
+        	intervention.setEtatIntervention(EtatTicket.valueOf("enCours"));
+    	}
     	utilities.context= new InitialContext();
     	utilities.interventionServicesRemote= (InterventionServicesRemote) utilities.context.lookup(utilities.interventionRemote);
     	utilities.interventionServicesRemote.update(intervention);
+    	utilities.GenerertAletrtOk("intervention enregistrée");
+    	
     	
     }
 

@@ -1,0 +1,84 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package tn.MedicaSud.app.client.gui;
+
+import com.jfoenix.controls.JFXButton;
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.layout.AnchorPane;
+
+/**
+ * FXML Controller class
+ *
+ * @author USER
+ */
+public class GestionFournisseursController implements Initializable {
+	@FXML
+    private AnchorPane imageMedicaSud;
+    @FXML
+    private JFXButton Ajouter;
+    @FXML
+    private JFXButton modifier;
+    @FXML
+    private JFXButton Supprimer;
+    @FXML
+    private JFXButton ListeMateriel;
+    @FXML
+    private JFXButton Accueil;
+    @FXML
+    private JFXButton Deconnexion;
+    @FXML
+    private TableView<?> FournisseurTableView;
+    @FXML
+    private TableColumn<?, ?> codeFournisseur;
+    @FXML
+    private TableColumn<?, ?> nomFournisseur;
+    @FXML
+    private TableColumn<?, ?> adresseFournisseur;
+    @FXML
+    private TableColumn<?, ?> emailFournisseur;
+    @FXML
+    private TableColumn<?, ?> telephoneFournisseur;
+    Utilites utilities= new Utilites();
+
+    /**
+     * Initializes the controller class.
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+    	utilities.backgroundImage(imageMedicaSud);
+    }    
+
+    @FXML
+    private void AjouterAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void modifierAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void supprimerAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void ListeMAterielAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void AccueilAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void DeconnexionAction(ActionEvent event) {
+    }
+    
+}

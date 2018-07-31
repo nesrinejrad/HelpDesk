@@ -1,0 +1,11 @@
+package tn.MedicaSud.app.client.tests;
+
+import tn.MedicaSud.app.client.gui.Utilites;
+
+public class TestLogin {
+	public static void main(String[] args) {
+		Utilites utilites= new Utilites();
+		
+	}
+
+}

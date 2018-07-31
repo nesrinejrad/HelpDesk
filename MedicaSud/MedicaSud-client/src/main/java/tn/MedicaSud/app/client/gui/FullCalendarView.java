@@ -198,9 +198,6 @@ public class FullCalendarView {
             taDates.addAll(DatePrecedent);
              DatePrecedent.clear();
              DatePrecedent.addAll(DateSuivant);
-             System.out.println("taDates fel suivant fele5er="+taDates.toString());
-             System.out.println("dateprecedent fel suivant fele5er="+DatePrecedent.toString());
-             System.out.println("********************");
          // Change the title of the calendar
          calendarTitle.setText(yearMonth.getMonth().toString() + " " + String.valueOf(yearMonth.getYear()));
      }
@@ -210,6 +207,8 @@ public class FullCalendarView {
     	        DatePrecedent.clear();
     	       // taDates.addAll(DateSuivant);
     	        DateSuivant.clear();
+    	         List<String> descriptions2= new ArrayList<String>();
+
     	        DateSuivant.addAll(taDates);
     	        // Get the date we want to start with on the calendar
     	        LocalDate calendarDate = LocalDate.of(yearMonth.getYear(), yearMonth.getMonthValue(), 1);
@@ -233,8 +232,12 @@ public class FullCalendarView {
     	                while(((nbJour=nbJour-periodes.get(i))>0)&& (LocalDate.ofYearDay(ld.getYear(), nbJour).getMonthValue()==(currentYearMonth.getMonthValue())))
     	                {   
     	                     ld1= LocalDate.ofYearDay(ld.getYear(),nbJour);
+    	                     
     	                     Dates.add(ld1);
     	                     periode2.add(periodes.get(i));
+    	                      descriptions2.add(descriptions.get(i));      
+
+    	                     
     	                 }           
     	                if(nbJour>0)
     	                {
@@ -244,13 +247,15 @@ public class FullCalendarView {
     	                {
     	                    nbJour=365+nbJour;
     	                    ld1= LocalDate.ofYearDay(ld.getYear()-1,nbJour);
+    	                      descriptions2.add(descriptions.get(i));       
+
     	                }
     	                
     	                periode2.add(periodes.get(i));
     	                DatePrecedent.add(ld1);
     	         }
     	            
-
+    	         int i=0;
     	        for (AnchorPaneNode ap : allCalendarDays) {
 
     	            if (ap.getChildren().size() != 0) {
@@ -259,16 +264,16 @@ public class FullCalendarView {
     	            }
     	            Text txt = new Text(String.valueOf(calendarDate.getDayOfMonth()));
     	            ap.setDate(calendarDate);
-
+    	         
     	                   
     	         for(LocalDate ld :Dates)
     	             
     	            {   if(calendarDate.equals(ld))
-    	            {   Text text=new Text("essai");
+    	            {   Text text=new Text(descriptions2.get(i));
     	                 ap.setTopAnchor(text,13.0);
     	                 ap.setLeftAnchor(text, 13.0);
     	                 ap.getChildren().add(text);
-    	                 
+    	                 i++;
     	                 }
     	                
     	            }

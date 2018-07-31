@@ -20,6 +20,13 @@ public class Intervention implements Serializable {
 	private LocalDate dateIntervention;
 	private String description;
 	private Integer periode;
+	private EtatTicket etatIntervention;
+	public EtatTicket getEtatIntervention() {
+		return etatIntervention;
+	}
+	public void setEtatIntervention(EtatTicket etatIntervention) {
+		this.etatIntervention = etatIntervention;
+	}
 	@ManyToOne
 	private Materiel materiel;
 	@ManyToOne
